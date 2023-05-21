@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:eurosom/logic/bloc/auth_bloc.dart';
+import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/main.dart';
 import 'package:eurosom/ui/auth/forgot_password_screen.dart';
 import 'package:eurosom/ui/utils/colors.dart';

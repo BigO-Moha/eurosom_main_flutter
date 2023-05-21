@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:eurosom/logic/bloc/auth_bloc.dart';
+import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/ui/auth/walkthrough_screen.dart';
 import 'package:eurosom/ui/routes/app_router.gr.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
