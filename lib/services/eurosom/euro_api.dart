@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
+import 'package:eurosom/models/pricing_model/pricing_model.dart';
+import 'package:eurosom/models/subscription_model/subscription_model.dart';
 import 'package:eurosom/services/core/config.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -11,4 +14,20 @@ abstract class EuroApiService {
   factory EuroApiService(Dio dio, {String? baseUrl}) = _EuroApiService;
   @GET("/home-sliders")
   Future<BannerModel> getHomeSliders(@Queries() Map<String, dynamic> query);
+  @GET("/applications")
+  Future<Appsmodel> getAllApplications(@Queries() Map<String, dynamic> query);
+  @GET("/pricings")
+  Future<PricingModel> getAllPricings(@Queries() Map<String, dynamic> query);
+  @GET("/subscriptions")
+  Future<SubscriptionModel> getMySubscriptions(
+      @Queries() Map<String, dynamic> query);
+  @POST("/subscriptions")
+  Future<SubscriptionModel> CreateSubscription(
+      @Body() Map<String, dynamic> body);
+  @POST("/subscriptions/{id}")
+  Future<SubscriptionModel> updateSubscription(
+      @Path() String id, @Queries() Map<String, dynamic> query);
+  @PUT("/users/{id}")
+  Future<Appsmodel> UpdateUser(
+      @Path() String id, @Body() Map<String, dynamic> body);
 }
