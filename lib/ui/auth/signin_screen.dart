@@ -2,7 +2,9 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/main.dart';
+import 'package:eurosom/ui/auth/signin_with%20_email_screen.dart';
 import 'package:eurosom/ui/auth/signup_screen.dart';
+import 'package:eurosom/ui/routes/app_router.gr.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 buttonText: "Login",
                 width: context.width(),
                 onTap: () {
-                  SignUpScreen().launch(context);
+                  SignWithEmailInScreen().launch(context);
                 }),
             16.height,
             CommonButton(

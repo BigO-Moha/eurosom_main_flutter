@@ -151,7 +151,7 @@ class _ChattingScreenState extends State<ChattingScreen> {
     });
 
     CompletionRequest testRequest = CompletionRequest(
-      model: ChatGptModel.gpt35Turbo,
+      model: ChatGptModel.gpt35Turbo0301,
       stream: true,
       maxTokens: 4000,
       messages: [Message(role: Role.user.name, content: question)],
@@ -305,7 +305,8 @@ class _ChattingScreenState extends State<ChattingScreen> {
           Container(
             height: context.height(),
             width: context.width(),
-            margin: const EdgeInsets.only(bottom: 0),
+            margin: EdgeInsets.only(
+                bottom: 66 + (isBannerLoad ? 16 : 0) + (isShowOption ? 50 : 0)),
             padding: const EdgeInsets.only(left: 16, right: 16),
             child: ListView.separated(
               separatorBuilder: (_, i) => Divider(color: Colors.transparent),

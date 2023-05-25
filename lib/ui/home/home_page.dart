@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/main.dart';
 import 'package:eurosom/models/absatractions/auth.dart';
+import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/services/core/injection.dart';
 import 'package:eurosom/ui/home/fragments/home_fragment.dart';
 import 'package:eurosom/ui/home/models/menu_model.dart';
@@ -22,6 +23,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   List<SampleListModel> getData = [];
 
   late int isSelected = 0;
+  late AuthModel? user;
 
   double value = 0;
 
@@ -33,6 +35,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   @override
   void initState() {
+    user = getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r);
     setStatusBarColor(appStore.scaffoldBackground!);
 
     getData.add(
@@ -78,7 +81,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
   }
 
   void init() async {
-    await Future.delayed(Duration(seconds: 1)).then((value) => openDrawer());
+    await Future.delayed(const Duration(seconds: 1))
+        .then((value) => openDrawer());
   }
 
   @override
@@ -89,8 +93,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    final user =
-        getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r);
     return Scaffold(
       body: Stack(
         children: [

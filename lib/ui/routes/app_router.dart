@@ -19,6 +19,7 @@ class AppRouter extends $AppRouter {
         MaterialRoute(page: ResetRoute.page),
         MaterialRoute(page: HomeDrawer.page),
         MaterialRoute(page: ChattingRoute.page),
+        MaterialRoute(page: CheckSubscription.page),
         MaterialRoute(page: Pricingshow.page),
         MaterialRoute(page: SplashRoute.page, initial: true),
       ];

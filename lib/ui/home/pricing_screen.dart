@@ -8,11 +8,21 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../../logic/eurosom/eurosom_bloc.dart';
 
-class PricingPlans extends StatelessWidget {
+class PricingPlans extends StatefulWidget {
   final am.Datum app;
   final List<Color> colors;
 
   const PricingPlans({super.key, required this.app, required this.colors});
+
+  @override
+  State<PricingPlans> createState() => _PricingPlansState();
+}
+
+class _PricingPlansState extends State<PricingPlans> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +32,7 @@ class PricingPlans extends StatelessWidget {
           backgroundColor: t14_colorWhite,
           automaticallyImplyLeading: false,
           elevation: 0.0,
-          title: Text("${app.title!} pricing ",
+          title: Text("${widget.app.title!} pricing ",
               style: boldTextStyle(color: t14_colorBlack, size: 18)),
           centerTitle: true,
           actions: [
@@ -41,7 +51,7 @@ class PricingPlans extends StatelessWidget {
               return ListView.builder(
                   itemCount: e.pricings.data!.length,
                   shrinkWrap: true,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   itemBuilder: (BuildContext context, int index) {
                     var data = e.pricings.data![index];
                     return Column(
@@ -51,14 +61,15 @@ class PricingPlans extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
-                              color: colors[0]),
+                              color: widget.colors[0]),
                           margin: EdgeInsets.only(bottom: 16),
                           child: Column(
                             children: [
                               Align(
                                 alignment: Alignment.topCenter,
                                 child: CustomPaint(
-                                  painter: ShapesPainter(color: colors[1]),
+                                  painter:
+                                      ShapesPainter(color: widget.colors[1]),
                                   child: Container(
                                     height: 90,
                                     width: 80,

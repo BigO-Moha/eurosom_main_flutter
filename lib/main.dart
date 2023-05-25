@@ -14,6 +14,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 AppStore appStore = AppStore();
 
@@ -48,19 +49,23 @@ class MyApp extends StatelessWidget {
                 getIt<AuthBloc>()..add(const AuthEvent.checkAppState())),
         BlocProvider<EurosomBloc>(create: (context) => getIt<EurosomBloc>()),
       ],
-      child: FlutterWebFrame(
-          maximumSize: Size(475.0, 812.0),
-          enabled: true,
-          builder: (context) {
-            return MaterialApp.router(
-              routeInformationParser: _appRouter.defaultRouteParser(),
-              routerDelegate: _appRouter.delegate(),
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
-            );
-          }),
+      child: MaterialApp.router(
+        builder: (context, child) => ResponsiveBreakpoints.builder(
+          child: child!,
+          breakpoints: [
+            const Breakpoint(start: 0, end: 450, name: MOBILE),
+            const Breakpoint(start: 451, end: 800, name: TABLET),
+            const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+            const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+          ],
+        ),
+        routeInformationParser: _appRouter.defaultRouteParser(),
+        routerDelegate: _appRouter.delegate(),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+      ),
     );
   }
 }

@@ -8,7 +8,7 @@
 PRODUCT_NAME = eurosom
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.eurosom
+PRODUCT_BUNDLE_IDENTIFIER = com.eurosom.apps
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.

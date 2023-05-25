@@ -106,6 +106,9 @@ class _ChatGPTHomeState extends State<ChatGPTHome> {
               );
             }),
           ),
+          const SizedBox(
+            height: 20,
+          )
         ],
       ),
     );

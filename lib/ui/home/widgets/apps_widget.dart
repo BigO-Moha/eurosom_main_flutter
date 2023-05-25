@@ -20,44 +20,41 @@ class AppsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<EurosomBloc, EurosomState>(
-      listener: (context, state) async {},
-      child: Container(
-          decoration: commonDecoration(),
-          alignment: Alignment.center,
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              paymentComponent("${Config.mainUrl}${data.image!.url!}",
-                  logo_color: primaryColor),
-              16.height,
-              Text(data.title!.validate(), style: boldTextStyle()),
-              8.height,
-              Row(
-                children: [
-                  // Text(data.stockPrice.validate(), style: secondaryTextStyle()),
-                  16.width,
-                  Row(
-                    children: const [
-                      // Container(
-                      //   padding: EdgeInsets.all(2),
-                      //   margin: EdgeInsets.only(right: 4),
-                      //   decoration: boxDecorationWithRoundedCorners(
-                      //     boxShape: BoxShape.circle,
-                      //     backgroundColor: data.priceColor!,
-                      //     border: Border.all(color: white),
-                      //   ),
-                      //   child: data.icon,
-                      // ),
-                      // Text(data.stockScale.validate(),
-                      //     style: primaryTextStyle(color: data.priceColor)),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          )),
-    );
+    return Container(
+        decoration: commonDecoration(),
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            paymentComponent("${Config.mainUrl}${data.image!.url!}",
+                logo_color: primaryColor),
+            16.height,
+            Text(data.title!.validate(), style: boldTextStyle()),
+            8.height,
+            Row(
+              children: [
+                // Text(data.stockPrice.validate(), style: secondaryTextStyle()),
+                16.width,
+                Row(
+                  children: const [
+                    // Container(
+                    //   padding: EdgeInsets.all(2),
+                    //   margin: EdgeInsets.only(right: 4),
+                    //   decoration: boxDecorationWithRoundedCorners(
+                    //     boxShape: BoxShape.circle,
+                    //     backgroundColor: data.priceColor!,
+                    //     border: Border.all(color: white),
+                    //   ),
+                    //   child: data.icon,
+                    // ),
+                    // Text(data.stockScale.validate(),
+                    //     style: primaryTextStyle(color: data.priceColor)),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ));
   }
 }

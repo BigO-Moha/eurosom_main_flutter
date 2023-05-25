@@ -48,7 +48,7 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
         state.maybeMap(
             orElse: () {},
             authenticated: (s) {
-              print("logged IN");
+              context.replaceRoute(const HomeDrawer());
             },
             unAuthenticated: (e) {
               FlushbarHelper.createError(

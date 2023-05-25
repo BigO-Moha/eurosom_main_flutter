@@ -32,7 +32,6 @@ class _PricingshowState extends State<Pricingshow> {
   @override
   void initState() {
     super.initState();
-    context.read<EurosomBloc>().add(EurosomEvent.getAppPricing(widget.appId));
     init();
   }
 

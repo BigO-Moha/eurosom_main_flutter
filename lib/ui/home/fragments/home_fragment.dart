@@ -96,13 +96,13 @@ class _HomeFragmentState extends State<HomeFragment> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Total assert value',
+                      Text('welcome to Eurosom',
                           style: secondaryTextStyle(
                               color: white.withOpacity(0.6))),
                       8.height,
                       Row(
                         children: [
-                          Text('\,908.00',
+                          Text('Explore unlimited applications',
                               style: boldTextStyle(color: white, size: 22)),
                           4.width,
                           CommonCachedNetworkImage(ic_show,
@@ -123,7 +123,8 @@ class _HomeFragmentState extends State<HomeFragment> {
                             child:
                                 const Icon(Icons.keyboard_arrow_up, size: 16),
                           ),
-                          Text('4.78 % [+0.20%] us Last week ',
+                          Text(
+                              'Technology is best when it brings people together.',
                               style: secondaryTextStyle(
                                   color: white.withOpacity(0.6))),
                         ],
@@ -238,66 +239,12 @@ class _HomeFragmentState extends State<HomeFragment> {
                       child: GridView.builder(
                           itemCount: e.apps.data!.length,
                           itemBuilder: (context, index) {
-                            return BlocListener<EurosomBloc, EurosomState>(
-                              listener: (context, state) {
-                                state.maybeMap(
-                                  orElse: () {
-                                    // context
-                                    //     .read<EurosomBloc>()
-                                    //     .add(const EurosomEvent.getAllApplications());
-                                  },
-                                  loading: (e) {
-                                    FlushbarHelper.createLoading(
-                                            message: "fetching subscriptions",
-                                            linearProgressIndicator:
-                                                const LinearProgressIndicator())
-                                        .show(context);
-                                  },
-                                  getMySubscriptionSuccess: (s) async {
-                                    final user = getIt<IAuthFacade>()
-                                        .getSignedUser()
-                                        .fold((l) => null, (r) => r);
-                                    print(user!.user!.id!);
-                                    final now = DateTime.now();
-                                    bool subscriped = false;
-                                    final subscriptions = s.subscriptions.data!;
-                                    if (subscriptions.isNotEmpty) {
-                                      for (var i = 0;
-                                          i < subscriptions.length;
-                                          i++) {
-                                        if (!DateTime.parse(
-                                                subscriptions[i].expiryDate!)
-                                            .isBefore(now)) {
-                                          subscriped = true;
-                                        }
-                                      }
-                                    } else {
-                                      print('unSubscriped');
-                                      subscriped = false;
-                                    }
-                                    subscriped == true
-                                        ? context.pushRoute(ChattingRoute())
-                                        : context.pushRoute(Pricingshow(
-                                            appId: e.apps.data![index].id!));
-                                  },
-                                  loadFailure: (v) {
-                                    print("aaaw");
-                                    FlushbarHelper.createError(
-                                            message: "Unable to load  data")
-                                        .show(context);
-                                  },
-                                );
-                              },
-                              child: InkWell(
-                                  child: AppsWidget(e.apps.data![index]),
-                                  onTap: () {
-                                    context.pushRoute(Pricingshow(
-                                        appId: e.apps.data![index].id!));
-                                    // context.read<EurosomBloc>().add(
-                                    //     EurosomEvent.fetchAppSubscription(
-                                    //         e.apps.data![index].id!));
-                                  }),
-                            );
+                            return InkWell(
+                                child: AppsWidget(e.apps.data![index]),
+                                onTap: () {
+                                  context.pushRoute(CheckSubscription(
+                                      appId: e.apps.data![index].id!));
+                                });
                           },
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -318,9 +265,9 @@ class _HomeFragmentState extends State<HomeFragment> {
                     );
                   },
                   orElse: () {
-                    // context
-                    //     .read<EurosomBloc>()
-                    //     .add(const EurosomEvent.getAllApplications());
+                    context
+                        .read<EurosomBloc>()
+                        .add(const EurosomEvent.getAllApplications());
                     return const Center(
                       child: CircularProgressIndicator(),
                     );

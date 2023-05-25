@@ -67,8 +67,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '820312652552',
     projectId: 'hubaaltv-de645',
     storageBucket: 'hubaaltv-de645.appspot.com',
-    iosClientId: '820312652552-ufuou71ajqtukh3m47q2df01iid7derk.apps.googleusercontent.com',
-    iosBundleId: 'com.example.eurosom',
+    iosClientId:
+        '820312652552-ufuou71ajqtukh3m47q2df01iid7derk.apps.googleusercontent.com',
+    iosBundleId: 'com.eurosom.apps',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '820312652552',
     projectId: 'hubaaltv-de645',
     storageBucket: 'hubaaltv-de645.appspot.com',
-    iosClientId: '820312652552-ufuou71ajqtukh3m47q2df01iid7derk.apps.googleusercontent.com',
-    iosBundleId: 'com.example.eurosom',
+    iosClientId:
+        '820312652552-ufuou71ajqtukh3m47q2df01iid7derk.apps.googleusercontent.com',
+    iosBundleId: 'com.eurosom.apps',
   );
 }

@@ -68,6 +68,7 @@ dependencies:
   image_card: ^0.0.4
   html: ^0.15.3
   firebase_core: ^2.13.0
+  responsive_framework: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -102,8 +103,9 @@ flutter:
   assets:
     - assets/images/
     - assets/mapStyles/
-    - images/icons/
-    - images/stock/
+    - images/stockMarket/icons/
+    - images/stockMarket/stock/
+    - images/stockMarket/
     - images/app/
     - images/chatgpt/
 

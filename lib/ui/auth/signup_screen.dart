@@ -2,6 +2,7 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/models/register/register.dart';
+import 'package:eurosom/ui/routes/app_router.gr.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         state.maybeMap(
             orElse: () {},
             authenticated: (s) {
-              print("logged IN");
+              context.replaceRoute(const HomeDrawer());
             },
             unAuthenticated: (e) {
               FlushbarHelper.createError(

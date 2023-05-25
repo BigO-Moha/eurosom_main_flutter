@@ -116,6 +116,8 @@ class AuthFacade implements IAuthFacade {
         print(e.error);
         return left(const AuthFailure.serverError());
       }
+    } on Error catch (e) {
+      return left(const AuthFailure.serverError());
     }
   }
 
