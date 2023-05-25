@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -27,7 +26,6 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   await initialize();
   await GetStorage.init();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   appStore.toggleDarkMode(value: getBoolAsync(isDarkModeOnPref));
 
   darkMapStyle = await rootBundle.loadString('assets/mapStyles/dark.json');
