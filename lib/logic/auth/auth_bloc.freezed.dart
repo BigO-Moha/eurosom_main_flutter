@@ -24,7 +24,7 @@ mixin _$AuthEvent {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,7 +35,7 @@ mixin _$AuthEvent {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,7 +46,7 @@ mixin _$AuthEvent {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,7 +153,7 @@ class _$ShowAppSate implements ShowAppSate {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
     return checkAppState();
   }
@@ -167,7 +167,7 @@ class _$ShowAppSate implements ShowAppSate {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
     return checkAppState?.call();
   }
@@ -181,7 +181,7 @@ class _$ShowAppSate implements ShowAppSate {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (checkAppState != null) {
@@ -291,7 +291,7 @@ class _$GetAuthState implements GetAuthState {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
     return getAuthState();
   }
@@ -305,7 +305,7 @@ class _$GetAuthState implements GetAuthState {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
     return getAuthState?.call();
   }
@@ -319,7 +319,7 @@ class _$GetAuthState implements GetAuthState {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (getAuthState != null) {
@@ -457,7 +457,7 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
     return loginWithEmailAndPassword(data);
   }
@@ -471,7 +471,7 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
     return loginWithEmailAndPassword?.call(data);
   }
@@ -485,7 +485,7 @@ class _$LoginWithEmailAndPassword implements LoginWithEmailAndPassword {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (loginWithEmailAndPassword != null) {
@@ -630,7 +630,7 @@ class _$SignUpWithEmailAndPassword implements SignUpWithEmailAndPassword {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
     return signUpWithEmailAndPassword(data);
   }
@@ -644,7 +644,7 @@ class _$SignUpWithEmailAndPassword implements SignUpWithEmailAndPassword {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
     return signUpWithEmailAndPassword?.call(data);
   }
@@ -658,7 +658,7 @@ class _$SignUpWithEmailAndPassword implements SignUpWithEmailAndPassword {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (signUpWithEmailAndPassword != null) {
@@ -772,7 +772,7 @@ class _$SignOut implements SignOut {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
     return signOut();
   }
@@ -786,7 +786,7 @@ class _$SignOut implements SignOut {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
     return signOut?.call();
   }
@@ -800,7 +800,7 @@ class _$SignOut implements SignOut {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -936,7 +936,7 @@ class _$SendForgetToken implements SendForgetToken {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
     return sendForgetToken(email);
   }
@@ -950,7 +950,7 @@ class _$SendForgetToken implements SendForgetToken {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
     return sendForgetToken?.call(email);
   }
@@ -964,7 +964,7 @@ class _$SendForgetToken implements SendForgetToken {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (sendForgetToken != null) {
@@ -1041,7 +1041,7 @@ abstract class _$$ResetPasswordCopyWith<$Res> {
           _$ResetPassword value, $Res Function(_$ResetPassword) then) =
       __$$ResetPasswordCopyWithImpl<$Res>;
   @useResult
-  $Res call({String token, String NewPassword});
+  $Res call({String token, String newPassword});
 }
 
 /// @nodoc
@@ -1056,16 +1056,16 @@ class __$$ResetPasswordCopyWithImpl<$Res>
   @override
   $Res call({
     Object? token = null,
-    Object? NewPassword = null,
+    Object? newPassword = null,
   }) {
     return _then(_$ResetPassword(
       null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      null == NewPassword
-          ? _value.NewPassword
-          : NewPassword // ignore: cast_nullable_to_non_nullable
+      null == newPassword
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1074,16 +1074,16 @@ class __$$ResetPasswordCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ResetPassword implements ResetPassword {
-  const _$ResetPassword(this.token, this.NewPassword);
+  const _$ResetPassword(this.token, this.newPassword);
 
   @override
   final String token;
   @override
-  final String NewPassword;
+  final String newPassword;
 
   @override
   String toString() {
-    return 'AuthEvent.resetPassword(token: $token, NewPassword: $NewPassword)';
+    return 'AuthEvent.resetPassword(token: $token, newPassword: $newPassword)';
   }
 
   @override
@@ -1092,12 +1092,12 @@ class _$ResetPassword implements ResetPassword {
         (other.runtimeType == runtimeType &&
             other is _$ResetPassword &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.NewPassword, NewPassword) ||
-                other.NewPassword == NewPassword));
+            (identical(other.newPassword, newPassword) ||
+                other.newPassword == newPassword));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token, NewPassword);
+  int get hashCode => Object.hash(runtimeType, token, newPassword);
 
   @JsonKey(ignore: true)
   @override
@@ -1114,9 +1114,9 @@ class _$ResetPassword implements ResetPassword {
     required TResult Function(RegisterData data) signUpWithEmailAndPassword,
     required TResult Function() signOut,
     required TResult Function(String email) sendForgetToken,
-    required TResult Function(String token, String NewPassword) resetPassword,
+    required TResult Function(String token, String newPassword) resetPassword,
   }) {
-    return resetPassword(token, NewPassword);
+    return resetPassword(token, newPassword);
   }
 
   @override
@@ -1128,9 +1128,9 @@ class _$ResetPassword implements ResetPassword {
     TResult? Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult? Function()? signOut,
     TResult? Function(String email)? sendForgetToken,
-    TResult? Function(String token, String NewPassword)? resetPassword,
+    TResult? Function(String token, String newPassword)? resetPassword,
   }) {
-    return resetPassword?.call(token, NewPassword);
+    return resetPassword?.call(token, newPassword);
   }
 
   @override
@@ -1142,11 +1142,11 @@ class _$ResetPassword implements ResetPassword {
     TResult Function(RegisterData data)? signUpWithEmailAndPassword,
     TResult Function()? signOut,
     TResult Function(String email)? sendForgetToken,
-    TResult Function(String token, String NewPassword)? resetPassword,
+    TResult Function(String token, String newPassword)? resetPassword,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
-      return resetPassword(token, NewPassword);
+      return resetPassword(token, newPassword);
     }
     return orElse();
   }
@@ -1205,11 +1205,11 @@ class _$ResetPassword implements ResetPassword {
 }
 
 abstract class ResetPassword implements AuthEvent {
-  const factory ResetPassword(final String token, final String NewPassword) =
+  const factory ResetPassword(final String token, final String newPassword) =
       _$ResetPassword;
 
   String get token;
-  String get NewPassword;
+  String get newPassword;
   @JsonKey(ignore: true)
   _$$ResetPasswordCopyWith<_$ResetPassword> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1225,7 +1225,7 @@ mixin _$AuthState {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -1237,7 +1237,7 @@ mixin _$AuthState {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -1249,7 +1249,7 @@ mixin _$AuthState {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) =>
@@ -1353,7 +1353,7 @@ class _$_Initial implements _Initial {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return initial();
@@ -1368,7 +1368,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return initial?.call();
@@ -1383,7 +1383,7 @@ class _$_Initial implements _Initial {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -1517,7 +1517,7 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return authenticated(user);
@@ -1532,7 +1532,7 @@ class _$_Authenticated implements _Authenticated {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return authenticated?.call(user);
@@ -1547,7 +1547,7 @@ class _$_Authenticated implements _Authenticated {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -1696,7 +1696,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return unAuthenticated(faliure);
@@ -1711,7 +1711,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return unAuthenticated?.call(faliure);
@@ -1726,7 +1726,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -1840,7 +1840,7 @@ class _$_OnboardingShow implements _OnboardingShow {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return onboardingShow();
@@ -1855,7 +1855,7 @@ class _$_OnboardingShow implements _OnboardingShow {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return onboardingShow?.call();
@@ -1870,7 +1870,7 @@ class _$_OnboardingShow implements _OnboardingShow {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -1978,7 +1978,7 @@ class _$_Codesent implements _Codesent {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return codeSent();
@@ -1993,7 +1993,7 @@ class _$_Codesent implements _Codesent {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return codeSent?.call();
@@ -2008,7 +2008,7 @@ class _$_Codesent implements _Codesent {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -2142,7 +2142,7 @@ class _$_ResetSuccess implements _ResetSuccess {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return resetSuccess(user);
@@ -2157,7 +2157,7 @@ class _$_ResetSuccess implements _ResetSuccess {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return resetSuccess?.call(user);
@@ -2172,7 +2172,7 @@ class _$_ResetSuccess implements _ResetSuccess {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -2247,7 +2247,9 @@ abstract class _$$_ResetFailureCopyWith<$Res> {
           _$_ResetFailure value, $Res Function(_$_ResetFailure) then) =
       __$$_ResetFailureCopyWithImpl<$Res>;
   @useResult
-  $Res call({AuthModel user});
+  $Res call({AuthFailure failure});
+
+  $AuthFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -2261,28 +2263,36 @@ class __$$_ResetFailureCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = null,
+    Object? failure = null,
   }) {
     return _then(_$_ResetFailure(
-      null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AuthModel,
+      null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as AuthFailure,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthFailureCopyWith<$Res> get failure {
+    return $AuthFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_ResetFailure implements _ResetFailure {
-  const _$_ResetFailure(this.user);
+  const _$_ResetFailure(this.failure);
 
   @override
-  final AuthModel user;
+  final AuthFailure failure;
 
   @override
   String toString() {
-    return 'AuthState.resetFaliure(user: $user)';
+    return 'AuthState.resetFaliure(failure: $failure)';
   }
 
   @override
@@ -2290,11 +2300,11 @@ class _$_ResetFailure implements _ResetFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ResetFailure &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -2311,10 +2321,10 @@ class _$_ResetFailure implements _ResetFailure {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
-    return resetFaliure(user);
+    return resetFaliure(failure);
   }
 
   @override
@@ -2326,10 +2336,10 @@ class _$_ResetFailure implements _ResetFailure {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
-    return resetFaliure?.call(user);
+    return resetFaliure?.call(failure);
   }
 
   @override
@@ -2341,12 +2351,12 @@ class _$_ResetFailure implements _ResetFailure {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (resetFaliure != null) {
-      return resetFaliure(user);
+      return resetFaliure(failure);
     }
     return orElse();
   }
@@ -2402,9 +2412,9 @@ class _$_ResetFailure implements _ResetFailure {
 }
 
 abstract class _ResetFailure implements AuthState {
-  const factory _ResetFailure(final AuthModel user) = _$_ResetFailure;
+  const factory _ResetFailure(final AuthFailure failure) = _$_ResetFailure;
 
-  AuthModel get user;
+  AuthFailure get failure;
   @JsonKey(ignore: true)
   _$$_ResetFailureCopyWith<_$_ResetFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2453,7 +2463,7 @@ class _$_Loading implements _Loading {
     required TResult Function() onboardingShow,
     required TResult Function() codeSent,
     required TResult Function(AuthModel user) resetSuccess,
-    required TResult Function(AuthModel user) resetFaliure,
+    required TResult Function(AuthFailure failure) resetFaliure,
     required TResult Function() loading,
   }) {
     return loading();
@@ -2468,7 +2478,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? onboardingShow,
     TResult? Function()? codeSent,
     TResult? Function(AuthModel user)? resetSuccess,
-    TResult? Function(AuthModel user)? resetFaliure,
+    TResult? Function(AuthFailure failure)? resetFaliure,
     TResult? Function()? loading,
   }) {
     return loading?.call();
@@ -2483,7 +2493,7 @@ class _$_Loading implements _Loading {
     TResult Function()? onboardingShow,
     TResult Function()? codeSent,
     TResult Function(AuthModel user)? resetSuccess,
-    TResult Function(AuthModel user)? resetFaliure,
+    TResult Function(AuthFailure failure)? resetFaliure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {

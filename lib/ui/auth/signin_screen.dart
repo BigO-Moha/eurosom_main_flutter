@@ -1,9 +1,12 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/main.dart';
 import 'package:eurosom/ui/auth/signup_screen.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 @RoutePage()
@@ -54,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
             Text('Welcome to Investor', style: boldTextStyle(size: 26)),
             24.height,
             Text(
-              'We let you invest in fraction of stocks \nwith as little as \$1.',
+              'We let you invest in fraction of stocks \nwith as little as \Auth.',
               textAlign: TextAlign.center,
               style: secondaryTextStyle(height: 1.4),
             ),

@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
             },
             authenticated: (e) async {
               print("auth");
-              context.replaceRoute(const SignUpRoute());
+              context.replaceRoute(const HomeDrawer());
             },
             onboardingShow: (e) async {
               print("walktrough");

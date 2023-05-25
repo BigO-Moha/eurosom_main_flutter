@@ -21,12 +21,12 @@ class _EuroApiService implements EuroApiService {
   String? baseUrl;
 
   @override
-  Future<BannerModel> getHomeSliders(Map<String, dynamic> query) async {
+  Future<BannerModel> getHomeSliders(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<BannerModel>(Options(
       method: 'GET',
@@ -45,12 +45,12 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
-  Future<Appsmodel> getAllApplications(Map<String, dynamic> query) async {
+  Future<Appsmodel> getAllApplications(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<Appsmodel>(Options(
       method: 'GET',
@@ -69,12 +69,12 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
-  Future<PricingModel> getAllPricings(Map<String, dynamic> query) async {
+  Future<PricingModel> getAllPricings(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<PricingModel>(Options(
       method: 'GET',
@@ -93,13 +93,36 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
-  Future<SubscriptionModel> getMySubscriptions(
-      Map<String, dynamic> query) async {
+  Future<AffliateModel> getmyAffliate(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AffliateModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/affliates',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = AffliateModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<SubscriptionModel> getMySubscriptions(query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<SubscriptionModel>(Options(
       method: 'GET',
@@ -118,8 +141,7 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
-  Future<SubscriptionModel> CreateSubscription(
-      Map<String, dynamic> body) async {
+  Future<SubscriptionModel> CreateSubscription(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -144,14 +166,14 @@ class _EuroApiService implements EuroApiService {
 
   @override
   Future<SubscriptionModel> updateSubscription(
-    String id,
-    Map<String, dynamic> query,
+    id,
+    query,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<SubscriptionModel>(Options(
       method: 'POST',
@@ -170,9 +192,33 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
+  Future<AffliateModel> createsAffliate(body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AffliateModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/affliates',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = AffliateModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<Appsmodel> UpdateUser(
-    String id,
-    Map<String, dynamic> body,
+    id,
+    body,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

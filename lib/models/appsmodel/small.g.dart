@@ -13,7 +13,7 @@ Small _$SmallFromJson(Map<String, dynamic> json) => Small(
       mime: json['mime'] as String?,
       name: json['name'] as String?,
       path: json['path'],
-      size: json['size'] as int?,
+      size: (json['size'] as num?)?.toDouble(),
       width: json['width'] as int?,
       height: json['height'] as int?,
     );

@@ -1,6 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'application.dart';
+
 part 'datum.g.dart';
 
 @JsonSerializable()
@@ -15,6 +17,7 @@ class Datum {
 	final DateTime? updatedAt;
 	final DateTime? publishedAt;
 	final String? subtitle;
+	final Application? application;
 
 	const Datum({
 		this.id, 
@@ -27,11 +30,12 @@ class Datum {
 		this.updatedAt, 
 		this.publishedAt, 
 		this.subtitle, 
+		this.application, 
 	});
 
 	@override
 	String toString() {
-		return 'Datum(id: $id, name: $name, price: $price, features: $features, duration: $duration, discount: $discount, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, subtitle: $subtitle)';
+		return 'Datum(id: $id, name: $name, price: $price, features: $features, duration: $duration, discount: $discount, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, subtitle: $subtitle, application: $application)';
 	}
 
 	factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
@@ -49,6 +53,7 @@ class Datum {
 		DateTime? updatedAt,
 		DateTime? publishedAt,
 		String? subtitle,
+		Application? application,
 	}) {
 		return Datum(
 			id: id ?? this.id,
@@ -61,6 +66,7 @@ class Datum {
 			updatedAt: updatedAt ?? this.updatedAt,
 			publishedAt: publishedAt ?? this.publishedAt,
 			subtitle: subtitle ?? this.subtitle,
+			application: application ?? this.application,
 		);
 	}
 
@@ -83,5 +89,6 @@ class Datum {
 			createdAt.hashCode ^
 			updatedAt.hashCode ^
 			publishedAt.hashCode ^
-			subtitle.hashCode;
+			subtitle.hashCode ^
+			application.hashCode;
 }

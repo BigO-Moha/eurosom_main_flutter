@@ -17,7 +17,12 @@ Widget CommonCachedNetworkImage(
   Color? color,
 }) {
   if (url!.validate().isEmpty) {
-    return placeHolderWidget(height: height, width: width, fit: fit, alignment: alignment, radius: radius);
+    return placeHolderWidget(
+        height: height,
+        width: width,
+        fit: fit,
+        alignment: alignment,
+        radius: radius);
   } else if (url.validate().startsWith('http')) {
     return CachedNetworkImage(
       imageUrl: url,
@@ -27,44 +32,84 @@ Widget CommonCachedNetworkImage(
       color: color,
       alignment: alignment as Alignment? ?? Alignment.center,
       errorWidget: (_, s, d) {
-        return placeHolderWidget(height: height, width: width, fit: fit, alignment: alignment, radius: radius);
+        return placeHolderWidget(
+            height: height,
+            width: width,
+            fit: fit,
+            alignment: alignment,
+            radius: radius);
       },
       placeholder: (_, s) {
         if (!usePlaceholderIfUrlEmpty) return SizedBox();
-        return placeHolderWidget(height: height, width: width, fit: fit, alignment: alignment, radius: radius);
+        return placeHolderWidget(
+            height: height,
+            width: width,
+            fit: fit,
+            alignment: alignment,
+            radius: radius);
       },
     );
   } else {
-    return Image.asset(url, height: height, width: width, fit: fit, color: color, alignment: alignment ?? Alignment.center).cornerRadiusWithClipRRect(radius ?? defaultRadius);
+    return Image.asset(url,
+            height: height,
+            width: width,
+            fit: fit,
+            color: color,
+            alignment: alignment ?? Alignment.center)
+        .cornerRadiusWithClipRRect(radius ?? defaultRadius);
   }
 }
 
-Widget placeHolderWidget({double? height, double? width, BoxFit? fit, AlignmentGeometry? alignment, double? radius}) {
-  return Image.asset('images/app/placeholder.jpg', height: height, width: width, fit: fit ?? BoxFit.cover, alignment: alignment ?? Alignment.center).cornerRadiusWithClipRRect(radius ?? defaultRadius);
+Widget placeHolderWidget(
+    {double? height,
+    double? width,
+    BoxFit? fit,
+    AlignmentGeometry? alignment,
+    double? radius}) {
+  return Image.asset('images/app/placeholder.png',
+          height: height,
+          width: width,
+          fit: fit ?? BoxFit.cover,
+          alignment: alignment ?? Alignment.center)
+      .cornerRadiusWithClipRRect(radius ?? defaultRadius);
 }
 
-Widget CommonButton({String? buttonText, Function()? onTap, double? width, double? margin}) {
+Widget CommonButton(
+    {String? buttonText, Function()? onTap, double? width, double? margin}) {
   return AppButton(
     onTap: onTap,
     width: width,
     shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     margin: EdgeInsets.symmetric(horizontal: margin.validate()),
-    child: Text(buttonText.validate(), style: boldTextStyle(color: Colors.white)),
+    child:
+        Text(buttonText.validate(), style: boldTextStyle(color: Colors.white)),
     color: primaryColor,
     padding: EdgeInsets.symmetric(vertical: 16),
   );
 }
 
-PreferredSizeWidget commonAppBarWidget(BuildContext context, {bool? showLeadingIcon = true, Color? iconColor, String? title, bool? changeIcon, Widget? iconWidget1, Widget? iconWidget2, Color? appBarColor}) {
+PreferredSizeWidget commonAppBarWidget(BuildContext context,
+    {bool? showLeadingIcon = true,
+    Color? iconColor,
+    String? title,
+    bool? changeIcon,
+    Widget? iconWidget1,
+    Widget? iconWidget2,
+    Color? appBarColor}) {
   return AppBar(
-    title: Text(title!, style: boldTextStyle(color: context.iconColor, size: 20)),
+    title:
+        Text(title!, style: boldTextStyle(color: context.iconColor, size: 20)),
     backgroundColor: appBarColor ?? context.scaffoldBackgroundColor,
     centerTitle: true,
     leading: IconButton(
       onPressed: () {
         finish(context);
       },
-      icon: Icon(changeIcon.validate() ? Icons.arrow_back_outlined : Icons.close, color: iconColor ?? context.iconColor, size: 22).visible(showLeadingIcon.validate()),
+      icon: Icon(
+              changeIcon.validate() ? Icons.arrow_back_outlined : Icons.close,
+              color: iconColor ?? context.iconColor,
+              size: 22)
+          .visible(showLeadingIcon.validate()),
       color: context.iconColor,
     ),
     actions: [iconWidget1.validate(), iconWidget2.validate()],
@@ -72,7 +117,11 @@ PreferredSizeWidget commonAppBarWidget(BuildContext context, {bool? showLeadingI
   );
 }
 
-InputDecoration inputDecoration(BuildContext context, {Widget? suffixIcon, Widget? prefixIcon, String? labelText, double? borderRadius}) {
+InputDecoration inputDecoration(BuildContext context,
+    {Widget? suffixIcon,
+    Widget? prefixIcon,
+    String? labelText,
+    double? borderRadius}) {
   return InputDecoration(
     contentPadding: EdgeInsets.only(left: 12, bottom: 10, top: 10, right: 10),
     labelText: labelText,
@@ -109,7 +158,8 @@ extension strEtx on String {
       height: size ?? 24,
       width: size ?? 24,
       fit: fit ?? BoxFit.cover,
-      color: color ?? (appStore.isDarkModeOn ? Colors.white : gray.withOpacity(0.6)),
+      color: color ??
+          (appStore.isDarkModeOn ? Colors.white : gray.withOpacity(0.6)),
       errorBuilder: (context, error, stackTrace) {
         return Image.asset(ic_message, height: size ?? 24, width: size ?? 24);
       },
@@ -126,13 +176,15 @@ Widget paymentComponent(String paymentImage, {Color? logo_color}) {
       border: Border.all(color: white),
       backgroundColor: logo_color ?? yellow,
     ),
-    child: CommonCachedNetworkImage(paymentImage, width: 22, height: 22, fit: BoxFit.cover),
+    child: CommonCachedNetworkImage(paymentImage,
+        width: 22, height: 22, fit: BoxFit.cover),
   );
 }
 
 Decoration commonDecoration() {
   return boxDecorationWithRoundedCorners(
-    backgroundColor: appStore.isDarkModeOn ? cardDarkColor : gray.withOpacity(0.1),
+    backgroundColor:
+        appStore.isDarkModeOn ? cardDarkColor : gray.withOpacity(0.1),
   );
 }
 
@@ -141,8 +193,10 @@ Widget portfolioType({String? image, String? portfolioTitle}) {
     children: [
       Container(
         padding: EdgeInsets.all(12),
-        decoration: boxDecorationWithRoundedCorners(boxShape: BoxShape.circle, backgroundColor: primaryColor),
-        child: CommonCachedNetworkImage(image.validate(), fit: BoxFit.cover, color: white, height: 20, width: 20),
+        decoration: boxDecorationWithRoundedCorners(
+            boxShape: BoxShape.circle, backgroundColor: primaryColor),
+        child: CommonCachedNetworkImage(image.validate(),
+            fit: BoxFit.cover, color: white, height: 20, width: 20),
       ),
       16.height,
       Text(portfolioTitle.validate(), style: boldTextStyle()),
@@ -172,12 +226,15 @@ Widget commonSocialLoginButton(BuildContext context) {
           //
         },
         style: OutlinedButton.styleFrom(
-          side: BorderSide(width: 1.0, color: appStore.isDarkModeOn ? white : gray.withOpacity(0.1)),
+          side: BorderSide(
+              width: 1.0,
+              color: appStore.isDarkModeOn ? white : gray.withOpacity(0.1)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CommonCachedNetworkImage(google_logo, fit: BoxFit.cover, width: 20, height: 20),
+            CommonCachedNetworkImage(google_logo,
+                fit: BoxFit.cover, width: 20, height: 20),
             8.width,
             Text('Google', style: boldTextStyle(color: context.iconColor)),
           ],
@@ -189,12 +246,15 @@ Widget commonSocialLoginButton(BuildContext context) {
           //
         },
         style: OutlinedButton.styleFrom(
-          side: BorderSide(width: 1.0, color: appStore.isDarkModeOn ? white : gray.withOpacity(0.1)),
+          side: BorderSide(
+              width: 1.0,
+              color: appStore.isDarkModeOn ? white : gray.withOpacity(0.1)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CommonCachedNetworkImage(apple_logo, fit: BoxFit.cover, width: 20, height: 20),
+            CommonCachedNetworkImage(apple_logo,
+                fit: BoxFit.cover, width: 20, height: 20),
             8.width,
             Text('Apple', style: boldTextStyle(color: context.iconColor)),
           ],
@@ -204,7 +264,8 @@ Widget commonSocialLoginButton(BuildContext context) {
   );
 }
 
-Future<void> commonLaunchUrl(String address, {LaunchMode launchMode = LaunchMode.inAppWebView}) async {
+Future<void> commonLaunchUrl(String address,
+    {LaunchMode launchMode = LaunchMode.inAppWebView}) async {
   await launchUrl(Uri.parse(address), mode: launchMode).catchError((e) {
     toast('Invalid URL: $address');
   });
@@ -215,13 +276,15 @@ Widget commonImageWidget({String? image}) {
     alignment: Alignment.center,
     children: [
       Container(
-        decoration: boxDecorationWithRoundedCorners(boxShape: BoxShape.circle, backgroundColor: primaryColor),
+        decoration: boxDecorationWithRoundedCorners(
+            boxShape: BoxShape.circle, backgroundColor: primaryColor),
         width: 150,
         height: 150,
       ),
       Positioned(
         bottom: -40,
-        child: CommonCachedNetworkImage(image.validate(), fit: BoxFit.cover, width: 150, height: 150, color: white),
+        child: CommonCachedNetworkImage(image.validate(),
+            fit: BoxFit.cover, width: 150, height: 150, color: white),
       ),
     ],
   );

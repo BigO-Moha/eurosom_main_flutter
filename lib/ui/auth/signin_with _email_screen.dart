@@ -2,12 +2,15 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/main.dart';
+import 'package:eurosom/models/login/login.dart';
 import 'package:eurosom/ui/auth/forgot_password_screen.dart';
+import 'package:eurosom/ui/routes/app_router.gr.dart';
 import 'package:eurosom/ui/utils/colors.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 @RoutePage()
@@ -17,7 +20,7 @@ class SignWithEmailInScreen extends StatefulWidget {
 }
 
 class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
-  TextEditingController emailCont = TextEditingController();
+  TextEditingController phoneCont = TextEditingController();
   TextEditingController passwordCont = TextEditingController();
 
   FocusNode emailfocus = FocusNode();
@@ -65,7 +68,7 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
               style: secondaryTextStyle(height: 1.3),
               children: [
                 TextSpan(
-                    text: "Stock Platform Terms & Conditions. Reward Policy,",
+                    text: "Eurosom Terms & Conditions. Reward Policy,",
                     style: boldTextStyle(size: 14)),
                 TextSpan(text: " and ", style: secondaryTextStyle()),
                 TextSpan(
@@ -77,7 +80,7 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Sign In to Investor', style: boldTextStyle(size: 24)),
+                Text('Sign In to Eurosom', style: boldTextStyle(size: 24)),
                 28.height,
                 commonSocialLoginButton(context),
                 28.height,
@@ -91,15 +94,19 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
                   ],
                 ),
                 28.height,
-                AppTextField(
-                  textFieldType: TextFieldType.EMAIL,
-                  controller: emailCont,
-                  focus: emailfocus,
-                  nextFocus: passwordfocus,
-                  decoration: inputDecoration(context,
-                      labelText: "Email",
-                      prefixIcon:
-                          ic_message.iconImage(size: 10).paddingAll(14)),
+                IntlPhoneField(
+                  disableLengthCheck: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Phone Number',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(),
+                    ),
+                  ),
+                  /**/
+                  initialCountryCode: 'SO',
+                  onChanged: (phone) {
+                    phoneCont.text = phone.completeNumber.split("+").last;
+                  },
                 ),
                 16.height,
                 AppTextField(
@@ -115,20 +122,47 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
                       prefixIcon: ic_lock.iconImage(size: 10).paddingAll(14)),
                 ),
                 16.height,
-                TextButton(
-                  onPressed: () {
-                    ForgotPasswordScreen().launch(context);
-                  },
-                  child: Text('Forgot Password?',
-                      style: boldTextStyle(
-                          color: appStore.isDarkModeOn ? white : primaryColor)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        context.pushRoute(const ForgotPasswordRoute());
+                      },
+                      child: Text('Forgot Password?',
+                          style: boldTextStyle(
+                              color: appStore.isDarkModeOn
+                                  ? white
+                                  : primaryColor)),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.pushRoute(const SignUpRoute());
+                      },
+                      child: Text('create new account?',
+                          style: boldTextStyle(
+                              color: appStore.isDarkModeOn
+                                  ? white
+                                  : primaryColor)),
+                    ),
+                  ],
                 ),
                 16.height,
                 CommonButton(
                   buttonText: "Sign In",
                   width: context.width(),
                   onTap: () {
-                    // DashBoardScreen().launch(context);
+                    if (passwordCont.text.length > 5 &&
+                        phoneCont.text.length > 8) {
+                      BlocProvider.of<AuthBloc>(context).add(
+                          AuthEvent.loginWithEmailAndPassword(LoginData(
+                              identifier: phoneCont.text,
+                              password: passwordCont.text)));
+                    } else {
+                      FlushbarHelper.createError(
+                              message: "Enter Valid Login Data")
+                          .show(context);
+                    }
                   },
                 ),
               ],

@@ -11,7 +11,7 @@ class Small {
 	final String? mime;
 	final String? name;
 	final dynamic path;
-	final int? size;
+	final double? size;
 	final int? width;
 	final int? height;
 
@@ -43,7 +43,7 @@ class Small {
 		String? mime,
 		String? name,
 		dynamic path,
-		int? size,
+		double? size,
 		int? width,
 		int? height,
 	}) {

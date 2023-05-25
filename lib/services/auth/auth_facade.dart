@@ -3,12 +3,10 @@ import 'package:eurosom/models/absatractions/auth.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/failures/auth_failure.dart';
 import 'package:eurosom/models/login/login.dart';
-import 'package:eurosom/models/register/register_data.dart';
+import 'package:eurosom/models/register/register.dart';
 import 'package:eurosom/services/auth/auth_rest_api.dart';
-import 'package:eurosom/ui/utils/images.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:injectable/injectable.dart';
-import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
 @LazySingleton(as: IAuthFacade)
@@ -54,7 +52,7 @@ class AuthFacade implements IAuthFacade {
       saveUser(registerData);
       return right(registerData);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(AuthFailure.authException(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -66,9 +64,24 @@ class AuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, AuthModel>> resetPassword(
-      String password, String token) {
-    // TODO: implement resetPassword
-    throw UnimplementedError();
+      String password, String token) async {
+    try {
+      final user = await _authApiService.resetPassword({
+        "password": password,
+        "passwordConfirmation": password,
+        "code": token
+      });
+      saveUser(user);
+      return right(user);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.response) {
+        return left(AuthFailure.authException(
+            e.response!.data["error"]["message"].toString()));
+      } else {
+        print(e.error);
+        return left(const AuthFailure.serverError());
+      }
+    }
   }
 
   @override
@@ -88,20 +101,15 @@ class AuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> sendmailToken(String email) {
-    // TODO: implement sendmailToken
-    throw UnimplementedError();
-  }
-
-  @override
   Future<Either<AuthFailure, AuthModel>> signInWithEmailAndPassword(
       LoginData loginInfo) async {
     try {
-      final loginData = await _authApiService.register(loginInfo.toJson());
+      final loginData = await _authApiService.login(loginInfo.toJson());
+      print(loginData.toJson());
       saveUser(loginData);
       return right(loginData);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(AuthFailure.authException(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -122,13 +130,22 @@ class AuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, AuthModel>> updateUser(AuthModel user) {
-    // TODO: implement updateUser
     throw UnimplementedError();
   }
 
   @override
   Future<Either<AuthFailure, Unit>> validateMobile() {
-    // TODO: implement validateMobile
     throw UnimplementedError();
+  }
+
+  @override
+  Future<void> sendResetToken(String email) async {
+    try {
+      print('poo');
+      final send = _authApiService.sendToken({"email": email});
+      print(send);
+    } on DioError catch (e) {
+      print(e);
+    }
   }
 }

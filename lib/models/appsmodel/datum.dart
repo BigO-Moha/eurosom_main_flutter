@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'icon.dart';
+import 'image.dart';
 
 part 'datum.g.dart';
 
@@ -13,8 +13,9 @@ class Datum {
 	final DateTime? createdAt;
 	final DateTime? updatedAt;
 	@JsonKey(name: 'its_webview') 
-	final dynamic itsWebview;
-	final Icon? icon;
+	final bool? itsWebview;
+	final bool? active;
+	final Image? image;
 
 	const Datum({
 		this.id, 
@@ -23,12 +24,13 @@ class Datum {
 		this.createdAt, 
 		this.updatedAt, 
 		this.itsWebview, 
-		this.icon, 
+		this.active, 
+		this.image, 
 	});
 
 	@override
 	String toString() {
-		return 'Datum(id: $id, title: $title, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, itsWebview: $itsWebview, icon: $icon)';
+		return 'Datum(id: $id, title: $title, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, itsWebview: $itsWebview, active: $active, image: $image)';
 	}
 
 	factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
@@ -41,8 +43,9 @@ class Datum {
 		String? url,
 		DateTime? createdAt,
 		DateTime? updatedAt,
-		dynamic itsWebview,
-		Icon? icon,
+		bool? itsWebview,
+		bool? active,
+		Image? image,
 	}) {
 		return Datum(
 			id: id ?? this.id,
@@ -51,7 +54,8 @@ class Datum {
 			createdAt: createdAt ?? this.createdAt,
 			updatedAt: updatedAt ?? this.updatedAt,
 			itsWebview: itsWebview ?? this.itsWebview,
-			icon: icon ?? this.icon,
+			active: active ?? this.active,
+			image: image ?? this.image,
 		);
 	}
 
@@ -71,5 +75,6 @@ class Datum {
 			createdAt.hashCode ^
 			updatedAt.hashCode ^
 			itsWebview.hashCode ^
-			icon.hashCode;
+			active.hashCode ^
+			image.hashCode;
 }

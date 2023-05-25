@@ -3,10 +3,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'formats.dart';
 
-part 'icon.g.dart';
+part 'image.g.dart';
 
 @JsonSerializable()
-class Icon {
+class Image {
 	final int? id;
 	final String? name;
 	final dynamic alternativeText;
@@ -26,7 +26,7 @@ class Icon {
 	final DateTime? createdAt;
 	final DateTime? updatedAt;
 
-	const Icon({
+	const Image({
 		this.id, 
 		this.name, 
 		this.alternativeText, 
@@ -48,14 +48,14 @@ class Icon {
 
 	@override
 	String toString() {
-		return 'Icon(id: $id, name: $name, alternativeText: $alternativeText, caption: $caption, width: $width, height: $height, formats: $formats, hash: $hash, ext: $ext, mime: $mime, size: $size, url: $url, previewUrl: $previewUrl, provider: $provider, providerMetadata: $providerMetadata, createdAt: $createdAt, updatedAt: $updatedAt)';
+		return 'Image(id: $id, name: $name, alternativeText: $alternativeText, caption: $caption, width: $width, height: $height, formats: $formats, hash: $hash, ext: $ext, mime: $mime, size: $size, url: $url, previewUrl: $previewUrl, provider: $provider, providerMetadata: $providerMetadata, createdAt: $createdAt, updatedAt: $updatedAt)';
 	}
 
-	factory Icon.fromJson(Map<String, dynamic> json) => _$IconFromJson(json);
+	factory Image.fromJson(Map<String, dynamic> json) => _$ImageFromJson(json);
 
-	Map<String, dynamic> toJson() => _$IconToJson(this);
+	Map<String, dynamic> toJson() => _$ImageToJson(this);
 
-	Icon copyWith({
+	Image copyWith({
 		int? id,
 		String? name,
 		dynamic alternativeText,
@@ -74,7 +74,7 @@ class Icon {
 		DateTime? createdAt,
 		DateTime? updatedAt,
 	}) {
-		return Icon(
+		return Image(
 			id: id ?? this.id,
 			name: name ?? this.name,
 			alternativeText: alternativeText ?? this.alternativeText,
@@ -98,7 +98,7 @@ class Icon {
 	@override
 	bool operator ==(Object other) {
 		if (identical(other, this)) return true;
-		if (other is! Icon) return false;
+		if (other is! Image) return false;
 		final mapEquals = const DeepCollectionEquality().equals;
 		return mapEquals(other.toJson(), toJson());
 	}

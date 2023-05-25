@@ -23,6 +23,9 @@ Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
           ? null
           : DateTime.parse(json['publishedAt'] as String),
       subtitle: json['subtitle'] as String?,
+      application: json['application'] == null
+          ? null
+          : Application.fromJson(json['application'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
@@ -36,4 +39,5 @@ Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
       'updatedAt': instance.updatedAt?.toIso8601String(),
       'publishedAt': instance.publishedAt?.toIso8601String(),
       'subtitle': instance.subtitle,
+      'application': instance.application,
     };

@@ -21,7 +21,7 @@ class _AuthApiService implements AuthApiService {
   String? baseUrl;
 
   @override
-  Future<AuthModel> login(Map<String, dynamic> credentials) async {
+  Future<AuthModel> login(credentials) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -45,7 +45,7 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<AuthModel> register(Map<String, dynamic> regbody) async {
+  Future<AuthModel> register(regbody) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -69,8 +69,7 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<HttpResponse<dynamic>> forgetPassword(
-      Map<String, dynamic> email) async {
+  Future<HttpResponse<dynamic>> forgetPassword(email) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -95,7 +94,7 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<AuthModel> changePassword(Map<String, dynamic> regbody) async {
+  Future<AuthModel> resetPassword(regbody) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -119,7 +118,7 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<AuthModel> sendToken(Map<String, dynamic> regbody) async {
+  Future<AuthModel> sendToken(regbody) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -144,8 +143,8 @@ class _AuthApiService implements AuthApiService {
 
   @override
   Future<AuthModel> updateUser(
-    String id,
-    Map<String, dynamic> regbody,
+    id,
+    regbody,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

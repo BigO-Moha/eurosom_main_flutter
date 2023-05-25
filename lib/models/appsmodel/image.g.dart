@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'icon.dart';
+part of 'image.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Icon _$IconFromJson(Map<String, dynamic> json) => Icon(
+Image _$ImageFromJson(Map<String, dynamic> json) => Image(
       id: json['id'] as int?,
       name: json['name'] as String?,
       alternativeText: json['alternativeText'],
@@ -32,7 +32,7 @@ Icon _$IconFromJson(Map<String, dynamic> json) => Icon(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$IconToJson(Icon instance) => <String, dynamic>{
+Map<String, dynamic> _$ImageToJson(Image instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'alternativeText': instance.alternativeText,

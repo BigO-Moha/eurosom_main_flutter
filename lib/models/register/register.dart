@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'register_data.g.dart';
+part 'register.g.dart';
 
 @JsonSerializable()
 class RegisterData {

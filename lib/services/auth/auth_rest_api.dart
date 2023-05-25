@@ -18,7 +18,7 @@ abstract class AuthApiService {
   Future<HttpResponse> forgetPassword(@Body() Map<String, dynamic> email);
 
   @POST("/auth/reset-password")
-  Future<AuthModel> changePassword(@Body() Map<String, dynamic> regbody);
+  Future<AuthModel> resetPassword(@Body() Map<String, dynamic> regbody);
 
   @POST("/auth/forgot-password")
   Future<AuthModel> sendToken(@Body() Map<String, dynamic> regbody);

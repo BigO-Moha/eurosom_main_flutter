@@ -16,10 +16,11 @@ Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
       updatedAt: json['updatedAt'] == null
           ? null
           : DateTime.parse(json['updatedAt'] as String),
-      itsWebview: json['its_webview'],
-      icon: json['icon'] == null
+      itsWebview: json['its_webview'] as bool?,
+      active: json['active'] as bool?,
+      image: json['image'] == null
           ? null
-          : Icon.fromJson(json['icon'] as Map<String, dynamic>),
+          : Image.fromJson(json['image'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
@@ -29,5 +30,6 @@ Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
       'its_webview': instance.itsWebview,
-      'icon': instance.icon,
+      'active': instance.active,
+      'image': instance.image,
     };

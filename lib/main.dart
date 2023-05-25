@@ -1,4 +1,5 @@
 import 'package:eurosom/logic/auth/auth_bloc.dart';
+import 'package:eurosom/logic/eurosom/eurosom_bloc.dart';
 import 'package:eurosom/services/core/injection.dart';
 import 'package:eurosom/ui/auth/walkthrough_screen.dart';
 import 'package:eurosom/ui/main/utils/flutter_web_frame/flutter_web_frame.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<AuthBloc>(
             create: (context) =>
                 getIt<AuthBloc>()..add(const AuthEvent.checkAppState())),
+        BlocProvider<EurosomBloc>(create: (context) => getIt<EurosomBloc>()),
       ],
       child: FlutterWebFrame(
           maximumSize: Size(475.0, 812.0),

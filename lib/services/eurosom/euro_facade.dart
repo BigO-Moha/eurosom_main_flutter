@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:eurosom/models/absatractions/auth.dart';
 import 'package:eurosom/models/absatractions/eurosom.dart';
+import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
@@ -11,6 +14,7 @@ import 'package:eurosom/models/subscription_model/subscription_model.dart';
 import 'package:eurosom/services/core/injection.dart';
 import 'package:eurosom/services/eurosom/euro_api.dart';
 import 'package:injectable/injectable.dart';
+import 'package:merchant_evc_plus/merchant_evc_plus.dart';
 
 @LazySingleton(as: IEurosomRepo)
 class EurosomFacade implements IEurosomRepo {
@@ -24,7 +28,7 @@ class EurosomFacade implements IEurosomRepo {
       final subscripe = await _apiService.CreateSubscription(subscription);
       return right(subscripe);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(EurosomFailure.postError(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -37,11 +41,11 @@ class EurosomFacade implements IEurosomRepo {
   Future<Either<EurosomFailure, Appsmodel>> getAllApplications() async {
     try {
       final apps = await _apiService.getAllApplications({
-        "populate": ['icon']
+        "populate": ['image']
       });
       return right(apps);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(EurosomFailure.fetchError(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -59,10 +63,12 @@ class EurosomFacade implements IEurosomRepo {
             "id": {"\$eq": appId}
           }
         },
+        "populate": ['application']
       });
+      print(pricings.toJson());
       return right(pricings);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(EurosomFailure.fetchError(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -79,7 +85,7 @@ class EurosomFacade implements IEurosomRepo {
       });
       return right(banners);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(EurosomFailure.fetchError(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -102,7 +108,43 @@ class EurosomFacade implements IEurosomRepo {
       });
       return right(mySubscriptions);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
+        return left(EurosomFailure.fetchError(
+            e.response!.data["error"]["message"].toString()));
+      } else {
+        return left(const EurosomFailure.serverError());
+      }
+    }
+  }
+
+  @override
+  Future<Either<EurosomFailure, SubscriptionModel>> getAppSubscriptions(
+      int appId) async {
+    final user =
+        getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r.user);
+    try {
+      final mySubscriptions = await _apiService.getMySubscriptions({
+        "filters": {
+          "\$and": [
+            {
+              "user": {
+                "id": {"\$eq": user!.id},
+              }
+            },
+            {
+              "app": {
+                "id": {
+                  "\$eq": appId,
+                }
+              },
+            },
+          ],
+        },
+        "populate": ['user', 'app']
+      });
+      return right(mySubscriptions);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.response) {
         return left(EurosomFailure.fetchError(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -113,13 +155,13 @@ class EurosomFacade implements IEurosomRepo {
 
   @override
   Future<Either<EurosomFailure, SubscriptionModel>> updateSubscription(
-      SubscriptionModel subscriptionModel) async {
+      String subscriptionId, SubscriptionModel subscriptionModel) async {
     try {
-      final Subscription =
-          await _apiService.getMySubscriptions(subscriptionModel.toJson());
+      final Subscription = await _apiService.updateSubscription(
+          subscriptionId, subscriptionModel.toJson());
       return right(Subscription);
     } on DioError catch (e) {
-      if (e.type == DioErrorType.badResponse) {
+      if (e.type == DioErrorType.response) {
         return left(EurosomFailure.fetchError(
             e.response!.data["error"]["message"].toString()));
       } else {
@@ -131,6 +173,92 @@ class EurosomFacade implements IEurosomRepo {
   @override
   Future<Either<EurosomFailure, AuthModel>> updateUser(AuthModel user) {
     // TODO: implement updateUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<EurosomFailure, AffliateModel>> createAffliate(
+      AffliateModel affliateModel) async {
+    try {
+      final affliate =
+          await _apiService.createsAffliate(affliateModel.toJson());
+      return right(affliate);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.response) {
+        return left(EurosomFailure.postError(
+            e.response!.data["error"]["message"].toString()));
+      } else {
+        return left(const EurosomFailure.serverError());
+      }
+    }
+  }
+
+  @override
+  Future<Either<EurosomFailure, AffliateModel>> getMyAffliate() async {
+    final user =
+        getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r.user);
+    try {
+      final myAffliates = await _apiService.getmyAffliate({
+        "filters": {
+          "user": {
+            "id": {"\$eq": user!.id!.toString()}
+          }
+        },
+        "populate": ['user', 'application']
+      });
+      return right(myAffliates);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.response) {
+        return left(EurosomFailure.fetchError(
+            e.response!.data["error"]["message"].toString()));
+      } else {
+        return left(const EurosomFailure.serverError());
+      }
+    }
+  }
+
+  @override
+  Future<Either<EurosomFailure, Unit>> payEvc(
+      String account, double amount) async {
+    try {
+      const merchantEvcPlus = MerchantEvcPlus(
+        apiKey: 'API-1685988125AHX', // API KEY
+        merchantUid: 'M0912379', // Merchant UID
+        apiUserId: '1005011', // API USER ID
+      );
+
+      var rng = Random();
+      var l = List.generate(12, (_) => rng.nextInt(100));
+
+      final transactionInfo = TransactionInfo(
+          payerPhoneNumber: account, amount: amount, invoiceId: l.toString());
+
+      await merchantEvcPlus.makePayment(
+        transactionInfo: transactionInfo,
+        onSuccess: () {
+          return right(unit);
+        },
+        onFailure: (error) {
+          return EurosomFailure.paymentError(error);
+        },
+      );
+    } catch (e) {
+      return left(const EurosomFailure.paymentError("error"));
+    }
+    return null!;
+  }
+
+  @override
+  Future<Either<EurosomFailure, Unit>> payEdahab(
+      String account, double amount) {
+    // TODO: implement payEdahab
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<EurosomFailure, Unit>> verifyEdahab(
+      String account, double amount) {
+    // TODO: implement verifyEdahab
     throw UnimplementedError();
   }
 }

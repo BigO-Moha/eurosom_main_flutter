@@ -19,6 +19,7 @@ mixin _$EurosomFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function(String message) paymentError,
     required TResult Function(String message) fetchError,
     required TResult Function(String? message) postError,
   }) =>
@@ -26,6 +27,7 @@ mixin _$EurosomFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverError,
+    TResult? Function(String message)? paymentError,
     TResult? Function(String message)? fetchError,
     TResult? Function(String? message)? postError,
   }) =>
@@ -33,6 +35,7 @@ mixin _$EurosomFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function(String message)? paymentError,
     TResult Function(String message)? fetchError,
     TResult Function(String? message)? postError,
     required TResult orElse(),
@@ -41,6 +44,7 @@ mixin _$EurosomFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
+    required TResult Function(PaymentFailure value) paymentError,
     required TResult Function(FetchError value) fetchError,
     required TResult Function(POstError value) postError,
   }) =>
@@ -48,6 +52,7 @@ mixin _$EurosomFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerError value)? serverError,
+    TResult? Function(PaymentFailure value)? paymentError,
     TResult? Function(FetchError value)? fetchError,
     TResult? Function(POstError value)? postError,
   }) =>
@@ -55,6 +60,7 @@ mixin _$EurosomFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
+    TResult Function(PaymentFailure value)? paymentError,
     TResult Function(FetchError value)? fetchError,
     TResult Function(POstError value)? postError,
     required TResult orElse(),
@@ -119,6 +125,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function(String message) paymentError,
     required TResult Function(String message) fetchError,
     required TResult Function(String? message) postError,
   }) {
@@ -129,6 +136,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverError,
+    TResult? Function(String message)? paymentError,
     TResult? Function(String message)? fetchError,
     TResult? Function(String? message)? postError,
   }) {
@@ -139,6 +147,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function(String message)? paymentError,
     TResult Function(String message)? fetchError,
     TResult Function(String? message)? postError,
     required TResult orElse(),
@@ -153,6 +162,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
+    required TResult Function(PaymentFailure value) paymentError,
     required TResult Function(FetchError value) fetchError,
     required TResult Function(POstError value) postError,
   }) {
@@ -163,6 +173,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerError value)? serverError,
+    TResult? Function(PaymentFailure value)? paymentError,
     TResult? Function(FetchError value)? fetchError,
     TResult? Function(POstError value)? postError,
   }) {
@@ -173,6 +184,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
+    TResult Function(PaymentFailure value)? paymentError,
     TResult Function(FetchError value)? fetchError,
     TResult Function(POstError value)? postError,
     required TResult orElse(),
@@ -186,6 +198,151 @@ class _$ServerError implements ServerError {
 
 abstract class ServerError implements EurosomFailure {
   const factory ServerError() = _$ServerError;
+}
+
+/// @nodoc
+abstract class _$$PaymentFailureCopyWith<$Res> {
+  factory _$$PaymentFailureCopyWith(
+          _$PaymentFailure value, $Res Function(_$PaymentFailure) then) =
+      __$$PaymentFailureCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$PaymentFailureCopyWithImpl<$Res>
+    extends _$EurosomFailureCopyWithImpl<$Res, _$PaymentFailure>
+    implements _$$PaymentFailureCopyWith<$Res> {
+  __$$PaymentFailureCopyWithImpl(
+      _$PaymentFailure _value, $Res Function(_$PaymentFailure) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$PaymentFailure(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PaymentFailure implements PaymentFailure {
+  const _$PaymentFailure(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'EurosomFailure.paymentError(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PaymentFailure &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PaymentFailureCopyWith<_$PaymentFailure> get copyWith =>
+      __$$PaymentFailureCopyWithImpl<_$PaymentFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function(String message) paymentError,
+    required TResult Function(String message) fetchError,
+    required TResult Function(String? message) postError,
+  }) {
+    return paymentError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverError,
+    TResult? Function(String message)? paymentError,
+    TResult? Function(String message)? fetchError,
+    TResult? Function(String? message)? postError,
+  }) {
+    return paymentError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function(String message)? paymentError,
+    TResult Function(String message)? fetchError,
+    TResult Function(String? message)? postError,
+    required TResult orElse(),
+  }) {
+    if (paymentError != null) {
+      return paymentError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(PaymentFailure value) paymentError,
+    required TResult Function(FetchError value) fetchError,
+    required TResult Function(POstError value) postError,
+  }) {
+    return paymentError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(PaymentFailure value)? paymentError,
+    TResult? Function(FetchError value)? fetchError,
+    TResult? Function(POstError value)? postError,
+  }) {
+    return paymentError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(PaymentFailure value)? paymentError,
+    TResult Function(FetchError value)? fetchError,
+    TResult Function(POstError value)? postError,
+    required TResult orElse(),
+  }) {
+    if (paymentError != null) {
+      return paymentError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PaymentFailure implements EurosomFailure {
+  const factory PaymentFailure(final String message) = _$PaymentFailure;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$PaymentFailureCopyWith<_$PaymentFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -253,6 +410,7 @@ class _$FetchError implements FetchError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function(String message) paymentError,
     required TResult Function(String message) fetchError,
     required TResult Function(String? message) postError,
   }) {
@@ -263,6 +421,7 @@ class _$FetchError implements FetchError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverError,
+    TResult? Function(String message)? paymentError,
     TResult? Function(String message)? fetchError,
     TResult? Function(String? message)? postError,
   }) {
@@ -273,6 +432,7 @@ class _$FetchError implements FetchError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function(String message)? paymentError,
     TResult Function(String message)? fetchError,
     TResult Function(String? message)? postError,
     required TResult orElse(),
@@ -287,6 +447,7 @@ class _$FetchError implements FetchError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
+    required TResult Function(PaymentFailure value) paymentError,
     required TResult Function(FetchError value) fetchError,
     required TResult Function(POstError value) postError,
   }) {
@@ -297,6 +458,7 @@ class _$FetchError implements FetchError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerError value)? serverError,
+    TResult? Function(PaymentFailure value)? paymentError,
     TResult? Function(FetchError value)? fetchError,
     TResult? Function(POstError value)? postError,
   }) {
@@ -307,6 +469,7 @@ class _$FetchError implements FetchError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
+    TResult Function(PaymentFailure value)? paymentError,
     TResult Function(FetchError value)? fetchError,
     TResult Function(POstError value)? postError,
     required TResult orElse(),
@@ -392,6 +555,7 @@ class _$POstError implements POstError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function(String message) paymentError,
     required TResult Function(String message) fetchError,
     required TResult Function(String? message) postError,
   }) {
@@ -402,6 +566,7 @@ class _$POstError implements POstError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverError,
+    TResult? Function(String message)? paymentError,
     TResult? Function(String message)? fetchError,
     TResult? Function(String? message)? postError,
   }) {
@@ -412,6 +577,7 @@ class _$POstError implements POstError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function(String message)? paymentError,
     TResult Function(String message)? fetchError,
     TResult Function(String? message)? postError,
     required TResult orElse(),
@@ -426,6 +592,7 @@ class _$POstError implements POstError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
+    required TResult Function(PaymentFailure value) paymentError,
     required TResult Function(FetchError value) fetchError,
     required TResult Function(POstError value) postError,
   }) {
@@ -436,6 +603,7 @@ class _$POstError implements POstError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerError value)? serverError,
+    TResult? Function(PaymentFailure value)? paymentError,
     TResult? Function(FetchError value)? fetchError,
     TResult? Function(POstError value)? postError,
   }) {
@@ -446,6 +614,7 @@ class _$POstError implements POstError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
+    TResult Function(PaymentFailure value)? paymentError,
     TResult Function(FetchError value)? fetchError,
     TResult Function(POstError value)? postError,
     required TResult orElse(),

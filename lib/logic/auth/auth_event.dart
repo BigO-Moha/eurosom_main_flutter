@@ -10,6 +10,6 @@ class AuthEvent with _$AuthEvent {
       SignUpWithEmailAndPassword;
   const factory AuthEvent.signOut() = SignOut;
   const factory AuthEvent.sendForgetToken(String email) = SendForgetToken;
-  const factory AuthEvent.resetPassword(String token, String NewPassword) =
+  const factory AuthEvent.resetPassword(String token, String newPassword) =
       ResetPassword;
 }
