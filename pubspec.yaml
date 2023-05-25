@@ -108,6 +108,7 @@ flutter:
 flutter_native_splash:
   color: "#42a5f5"
   image: assets/images/logo.png
+  web: true
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
