@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 @RoutePage()
@@ -25,10 +24,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void init() async {
-    await 2.seconds.delay.then((value) {
-      FlutterNativeSplash.remove();
-      // WalkThroughScreen().launch(context);
-    });
+    // await 2.seconds.delay.then((value) {
+    //   // WalkThroughScreen().launch(context);
+    // });
   }
 
   @override
