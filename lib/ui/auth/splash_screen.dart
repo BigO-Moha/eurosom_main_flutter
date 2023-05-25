@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
             orElse: () {},
             unAuthenticated: (e) async {
               print("unAuth");
-              context.replaceRoute(const WalkThroughRoute());
+              context.replaceRoute(const SignInRoute());
             },
             authenticated: (e) async {
               print("auth");
@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
             },
             onboardingShow: (e) async {
               print("walktrough");
-              context.replaceRoute(const WalkThroughRoute());
+              context.replaceRoute(const SignInRoute());
             });
       },
       builder: (context, state) {
