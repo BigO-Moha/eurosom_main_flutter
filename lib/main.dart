@@ -28,8 +28,8 @@ void main() async {
   await GetStorage.init();
   appStore.toggleDarkMode(value: getBoolAsync(isDarkModeOnPref));
 
-  darkMapStyle = await rootBundle.loadString('assets/mapStyles/dark.json');
-  lightMapStyle = await rootBundle.loadString('assets/mapStyles/light.json');
+  // darkMapStyle = await rootBundle.loadString('assets/mapStyles/dark.json');
+  // lightMapStyle = await rootBundle.loadString('assets/mapStyles/light.json');
   runApp(const MyApp());
 }
 
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       ],
       child: FlutterWebFrame(
           maximumSize: Size(475.0, 812.0),
-          enabled: kIsWeb,
+          enabled: true,
           builder: (context) {
             return MaterialApp.router(
               routeInformationParser: _appRouter.defaultRouteParser(),

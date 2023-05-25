@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "820312652552",
+    "project_id": "hubaaltv-de645",
+    "storage_bucket": "hubaaltv-de645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820312652552:android:59ba4f00634b09cd844abd",
+        "android_client_info": {
+          "package_name": "com.casri.tv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820312652552-5idqqntmvobc127e2dl386oin3hoic6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvO61f2TjrWH3srhPxQuJSCi6OVi6zyAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820312652552-5idqqntmvobc127e2dl386oin3hoic6g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820312652552:android:71edcbc381432e4a844abd",
+        "android_client_info": {
+          "package_name": "com.eurosom.apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820312652552-5idqqntmvobc127e2dl386oin3hoic6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvO61f2TjrWH3srhPxQuJSCi6OVi6zyAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820312652552-5idqqntmvobc127e2dl386oin3hoic6g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

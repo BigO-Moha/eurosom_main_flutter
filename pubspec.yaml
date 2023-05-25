@@ -67,6 +67,7 @@ dependencies:
   just_bottom_sheet: ^1.3.0
   image_card: ^0.0.4
   html: ^0.15.3
+  firebase_core: ^2.13.0
 
 dev_dependencies:
   flutter_test:
