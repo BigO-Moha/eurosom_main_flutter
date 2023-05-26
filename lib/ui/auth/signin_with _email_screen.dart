@@ -32,7 +32,7 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
   @override
   void initState() {
     super.initState();
-    // context.read<AuthBloc>().add();
+    context.read<AuthBloc>().add(const AuthEvent.checkAppState());
     init();
   }
 
@@ -164,10 +164,10 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
                 CommonButton(
                   buttonText: "Sign In",
                   width: context.width(),
-                  onTap: () {
+                  onTap: () async {
                     if (passwordCont.text.length > 5 &&
                         phoneCont.text.length > 8) {
-                      BlocProvider.of<AuthBloc>(context).add(
+                      context.read<AuthBloc>().add(
                           AuthEvent.loginWithEmailAndPassword(LoginData(
                               identifier: phoneCont.text,
                               password: passwordCont.text)));
