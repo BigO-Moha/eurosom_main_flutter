@@ -11,7 +11,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       status: json['status'] as String?,
       startDate: json['start_date'] as String?,
       expiryDate: json['expiry_date'] as String?,
-      amount: json['amount'] as int?,
+      amount: (json['amount'] as num?)?.toDouble(),
       paymentMethod: json['payment_method'] as String?,
       account: json['account'] as String?,
       app: json['app'] as String?,

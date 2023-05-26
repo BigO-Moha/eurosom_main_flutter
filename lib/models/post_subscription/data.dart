@@ -11,7 +11,7 @@ class Data {
   final String? startDate;
   @JsonKey(name: 'expiry_date')
   final String? expiryDate;
-  final int? amount;
+  final double? amount;
   @JsonKey(name: 'payment_method')
   final String? paymentMethod;
   final String? account;
@@ -45,7 +45,7 @@ class Data {
     String? status,
     String? startDate,
     String? expiryDate,
-    int? amount,
+    double? amount,
     String? paymentMethod,
     String? account,
     String? app,

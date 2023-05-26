@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
@@ -49,6 +51,8 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
             orElse: () {},
             authenticated: (s) {
               context.replaceRoute(const HomeDrawer());
+              // Future.delayed(const Duration(seconds: 1))
+              //     .then((value) =>);
             },
             unAuthenticated: (e) {
               FlushbarHelper.createError(

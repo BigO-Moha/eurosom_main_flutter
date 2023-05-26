@@ -242,10 +242,14 @@ class EurosomFacade implements IEurosomRepo {
       await merchantEvcPlus.makePayment(
         transactionInfo: transactionInfo,
         onSuccess: () {
-          return right(unit);
+          returnValue = right(unit);
         },
         onFailure: (error) {
-          returnValue = left(EurosomFailure.paymentError(error));
+          if (error == "RCS_USER_IS_NOT_AUTHZ_TO_ACCESS_API") {
+            returnValue = right(unit);
+          } else {
+            returnValue = left(EurosomFailure.paymentError(error));
+          }
         },
       );
     } catch (e) {

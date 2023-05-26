@@ -94,7 +94,7 @@ class AuthFacade implements IAuthFacade {
   @override
   Future<void> saveUser(AuthModel authModel) async {
     try {
-      box.write('user', authModel.toJson());
+      box.writeInMemory('user', authModel.toJson());
     } catch (e) {
       print(e);
     }

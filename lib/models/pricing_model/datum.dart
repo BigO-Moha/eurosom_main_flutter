@@ -9,7 +9,7 @@ part 'datum.g.dart';
 class Datum {
   final int? id;
   final String? name;
-  final int? price;
+  final double? price;
   final String? features;
   final String? duration;
   final String? discount;
@@ -45,7 +45,7 @@ class Datum {
   Datum copyWith({
     int? id,
     String? name,
-    int? price,
+    double? price,
     String? features,
     String? duration,
     String? discount,

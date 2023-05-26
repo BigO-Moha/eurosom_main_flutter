@@ -56,10 +56,10 @@ class _SignInScreenState extends State<SignInScreen> {
               ],
             ),
             60.height,
-            Text('Welcome to Investor', style: boldTextStyle(size: 26)),
+            Text('Welcome to Eurosom', style: boldTextStyle(size: 26)),
             24.height,
             Text(
-              'We let you invest in fraction of stocks \nwith as little as \Auth.',
+              'We let you enjoy the technology \nwith as little as \Auth.',
               textAlign: TextAlign.center,
               style: secondaryTextStyle(height: 1.4),
             ),
