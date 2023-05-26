@@ -221,71 +221,86 @@ class _HomeDrawerState extends State<HomeDrawer> {
                                     setState(() {});
                                   },
                                 ),
-                                250.width,
-                                GestureDetector(
-                                  onTap: () {
-                                    toast("Notification");
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.all(4),
-                                    decoration: boxDecorationWithRoundedCorners(
-                                      border: Border.all(
-                                          color: appStore.isDarkModeOn
-                                              ? white
-                                              : gray.withOpacity(0.4)),
-                                      boxShape: BoxShape.circle,
-                                      backgroundColor: Colors.white,
-                                    ),
-                                    child: Stack(
-                                      alignment: Alignment.topRight,
-                                      children: [
-                                        Icon(Icons.notifications_none,
-                                            size: 24, color: primaryColor),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.only(right: 2, top: 3),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      left: MediaQuery.of(context).size.width -
+                                          150),
+                                  child: Row(
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          toast("logging out");
+                                          context
+                                              .read<AuthBloc>()
+                                              .add(const AuthEvent.signOut());
+                                        },
+                                        child: Container(
+                                          padding: EdgeInsets.all(4),
                                           decoration:
                                               boxDecorationWithRoundedCorners(
-                                                  boxShape: BoxShape.circle,
-                                                  backgroundColor: Colors.red),
-                                          width: 6,
-                                          height: 6,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                8.width,
-                                GestureDetector(
-                                  onTap: () {
-                                    toast("logging out");
-                                    context
-                                        .read<AuthBloc>()
-                                        .add(const AuthEvent.signOut());
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.all(4),
-                                    decoration: boxDecorationWithRoundedCorners(
-                                      border: Border.all(
-                                          color: appStore.isDarkModeOn
-                                              ? white
-                                              : gray.withOpacity(0.4)),
-                                      boxShape: BoxShape.circle,
-                                      backgroundColor: Colors.white,
-                                    ),
-                                    child: Stack(
-                                      alignment: Alignment.topRight,
-                                      children: [
-                                        Icon(Icons.logout,
-                                            size: 24, color: primaryColor),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.only(right: 2, top: 3),
-                                          width: 6,
-                                          height: 6,
-                                        )
-                                      ],
-                                    ),
+                                            border: Border.all(
+                                                color: appStore.isDarkModeOn
+                                                    ? white
+                                                    : gray.withOpacity(0.4)),
+                                            boxShape: BoxShape.circle,
+                                            backgroundColor: Colors.white,
+                                          ),
+                                          child: Stack(
+                                            alignment: Alignment.topRight,
+                                            children: [
+                                              Icon(Icons.logout,
+                                                  size: 24,
+                                                  color: primaryColor),
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    right: 2, top: 3),
+                                                width: 6,
+                                                height: 6,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      8.width,
+                                      GestureDetector(
+                                        onTap: () {
+                                          toast("Notification");
+                                        },
+                                        child: Container(
+                                          padding: EdgeInsets.all(4),
+                                          decoration:
+                                              boxDecorationWithRoundedCorners(
+                                            border: Border.all(
+                                                color: appStore.isDarkModeOn
+                                                    ? white
+                                                    : gray.withOpacity(0.4)),
+                                            boxShape: BoxShape.circle,
+                                            backgroundColor: Colors.white,
+                                          ),
+                                          child: Stack(
+                                            alignment: Alignment.topRight,
+                                            children: [
+                                              Icon(Icons.notifications_none,
+                                                  size: 24,
+                                                  color: primaryColor),
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    right: 2, top: 3),
+                                                decoration:
+                                                    boxDecorationWithRoundedCorners(
+                                                        boxShape:
+                                                            BoxShape.circle,
+                                                        backgroundColor:
+                                                            Colors.red),
+                                                width: 6,
+                                                height: 6,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      8.width,
+                                    ],
                                   ),
                                 ),
                               ],

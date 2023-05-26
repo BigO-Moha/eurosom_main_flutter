@@ -37,7 +37,7 @@ class ChattingScreen extends StatefulWidget {
 
 class _ChattingScreenState extends State<ChattingScreen> {
   ChatGpt chatGpt =
-      ChatGpt(apiKey: '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');
+      ChatGpt(apiKey: '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');
 
   ScrollController scrollController = ScrollController();
 

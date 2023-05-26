@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<EurosomBloc>(create: (context) => getIt<EurosomBloc>()),
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         builder: (context, child) => ResponsiveBreakpoints.builder(
           child: child!,
           breakpoints: [

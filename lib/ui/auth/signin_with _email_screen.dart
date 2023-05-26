@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'dart:html' as html;
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 @RoutePage()
 class SignWithEmailInScreen extends StatefulWidget {
@@ -31,6 +32,7 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
   @override
   void initState() {
     super.initState();
+    // context.read<AuthBloc>().add();
     init();
   }
 
@@ -49,8 +51,15 @@ class _SignWithEmailInScreenState extends State<SignWithEmailInScreen> {
       listener: (context, state) {
         state.maybeMap(
             orElse: () {},
-            authenticated: (s) {
+            authenticated: (s) async {
+              // if (kIsWeb) {
+              //   sleep(const Duration(seconds: 2));
+              //   html.window
+              //       .open('http://localhost:54123/home-drawer', 'new tab');
+              // }
               context.replaceRoute(const HomeDrawer());
+              // BlocProvider.of<AuthBloc>(context)
+              //     .add(const AuthEvent.getAuthState());
               // Future.delayed(const Duration(seconds: 1))
               //     .then((value) =>);
             },
