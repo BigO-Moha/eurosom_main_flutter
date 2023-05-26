@@ -117,6 +117,30 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
+  Future<Configs> getConfigs(query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Configs>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/configs',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Configs.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<SubscriptionModel> getMySubscriptions(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -217,7 +241,7 @@ class _EuroApiService implements EuroApiService {
   }
 
   @override
-  Future<Appsmodel> UpdateUser(
+  Future<UserResponse> updateUser(
     id,
     body,
   ) async {
@@ -227,7 +251,7 @@ class _EuroApiService implements EuroApiService {
     final _data = <String, dynamic>{};
     _data.addAll(body);
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<Appsmodel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<UserResponse>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -239,7 +263,34 @@ class _EuroApiService implements EuroApiService {
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = Appsmodel.fromJson(_result.data!);
+    final value = UserResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UserResponse> updateTokensUsed(
+    id,
+    body,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UserResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/users/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = UserResponse.fromJson(_result.data!);
     return value;
   }
 

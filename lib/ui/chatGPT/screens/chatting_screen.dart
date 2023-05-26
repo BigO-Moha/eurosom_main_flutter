@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:chat_gpt_flutter/chat_gpt_flutter.dart';
+import 'package:eurosom/logic/eurosom/eurosom_bloc.dart';
 import 'package:eurosom/main.dart';
 import 'package:eurosom/ui/chatGPT/components/commonIconButton.dart';
 import 'package:eurosom/ui/chatGPT/components/voice_search_component.dart';
@@ -13,6 +14,8 @@ import 'package:eurosom/ui/chatGPT/utils/images.dart';
 import 'package:eurosom/ui/home/utils/T14Colors.dart';
 import 'package:eurosom/ui/main/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import 'package:share_plus/share_plus.dart';
@@ -36,10 +39,8 @@ class ChattingScreen extends StatefulWidget {
 }
 
 class _ChattingScreenState extends State<ChattingScreen> {
-  ChatGpt chatGpt =
-      ChatGpt(apiKey: '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');
-
-  ScrollController scrollController = ScrollController();
+  ScrollController scrollController =
+      ScrollController(initialScrollOffset: 50.0);
 
   TextEditingController msgController = TextEditingController();
 
@@ -127,7 +128,7 @@ class _ChattingScreenState extends State<ChattingScreen> {
     if (mounted) super.setState(fn);
   }
 
-  void sendMessage() async {
+  void sendMessage(ChatGpt chatGpt) async {
     hideKeyboard(context);
 
     if (selectedText.isNotEmpty) {
@@ -151,13 +152,13 @@ class _ChattingScreenState extends State<ChattingScreen> {
     });
 
     CompletionRequest testRequest = CompletionRequest(
-      model: ChatGptModel.gpt35Turbo0301,
+      model: ChatGptModel.gpt35Turbo,
       stream: true,
       maxTokens: 4000,
       messages: [Message(role: Role.user.name, content: question)],
     );
 
-    await _streamResponse(testRequest);
+    await _streamResponse(testRequest, chatGpt);
 
     if (adCount == showAdCount) {
     } else {
@@ -169,7 +170,8 @@ class _ChattingScreenState extends State<ChattingScreen> {
     setState(() {});
   }
 
-  Future<dynamic> _streamResponse(CompletionRequest request) async {
+  Future<dynamic> _streamResponse(
+      CompletionRequest request, ChatGpt chatGpt) async {
     streamSubscription?.cancel();
 
     try {
@@ -182,6 +184,7 @@ class _ChattingScreenState extends State<ChattingScreen> {
           if (event.streamMessageEnd) {
             streamSubscription?.cancel();
           } else {
+            print(event.choices?.first.delta?.content);
             return questionAnswers.first.answer!
                 .write(event.choices?.first.delta?.content);
           }
@@ -233,234 +236,271 @@ class _ChattingScreenState extends State<ChattingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBarWidget(
-        'ChatGPT',
-        elevation: 0,
-        color: appStore.isDarkModeOn ? replyMsgBgColor : transparentColor,
-        backWidget: IconButton(
-          icon: Icon(Icons.arrow_back,
-              color: appStore.isDarkModeOn ? Colors.white : Colors.black),
-          visualDensity: VisualDensity.compact,
-          onPressed: () {
-            if (widget.isDirect.validate()) {
-              // ProKitLauncher().launch(context,
-              //     isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
-            } else {
-              finish(context);
-            }
-          },
-        ),
-        actions: [
-          CommonIconButton(
-            icon: Icons.restart_alt,
-            toolTip: 'Clear Conversation',
-            onPressed: () {
-              showDialog();
-            },
-          ).visible(questionAnswers.isNotEmpty),
-          isIOS
-              ? Builder(builder: (context) {
-                  return CommonIconButton(
-                    icon: Icons.share,
-                    iconSize: 20,
-                    toolTip: 'Share Conversation',
-                    onPressed: () {
-                      final box = context.findRenderObject() as RenderBox?;
-                      share(context,
-                          questionAnswers: questionAnswers, box: box);
-                    },
-                  ).visible(questionAnswers.isNotEmpty);
-                })
-              : CommonIconButton(
-                  icon: Icons.share,
-                  iconSize: 20,
-                  toolTip: 'Share Conversation',
-                  onPressed: () {
-                    final box = context.findRenderObject() as RenderBox?;
-                    share(context, questionAnswers: questionAnswers, box: box);
-                  },
-                ).visible(questionAnswers.isNotEmpty)
-        ],
-      ),
-      bottomSheet: VoiceSearchComponent().visible(speech.isListening),
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: Image.asset(chat_default_bg_image).image,
-                fit: BoxFit.cover,
-                colorFilter: appStore.isDarkModeOn
-                    ? ColorFilter.mode(
-                        context.scaffoldBackgroundColor, BlendMode.multiply)
-                    : ColorFilter.mode(
-                        t14_choosePlan_bgColor.withAlpha(180),
-                        BlendMode.overlay,
-                      ),
+    return BlocConsumer<EurosomBloc, EurosomState>(
+      listener: (context, state) {
+        state.maybeMap(
+            orElse: () {},
+            getConfigSuccess: (e) {
+              CHAT_GPT_API_KEY = e.config.data![0].token!;
+            });
+      },
+      builder: (context, state) {
+        return state.maybeMap(orElse: () {
+          SchedulerBinding.instance.addPostFrameCallback((_) {
+            scrollController.jumpTo(scrollController.position.maxScrollExtent);
+          });
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }, getConfigSuccess: (e) {
+          return Scaffold(
+            appBar: appBarWidget(
+              'ChatGPT',
+              elevation: 0,
+              color: appStore.isDarkModeOn ? replyMsgBgColor : transparentColor,
+              backWidget: IconButton(
+                icon: Icon(Icons.arrow_back,
+                    color: appStore.isDarkModeOn ? Colors.white : Colors.black),
+                visualDensity: VisualDensity.compact,
+                onPressed: () {
+                  if (widget.isDirect.validate()) {
+                    // ProKitLauncher().launch(context,
+                    //     isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
+                  } else {
+                    finish(context);
+                  }
+                },
               ),
-            ),
-          ),
-          Container(
-            height: context.height(),
-            width: context.width(),
-            margin: EdgeInsets.only(
-                bottom: 66 + (isBannerLoad ? 16 : 0) + (isShowOption ? 50 : 0)),
-            padding: const EdgeInsets.only(left: 16, right: 16),
-            child: ListView.separated(
-              separatorBuilder: (_, i) => Divider(color: Colors.transparent),
-              reverse: true,
-              padding: const EdgeInsets.only(bottom: 8, top: 16),
-              controller: scrollController,
-              itemCount: questionAnswers.length,
-              itemBuilder: (_, index) {
-                QuestionAnswerModel data = questionAnswers[index];
-
-                String answer = data.answer.toString().trim();
-
-                return ChatMessageWidget(
-                    answer: answer,
-                    data: data,
-                    isLoading: data.isLoading.validate());
-              },
-            ),
-          ),
-          if (questionAnswers.validate().isEmpty)
-            ChatGPTHome(
-              isScroll: isScroll,
-              onTap: (value) {
-                msgController.text = value;
-                setState(() {});
-              },
-            ).center(),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Column(
-              children: [
-                if (isShowOption)
-                  Wrap(
-                    spacing: 16,
-                    children: List.generate(chipList.length, (index) {
-                      return GestureDetector(
-                        onTap: () {
-                          if (index == selectedIndex) {
-                            isSelectedIndex = !isSelectedIndex;
-                          }
-
-                          selectedIndex = index;
-
-                          if (isSelectedIndex && index == selectedIndex) {
-                            selectedText = '${chipList[index]} of ';
-                          } else {
-                            selectedText = '';
-                          }
-
-                          setState(() {});
-                        },
-                        child: Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                          decoration: boxDecorationDefault(
-                            borderRadius: radius(20),
-                            color: appStore.isDarkModeOn
-                                ? (index == selectedIndex && isSelectedIndex)
-                                    ? Colors.white
-                                    : replyMsgBgColor.withAlpha(90)
-                                : (index == selectedIndex && isSelectedIndex)
-                                    ? Colors.white
-                                    : appColorPrimary.withAlpha(20),
-                          ),
-                          child: Text(chipList[index],
-                              style: primaryTextStyle(
-                                size: 14,
-                                color: appStore.isDarkModeOn
-                                    ? (index == selectedIndex &&
-                                            isSelectedIndex)
-                                        ? Colors.black
-                                        : Colors.white
-                                    : appColorPrimary,
-                              )),
-                        ),
-                      );
-                    }),
-                  ),
-                16.height,
-                Row(
-                  children: [
-                    AppTextField(
-                      textFieldType: TextFieldType.MULTILINE,
-                      controller: msgController,
-                      minLines: 1,
-                      maxLines: 5,
-                      cursorColor:
-                          appStore.isDarkModeOn ? Colors.white : Colors.black,
-                      keyboardType: TextInputType.multiline,
-                      decoration: inputDecoration(
-                        context,
-                        label: 'How can i help you!...',
-                        prefixIcon: IconButton(
-                          icon: Icon(Icons.mic,
-                              color:
-                                  appStore.isDarkModeOn ? Colors.grey : null),
+              actions: [
+                CommonIconButton(
+                  icon: Icons.restart_alt,
+                  toolTip: 'Clear Conversation',
+                  onPressed: () {
+                    showDialog();
+                  },
+                ).visible(questionAnswers.isNotEmpty),
+                isIOS
+                    ? Builder(builder: (context) {
+                        return CommonIconButton(
+                          icon: Icons.share,
+                          iconSize: 20,
+                          toolTip: 'Share Conversation',
                           onPressed: () {
-                            startListening();
+                            final box =
+                                context.findRenderObject() as RenderBox?;
+                            share(context,
+                                questionAnswers: questionAnswers, box: box);
                           },
-                        ),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            isShowOption
-                                ? Icons.keyboard_arrow_down
-                                : Icons.keyboard_arrow_up,
-                            color: appStore.isDarkModeOn ? Colors.grey : null,
-                          ),
-                          onPressed: () {
-                            isShowOption = !isShowOption;
-
-                            if (isShowOption == false) {
-                              isSelectedIndex = false;
-                              selectedText = '';
-                            }
-
-                            setState(() {});
-                          },
-                        ),
-                      ),
-                      onFieldSubmitted: (s) {
-                        sendMessage();
-                      },
-                      onTap: () {
-                        isScroll = true;
-                        setState(() {});
-                      },
-                    ).expand(),
-                    16.width,
-                    Container(
-                      decoration: boxDecorationDefault(
-                        shape: BoxShape.circle,
-                        color: appColorPrimary,
-                        boxShadow: defaultBoxShadow(
-                            blurRadius: 0, shadowColor: Colors.transparent),
-                      ),
-                      child: IconButton(
-                        icon: Icon(Icons.send, size: 16, color: Colors.white),
+                        ).visible(questionAnswers.isNotEmpty);
+                      })
+                    : CommonIconButton(
+                        icon: Icons.share,
+                        iconSize: 20,
+                        toolTip: 'Share Conversation',
                         onPressed: () {
-                          if (msgController.text.isNotEmpty) {
-                            sendMessage();
-                          }
+                          final box = context.findRenderObject() as RenderBox?;
+                          share(context,
+                              questionAnswers: questionAnswers, box: box);
                         },
-                      ),
-                    ),
-                  ],
-                ).paddingSymmetric(horizontal: 16),
-                16.height,
+                      ).visible(questionAnswers.isNotEmpty)
               ],
             ),
-          ),
-        ],
-      ),
+            bottomSheet: VoiceSearchComponent().visible(speech.isListening),
+            body: Stack(
+              fit: StackFit.expand,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: Image.asset(chat_default_bg_image).image,
+                      fit: BoxFit.cover,
+                      colorFilter: appStore.isDarkModeOn
+                          ? ColorFilter.mode(context.scaffoldBackgroundColor,
+                              BlendMode.multiply)
+                          : ColorFilter.mode(
+                              t14_choosePlan_bgColor.withAlpha(180),
+                              BlendMode.overlay,
+                            ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: context.height(),
+                  width: context.width(),
+                  margin: EdgeInsets.only(
+                      bottom: 66 +
+                          (isBannerLoad ? 16 : 0) +
+                          (isShowOption ? 50 : 0)),
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: ListView.separated(
+                    separatorBuilder: (_, i) =>
+                        Divider(color: Colors.transparent),
+                    reverse: true,
+                    padding: const EdgeInsets.only(bottom: 8, top: 16),
+                    controller: scrollController,
+                    itemCount: questionAnswers.length,
+                    itemBuilder: (_, index) {
+                      QuestionAnswerModel data = questionAnswers[index];
+
+                      String answer = data.answer.toString().trim();
+
+                      return ChatMessageWidget(
+                          answer: answer,
+                          data: data,
+                          isLoading: data.isLoading.validate());
+                    },
+                  ),
+                ),
+                if (questionAnswers.validate().isEmpty)
+                  ChatGPTHome(
+                    isScroll: isScroll,
+                    onTap: (value) {
+                      msgController.text = value;
+                      setState(() {});
+                    },
+                  ).center(),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Column(
+                    children: [
+                      if (isShowOption)
+                        Wrap(
+                          spacing: 16,
+                          children: List.generate(chipList.length, (index) {
+                            return GestureDetector(
+                              onTap: () {
+                                if (index == selectedIndex) {
+                                  isSelectedIndex = !isSelectedIndex;
+                                }
+
+                                selectedIndex = index;
+
+                                if (isSelectedIndex && index == selectedIndex) {
+                                  selectedText = '${chipList[index]} of ';
+                                } else {
+                                  selectedText = '';
+                                }
+
+                                setState(() {});
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 8),
+                                decoration: boxDecorationDefault(
+                                  borderRadius: radius(20),
+                                  color: appStore.isDarkModeOn
+                                      ? (index == selectedIndex &&
+                                              isSelectedIndex)
+                                          ? Colors.white
+                                          : replyMsgBgColor.withAlpha(90)
+                                      : (index == selectedIndex &&
+                                              isSelectedIndex)
+                                          ? Colors.white
+                                          : appColorPrimary.withAlpha(20),
+                                ),
+                                child: Text(chipList[index],
+                                    style: primaryTextStyle(
+                                      size: 14,
+                                      color: appStore.isDarkModeOn
+                                          ? (index == selectedIndex &&
+                                                  isSelectedIndex)
+                                              ? Colors.black
+                                              : Colors.white
+                                          : appColorPrimary,
+                                    )),
+                              ),
+                            );
+                          }),
+                        ),
+                      16.height,
+                      Row(
+                        children: [
+                          AppTextField(
+                            textFieldType: TextFieldType.MULTILINE,
+                            controller: msgController,
+                            minLines: 1,
+                            maxLines: 5,
+                            cursorColor: appStore.isDarkModeOn
+                                ? Colors.white
+                                : Colors.black,
+                            keyboardType: TextInputType.multiline,
+                            decoration: inputDecoration(
+                              context,
+                              label: 'How can i help you!...',
+                              prefixIcon: IconButton(
+                                icon: Icon(Icons.mic,
+                                    color: appStore.isDarkModeOn
+                                        ? Colors.grey
+                                        : null),
+                                onPressed: () {
+                                  startListening();
+                                },
+                              ),
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  isShowOption
+                                      ? Icons.keyboard_arrow_down
+                                      : Icons.keyboard_arrow_up,
+                                  color: appStore.isDarkModeOn
+                                      ? Colors.grey
+                                      : null,
+                                ),
+                                onPressed: () {
+                                  isShowOption = !isShowOption;
+
+                                  if (isShowOption == false) {
+                                    isSelectedIndex = false;
+                                    selectedText = '';
+                                  }
+
+                                  setState(() {});
+                                },
+                              ),
+                            ),
+                            onFieldSubmitted: (s) {
+                              sendMessage(
+                                  ChatGpt(apiKey: e.config.data![0].token!));
+                            },
+                            onTap: () {
+                              isScroll = true;
+                              setState(() {});
+                            },
+                          ).expand(),
+                          16.width,
+                          Container(
+                            decoration: boxDecorationDefault(
+                              shape: BoxShape.circle,
+                              color: appColorPrimary,
+                              boxShadow: defaultBoxShadow(
+                                  blurRadius: 0,
+                                  shadowColor: Colors.transparent),
+                            ),
+                            child: IconButton(
+                              icon: Icon(Icons.send,
+                                  size: 16, color: Colors.white),
+                              onPressed: () {
+                                if (msgController.text.isNotEmpty) {
+                                  sendMessage(ChatGpt(
+                                      apiKey: e.config.data![0].token!));
+                                }
+                              },
+                            ),
+                          ),
+                        ],
+                      ).paddingSymmetric(horizontal: 16),
+                      16.height,
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+      },
     );
   }
 }

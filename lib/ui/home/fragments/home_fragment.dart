@@ -63,7 +63,7 @@ class _HomeFragmentState extends State<HomeFragment> {
           Container(
             decoration: boxDecorationWithRoundedCorners(
                 backgroundColor: primaryColor, borderRadius: BorderRadius.zero),
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -91,7 +91,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                 ),
                 16.height,
                 Container(
-                  padding: EdgeInsets.all(24),
+                  padding: const EdgeInsets.all(24),
                   width: context.width(),
                   decoration: boxDecorationWithRoundedCorners(
                       backgroundColor: Colors.green.withOpacity(0.8)),

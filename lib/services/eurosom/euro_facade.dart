@@ -8,9 +8,11 @@ import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
+import 'package:eurosom/models/configs/configs.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
+import 'package:eurosom/models/user_response/user_response.dart';
 import 'package:eurosom/services/core/injection.dart';
 import 'package:eurosom/services/eurosom/euro_api.dart';
 import 'package:injectable/injectable.dart';
@@ -171,7 +173,7 @@ class EurosomFacade implements IEurosomRepo {
   }
 
   @override
-  Future<Either<EurosomFailure, AuthModel>> updateUser(AuthModel user) {
+  Future<Either<EurosomFailure, UserResponse>> updateUser(AuthModel user) {
     // TODO: implement updateUser
     throw UnimplementedError();
   }
@@ -271,5 +273,39 @@ class EurosomFacade implements IEurosomRepo {
       String account, double amount) {
     // TODO: implement verifyEdahab
     throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<EurosomFailure, Configs>> getConfigs() async {
+    try {
+      final configs = await _apiService.getConfigs({});
+      return right(configs);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.response) {
+        return left(EurosomFailure.fetchError(
+            e.response!.data["error"]["message"].toString()));
+      } else {
+        return left(const EurosomFailure.serverError());
+      }
+    }
+  }
+
+  @override
+  Future<Either<EurosomFailure, UserResponse>> updateTokensUsed(
+      int token_count) async {
+    final user =
+        getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r.user);
+    try {
+      final tokens = await _apiService
+          .updateTokensUsed(user!.id!.toString(), {"token_count": token_count});
+      return right(tokens);
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.response) {
+        return left(EurosomFailure.fetchError(
+            e.response!.data["error"]["message"].toString()));
+      } else {
+        return left(const EurosomFailure.serverError());
+      }
+    }
   }
 }

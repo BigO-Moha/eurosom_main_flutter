@@ -3,8 +3,10 @@ import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
+import 'package:eurosom/models/configs/configs.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
+import 'package:eurosom/models/user_response/user_response.dart';
 import 'package:eurosom/services/core/config.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -21,6 +23,8 @@ abstract class EuroApiService {
   Future<PricingModel> getAllPricings(@Queries() Map<String, dynamic> query);
   @GET("/affliates")
   Future<AffliateModel> getmyAffliate(@Queries() Map<String, dynamic> query);
+  @GET("/configs")
+  Future<Configs> getConfigs(@Queries() Map<String, dynamic> query);
   @GET("/subscriptions")
   Future<SubscriptionModel> getMySubscriptions(
       @Queries() Map<String, dynamic> query);
@@ -32,6 +36,9 @@ abstract class EuroApiService {
   @POST("/affliates")
   Future<AffliateModel> createsAffliate(@Body() Map<String, dynamic> body);
   @PUT("/users/{id}")
-  Future<Appsmodel> UpdateUser(
+  Future<UserResponse> updateUser(
+      @Path() String id, @Body() Map<String, dynamic> body);
+  @PUT("/users/{id}")
+  Future<UserResponse> updateTokensUsed(
       @Path() String id, @Body() Map<String, dynamic> body);
 }

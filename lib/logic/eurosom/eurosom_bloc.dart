@@ -4,10 +4,12 @@ import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
+import 'package:eurosom/models/configs/configs.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
 import 'package:eurosom/models/post_subscription/post_subscription.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
+import 'package:eurosom/models/user_response/user_response.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -93,6 +95,22 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
                 (l) => EurosomState.loadFailure(l),
                 (r) => const EurosomState.createSubscriptionSuccess());
             emit(subscriptionState);
+          },
+          getConfig: (e) async {
+            emit(const EurosomState.loading());
+            final configs = await _eurosomRepo.getConfigs();
+            final configsState = configs.fold(
+                (l) => EurosomState.loadFailure(l),
+                (r) => EurosomState.getConfigSuccess(r));
+            emit(configsState);
+          },
+          updateUserTokens: (e) async {
+            emit(const EurosomState.loading());
+            final userTokens = await _eurosomRepo.updateTokensUsed(e.tokens);
+            final userTokensState = userTokens.fold(
+                (l) => EurosomState.loadFailure(l),
+                (r) => EurosomState.updateUserSuccess(r));
+            emit(userTokensState);
           });
     });
   }

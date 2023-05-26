@@ -1,4 +1,4 @@
-const splash_logo = 'images/stockMarket/stock/splash_logo.png';
+const splash_logo = 'assets/images/logo.png';
 const apple_logo = 'images/stockMarket/stock/apple_logo.png';
 const google_logo = 'images/stockMarket/stock/google_logo.png';
 const ic_message = 'images/stockMarket/icons/ic_message.png';
@@ -43,7 +43,7 @@ const ic_transfer = 'images/stockMarket/icons/ic_transfer.png';
 const ic_exchange = 'images/stockMarket/icons/ic_exchange.png';
 const walkThrough1 = 'images/stockMarket/stock/walkThrough1.jpg';
 const walkThrough2 = 'images/stockMarket/stock/walkThrough2.jpg';
-const walkThrough3 = 'images/stockMarket/stock/walkThrough3.png';
+const walkThrough3 = 'assets/images/logo.png';
 const dashboard = 'images/stockMarket/stock/dashboard.png';
 const forgot_password = 'images/stockMarket/stock/forgot_password.png';
 const scan = 'images/stockMarket/stock/scan.png';

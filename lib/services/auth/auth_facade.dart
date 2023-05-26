@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:eurosom/main.dart';
 import 'package:eurosom/models/absatractions/auth.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/failures/auth_failure.dart';
@@ -6,6 +7,7 @@ import 'package:eurosom/models/login/login.dart';
 import 'package:eurosom/models/register/register.dart';
 import 'package:eurosom/services/auth/auth_rest_api.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart';
 
@@ -31,15 +33,27 @@ class AuthFacade implements IAuthFacade {
   @override
   Either<Unit, AuthModel> getSignedUser() {
     try {
-      final data = box.read('user');
-      final userObj = AuthModel.fromJson(data);
+      final isBoxOpen = Hive.isBoxOpen("AuthModel");
+      if (isBoxOpen) {
+        final authInfo = authBox.getAt(authBox.length - 1);
+        print(authInfo);
 
-      if (data == null) {
-        return left(unit);
+        return right(authInfo);
       } else {
-        return right(userObj);
+        Hive.openBox("AuthModel");
+        final authInfo = authBox.getAt(authBox.length - 1);
+        print(authInfo);
+        return right(authInfo);
       }
-    } catch (e) {
+    } on HiveError catch (e) {
+      Hive.openBox("AuthModel");
+      print(e);
+      return left(unit);
+    } on RangeError catch (e) {
+      print(e);
+      return left(unit);
+    } on Exception catch (e) {
+      print(e);
       return left(unit);
     }
   }
@@ -94,8 +108,8 @@ class AuthFacade implements IAuthFacade {
   @override
   Future<void> saveUser(AuthModel authModel) async {
     try {
-      await box.write('user', authModel.toJson());
-    } catch (e) {
+      await authBox.add(authModel);
+    } on HiveError catch (e) {
       print(e);
     }
   }
@@ -124,7 +138,8 @@ class AuthFacade implements IAuthFacade {
   @override
   Future<void> signOut() async {
     try {
-      box.erase();
+      await Hive.deleteBoxFromDisk('AuthModel');
+      ;
     } catch (e) {
       print(e);
     }

@@ -18,8 +18,10 @@ class EurosomState with _$EurosomState {
       _createSubscriptionSuccess;
   const factory EurosomState.getAffliatesSuccess(AffliateModel affliateModel) =
       _GetAffliatesSuccess;
+  const factory EurosomState.getConfigSuccess(Configs config) =
+      _GetConfigSuccess;
   const factory EurosomState.createAffliatesSuccess(
       AffliateModel affliateModel) = _CreateAffliatesSuccess;
-  const factory EurosomState.updateUserSuccess(AuthModel authModel) =
+  const factory EurosomState.updateUserSuccess(UserResponse userResponse) =
       _UpdateUserSuccess;
 }

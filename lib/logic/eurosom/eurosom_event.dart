@@ -15,6 +15,8 @@ class EurosomEvent with _$EurosomEvent {
   const factory EurosomEvent.createMyAffliate(AffliateModel affliateModel) =
       _CreateMyAffliate;
   const factory EurosomEvent.findAffliate(String id) = _FindAffliate;
+  const factory EurosomEvent.getConfig() = _GetConfig;
+  const factory EurosomEvent.updateUserTokens(int tokens) = _UpdateUserTokens;
   const factory EurosomEvent.getMyAffliateInfo() = _GetMyAffliateInfo;
   const factory EurosomEvent.updateUser(AuthModel userInfo) = _UpdateUser;
 }

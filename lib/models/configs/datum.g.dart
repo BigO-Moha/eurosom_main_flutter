@@ -8,38 +8,28 @@ part of 'datum.dart';
 
 Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
       id: json['id'] as int?,
-      status: json['status'] as String?,
-      startDate: json['start_date'] as String?,
-      expiryDate: json['expiry_date'] as String?,
-      amount: (json['amount'] as num?)?.toDouble(),
-      paymentMethod: json['payment_method'] as String?,
-      account: json['account'] as String?,
+      active: json['active'] as bool?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
       updatedAt: json['updatedAt'] == null
           ? null
           : DateTime.parse(json['updatedAt'] as String),
-      appId: json['app_id'] as int?,
-      app: json['app'] == null
+      publishedAt: json['publishedAt'] == null
           ? null
-          : App.fromJson(json['app'] as Map<String, dynamic>),
-      user: json['user'] == null
+          : DateTime.parse(json['publishedAt'] as String),
+      gptTokens: json['gpt_tokens'] == null
           ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+          : GptTokens.fromJson(json['gpt_tokens'] as Map<String, dynamic>),
+      token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
       'id': instance.id,
-      'status': instance.status,
-      'start_date': instance.startDate,
-      'expiry_date': instance.expiryDate,
-      'amount': instance.amount,
-      'payment_method': instance.paymentMethod,
-      'account': instance.account,
+      'active': instance.active,
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
-      'app_id': instance.appId,
-      'app': instance.app,
-      'user': instance.user,
+      'publishedAt': instance.publishedAt?.toIso8601String(),
+      'gpt_tokens': instance.gptTokens,
+      'token': instance.token,
     };

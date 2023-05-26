@@ -1,9 +1,8 @@
-import 'dart:io';
-import 'dart:html' as html;
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/main.dart';
+import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/login/login.dart';
 import 'package:eurosom/ui/auth/forgot_password_screen.dart';
 import 'package:eurosom/ui/routes/app_router.gr.dart';
@@ -12,6 +11,7 @@ import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;

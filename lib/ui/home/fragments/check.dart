@@ -68,6 +68,7 @@ class _CheckSubscriptionState extends State<CheckSubscription> {
               subscriped = false;
             }
             if (subscriped == true) {
+              context.read<EurosomBloc>().add(const EurosomEvent.getConfig());
               context.replaceRoute(ChattingRoute());
             } else {
               context

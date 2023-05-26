@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'user.dart';
@@ -6,8 +7,13 @@ import 'user.dart';
 part 'auth_model.g.dart';
 
 @JsonSerializable()
+@HiveType(
+  typeId: 1,
+)
 class AuthModel {
+  @HiveField(0)
   final String? jwt;
+  @HiveField(1)
   final User? user;
 
   const AuthModel({this.jwt, this.user});

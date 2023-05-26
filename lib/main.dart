@@ -1,5 +1,7 @@
 import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/logic/eurosom/eurosom_bloc.dart';
+import 'package:eurosom/models/auth_model/auth_model.dart';
+import 'package:eurosom/models/auth_model/user.dart';
 import 'package:eurosom/services/core/injection.dart';
 import 'package:eurosom/ui/auth/walkthrough_screen.dart';
 import 'package:eurosom/ui/main/utils/flutter_web_frame/flutter_web_frame.dart';
@@ -12,6 +14,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -22,7 +25,13 @@ int currentIndex = 0;
 
 late String darkMapStyle;
 late String lightMapStyle;
+late Box authBox;
+late Box localBox;
 void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(AuthModelAdapter());
+  Hive.registerAdapter(UserAdapter());
+  authBox = await Hive.openBox<AuthModel>("AuthModel");
   configureDependencies(Environment.prod);
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   await initialize();

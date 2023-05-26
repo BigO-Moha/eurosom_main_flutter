@@ -345,6 +345,8 @@ class _PricingshowState extends State<Pricingshow> {
                                                             app: widget.appId
                                                                 .toString(),
                                                             status: 'active'))));
+                                            context.read<EurosomBloc>().add(
+                                                const EurosomEvent.getConfig());
                                             context
                                                 .replaceRoute(ChattingRoute());
                                           }
