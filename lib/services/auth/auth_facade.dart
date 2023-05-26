@@ -124,7 +124,7 @@ class AuthFacade implements IAuthFacade {
   @override
   Future<void> signOut() async {
     try {
-      box.remove('user');
+      box.erase();
     } catch (e) {
       print(e);
     }

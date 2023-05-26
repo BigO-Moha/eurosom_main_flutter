@@ -8,6 +8,7 @@ import 'package:eurosom/models/absatractions/auth.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/appsmodel/datum.dart' as am;
 import 'package:eurosom/services/core/injection.dart';
+import 'package:eurosom/ui/home/pricing_screen.dart';
 import 'package:eurosom/ui/home/widgets/apps_widget.dart';
 import 'package:eurosom/ui/utils/colors.dart';
 import 'package:eurosom/ui/utils/common.dart';
@@ -32,7 +33,7 @@ class _HomeFragmentState extends State<HomeFragment> {
   void initState() {
     super.initState();
     isActive = true;
-    context.read<EurosomBloc>().add(const EurosomEvent.getAllApplications());
+
     init();
   }
 
@@ -50,6 +51,7 @@ class _HomeFragmentState extends State<HomeFragment> {
 
   @override
   Widget build(BuildContext context) {
+    // BlocProvider.of<EurosomBloc>(context).add(const EurosomEvent.getAllApplications());
     // am.Datum? appModel;
     final user =
         getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r);
@@ -239,12 +241,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                       child: GridView.builder(
                           itemCount: e.apps.data!.length,
                           itemBuilder: (context, index) {
-                            return InkWell(
-                                child: AppsWidget(e.apps.data![index]),
-                                onTap: () {
-                                  context.pushRoute(CheckSubscription(
-                                      appId: e.apps.data![index].id!));
-                                });
+                            return AppsWidget(e.apps.data![index]);
                           },
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -265,9 +262,9 @@ class _HomeFragmentState extends State<HomeFragment> {
                     );
                   },
                   orElse: () {
-                    context
-                        .read<EurosomBloc>()
-                        .add(const EurosomEvent.getAllApplications());
+                    // context
+                    //     .read<EurosomBloc>()
+                    //     .add(const EurosomEvent.getAllApplications());
                     return const Center(
                       child: CircularProgressIndicator(),
                     );

@@ -5,6 +5,7 @@ import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
+import 'package:eurosom/models/post_subscription/post_subscription.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -42,7 +43,7 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
             final pricingState = pricing.fold(
                 (l) => EurosomState.loadFailure(l),
                 (r) => EurosomState.getPricingsSuccess(r));
-            print(pricingState);
+
             emit(pricingState);
           },
           getMySubscriptions: (e) async {
@@ -62,12 +63,9 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
           },
           updateSubscriptions: (e) async {
             emit(const EurosomState.loading());
-            final subscription = await _eurosomRepo.updateSubscription(
-                e.id, e.subscriptionModel);
-            final subscriptionState = subscription.fold(
-                (l) => EurosomState.loadFailure(l),
-                (r) => EurosomState.getMySubscriptionSuccess(r));
-            emit(subscriptionState);
+            await _eurosomRepo.updateSubscription(
+              e.id,
+            );
           },
           createMyAffliate: (e) async {
             emit(const EurosomState.loading());
@@ -86,7 +84,16 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
                 (r) => EurosomState.getAffliatesSuccess(r));
             emit(affliateState);
           },
-          updateUser: (e) async {});
+          updateUser: (e) async {},
+          createSubscription: (e) async {
+            emit(const EurosomState.loading());
+            final subscription =
+                await _eurosomRepo.createSubscription(e.susbcription.toJson());
+            final subscriptionState = subscription.fold(
+                (l) => EurosomState.loadFailure(l),
+                (r) => const EurosomState.createSubscriptionSuccess());
+            emit(subscriptionState);
+          });
     });
   }
 }

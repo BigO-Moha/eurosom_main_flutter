@@ -25,8 +25,7 @@ abstract class EuroApiService {
   Future<SubscriptionModel> getMySubscriptions(
       @Queries() Map<String, dynamic> query);
   @POST("/subscriptions")
-  Future<SubscriptionModel> CreateSubscription(
-      @Body() Map<String, dynamic> body);
+  Future<HttpResponse> CreateSubscription(@Body() Map<String, dynamic> body);
   @POST("/subscriptions/{id}")
   Future<SubscriptionModel> updateSubscription(
       @Path() String id, @Queries() Map<String, dynamic> query);

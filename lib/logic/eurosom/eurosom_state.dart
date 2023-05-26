@@ -14,8 +14,8 @@ class EurosomState with _$EurosomState {
       _GetPricingsSuccess;
   const factory EurosomState.getMySubscriptionSuccess(
       SubscriptionModel subscriptions) = _GetSubscriptionsSuccess;
-  const factory EurosomState.createSubscriptionSuccess(
-      SubscriptionModel subscriptionModel) = _createSubscriptionSuccess;
+  const factory EurosomState.createSubscriptionSuccess() =
+      _createSubscriptionSuccess;
   const factory EurosomState.getAffliatesSuccess(AffliateModel affliateModel) =
       _GetAffliatesSuccess;
   const factory EurosomState.createAffliatesSuccess(

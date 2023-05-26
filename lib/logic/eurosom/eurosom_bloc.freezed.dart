@@ -23,8 +23,8 @@ mixin _$EurosomEvent {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -38,8 +38,8 @@ mixin _$EurosomEvent {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -53,8 +53,8 @@ mixin _$EurosomEvent {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -69,6 +69,7 @@ mixin _$EurosomEvent {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -83,6 +84,7 @@ mixin _$EurosomEvent {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -97,6 +99,7 @@ mixin _$EurosomEvent {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -168,8 +171,8 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -186,8 +189,8 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -204,8 +207,8 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -226,6 +229,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -243,6 +247,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -260,6 +265,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -321,8 +327,8 @@ class _$_GetAllApplications implements _GetAllApplications {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -339,8 +345,8 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -357,8 +363,8 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -379,6 +385,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -396,6 +403,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -413,6 +421,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -500,8 +509,8 @@ class _$_GetAppPricing implements _GetAppPricing {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -518,8 +527,8 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -536,8 +545,8 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -558,6 +567,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -575,6 +585,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -592,6 +603,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -658,8 +670,8 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -676,8 +688,8 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -694,8 +706,8 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -716,6 +728,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -733,6 +746,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -750,6 +764,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -838,8 +853,8 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -856,8 +871,8 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -874,8 +889,8 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -896,6 +911,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -913,6 +929,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -930,6 +947,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -955,12 +973,202 @@ abstract class _FetchAppSubscription implements EurosomEvent {
 }
 
 /// @nodoc
+abstract class _$$_CreateSubscriptionCopyWith<$Res> {
+  factory _$$_CreateSubscriptionCopyWith(_$_CreateSubscription value,
+          $Res Function(_$_CreateSubscription) then) =
+      __$$_CreateSubscriptionCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PostSubscription susbcription});
+}
+
+/// @nodoc
+class __$$_CreateSubscriptionCopyWithImpl<$Res>
+    extends _$EurosomEventCopyWithImpl<$Res, _$_CreateSubscription>
+    implements _$$_CreateSubscriptionCopyWith<$Res> {
+  __$$_CreateSubscriptionCopyWithImpl(
+      _$_CreateSubscription _value, $Res Function(_$_CreateSubscription) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? susbcription = null,
+  }) {
+    return _then(_$_CreateSubscription(
+      null == susbcription
+          ? _value.susbcription
+          : susbcription // ignore: cast_nullable_to_non_nullable
+              as PostSubscription,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CreateSubscription implements _CreateSubscription {
+  const _$_CreateSubscription(this.susbcription);
+
+  @override
+  final PostSubscription susbcription;
+
+  @override
+  String toString() {
+    return 'EurosomEvent.createSubscription(susbcription: $susbcription)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CreateSubscription &&
+            (identical(other.susbcription, susbcription) ||
+                other.susbcription == susbcription));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, susbcription);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CreateSubscriptionCopyWith<_$_CreateSubscription> get copyWith =>
+      __$$_CreateSubscriptionCopyWithImpl<_$_CreateSubscription>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getHomeSlider,
+    required TResult Function() getAllApplications,
+    required TResult Function(int id) getAppPricing,
+    required TResult Function() getMySubscriptions,
+    required TResult Function(int app_id) fetchAppSubscription,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
+    required TResult Function(AffliateModel affliateModel) createMyAffliate,
+    required TResult Function(String id) findAffliate,
+    required TResult Function() getMyAffliateInfo,
+    required TResult Function(AuthModel userInfo) updateUser,
+  }) {
+    return createSubscription(susbcription);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getHomeSlider,
+    TResult? Function()? getAllApplications,
+    TResult? Function(int id)? getAppPricing,
+    TResult? Function()? getMySubscriptions,
+    TResult? Function(int app_id)? fetchAppSubscription,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
+    TResult? Function(AffliateModel affliateModel)? createMyAffliate,
+    TResult? Function(String id)? findAffliate,
+    TResult? Function()? getMyAffliateInfo,
+    TResult? Function(AuthModel userInfo)? updateUser,
+  }) {
+    return createSubscription?.call(susbcription);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getHomeSlider,
+    TResult Function()? getAllApplications,
+    TResult Function(int id)? getAppPricing,
+    TResult Function()? getMySubscriptions,
+    TResult Function(int app_id)? fetchAppSubscription,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
+    TResult Function(AffliateModel affliateModel)? createMyAffliate,
+    TResult Function(String id)? findAffliate,
+    TResult Function()? getMyAffliateInfo,
+    TResult Function(AuthModel userInfo)? updateUser,
+    required TResult orElse(),
+  }) {
+    if (createSubscription != null) {
+      return createSubscription(susbcription);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetHomeSliders value) getHomeSlider,
+    required TResult Function(_GetAllApplications value) getAllApplications,
+    required TResult Function(_GetAppPricing value) getAppPricing,
+    required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(_UpdateSubscription value) updateSubscriptions,
+    required TResult Function(_CreateMyAffliate value) createMyAffliate,
+    required TResult Function(_FindAffliate value) findAffliate,
+    required TResult Function(_GetMyAffliateInfo value) getMyAffliateInfo,
+    required TResult Function(_UpdateUser value) updateUser,
+  }) {
+    return createSubscription(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetHomeSliders value)? getHomeSlider,
+    TResult? Function(_GetAllApplications value)? getAllApplications,
+    TResult? Function(_GetAppPricing value)? getAppPricing,
+    TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(_UpdateSubscription value)? updateSubscriptions,
+    TResult? Function(_CreateMyAffliate value)? createMyAffliate,
+    TResult? Function(_FindAffliate value)? findAffliate,
+    TResult? Function(_GetMyAffliateInfo value)? getMyAffliateInfo,
+    TResult? Function(_UpdateUser value)? updateUser,
+  }) {
+    return createSubscription?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetHomeSliders value)? getHomeSlider,
+    TResult Function(_GetAllApplications value)? getAllApplications,
+    TResult Function(_GetAppPricing value)? getAppPricing,
+    TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(_UpdateSubscription value)? updateSubscriptions,
+    TResult Function(_CreateMyAffliate value)? createMyAffliate,
+    TResult Function(_FindAffliate value)? findAffliate,
+    TResult Function(_GetMyAffliateInfo value)? getMyAffliateInfo,
+    TResult Function(_UpdateUser value)? updateUser,
+    required TResult orElse(),
+  }) {
+    if (createSubscription != null) {
+      return createSubscription(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateSubscription implements EurosomEvent {
+  const factory _CreateSubscription(final PostSubscription susbcription) =
+      _$_CreateSubscription;
+
+  PostSubscription get susbcription;
+  @JsonKey(ignore: true)
+  _$$_CreateSubscriptionCopyWith<_$_CreateSubscription> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$_UpdateSubscriptionCopyWith<$Res> {
   factory _$$_UpdateSubscriptionCopyWith(_$_UpdateSubscription value,
           $Res Function(_$_UpdateSubscription) then) =
       __$$_UpdateSubscriptionCopyWithImpl<$Res>;
   @useResult
-  $Res call({String id, SubscriptionModel subscriptionModel});
+  $Res call({String id});
 }
 
 /// @nodoc
@@ -975,17 +1183,12 @@ class __$$_UpdateSubscriptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? subscriptionModel = null,
   }) {
     return _then(_$_UpdateSubscription(
       null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      null == subscriptionModel
-          ? _value.subscriptionModel
-          : subscriptionModel // ignore: cast_nullable_to_non_nullable
-              as SubscriptionModel,
     ));
   }
 }
@@ -993,16 +1196,14 @@ class __$$_UpdateSubscriptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UpdateSubscription implements _UpdateSubscription {
-  const _$_UpdateSubscription(this.id, this.subscriptionModel);
+  const _$_UpdateSubscription(this.id);
 
   @override
   final String id;
-  @override
-  final SubscriptionModel subscriptionModel;
 
   @override
   String toString() {
-    return 'EurosomEvent.updateSubscriptions(id: $id, subscriptionModel: $subscriptionModel)';
+    return 'EurosomEvent.updateSubscriptions(id: $id)';
   }
 
   @override
@@ -1010,13 +1211,11 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UpdateSubscription &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.subscriptionModel, subscriptionModel) ||
-                other.subscriptionModel == subscriptionModel));
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, subscriptionModel);
+  int get hashCode => Object.hash(runtimeType, id);
 
   @JsonKey(ignore: true)
   @override
@@ -1033,14 +1232,14 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
     required TResult Function(AuthModel userInfo) updateUser,
   }) {
-    return updateSubscriptions(id, subscriptionModel);
+    return updateSubscriptions(id);
   }
 
   @override
@@ -1051,14 +1250,14 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
     TResult? Function(AuthModel userInfo)? updateUser,
   }) {
-    return updateSubscriptions?.call(id, subscriptionModel);
+    return updateSubscriptions?.call(id);
   }
 
   @override
@@ -1069,8 +1268,8 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -1078,7 +1277,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult orElse(),
   }) {
     if (updateSubscriptions != null) {
-      return updateSubscriptions(id, subscriptionModel);
+      return updateSubscriptions(id);
     }
     return orElse();
   }
@@ -1091,6 +1290,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1108,6 +1308,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1125,6 +1326,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1140,12 +1342,9 @@ class _$_UpdateSubscription implements _UpdateSubscription {
 }
 
 abstract class _UpdateSubscription implements EurosomEvent {
-  const factory _UpdateSubscription(
-          final String id, final SubscriptionModel subscriptionModel) =
-      _$_UpdateSubscription;
+  const factory _UpdateSubscription(final String id) = _$_UpdateSubscription;
 
   String get id;
-  SubscriptionModel get subscriptionModel;
   @JsonKey(ignore: true)
   _$$_UpdateSubscriptionCopyWith<_$_UpdateSubscription> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1221,8 +1420,8 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -1239,8 +1438,8 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -1257,8 +1456,8 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -1279,6 +1478,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1296,6 +1496,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1313,6 +1514,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1406,8 +1608,8 @@ class _$_FindAffliate implements _FindAffliate {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -1424,8 +1626,8 @@ class _$_FindAffliate implements _FindAffliate {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -1442,8 +1644,8 @@ class _$_FindAffliate implements _FindAffliate {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -1464,6 +1666,7 @@ class _$_FindAffliate implements _FindAffliate {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1481,6 +1684,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1498,6 +1702,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1564,8 +1769,8 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -1582,8 +1787,8 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -1600,8 +1805,8 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -1622,6 +1827,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1639,6 +1845,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1656,6 +1863,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1744,8 +1952,8 @@ class _$_UpdateUser implements _UpdateUser {
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(String id, SubscriptionModel subscriptionModel)
-        updateSubscriptions,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
     required TResult Function() getMyAffliateInfo,
@@ -1762,8 +1970,8 @@ class _$_UpdateUser implements _UpdateUser {
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
     TResult? Function()? getMyAffliateInfo,
@@ -1780,8 +1988,8 @@ class _$_UpdateUser implements _UpdateUser {
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(String id, SubscriptionModel subscriptionModel)?
-        updateSubscriptions,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
     TResult Function()? getMyAffliateInfo,
@@ -1802,6 +2010,7 @@ class _$_UpdateUser implements _UpdateUser {
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1819,6 +2028,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1836,6 +2046,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1871,8 +2082,7 @@ mixin _$EurosomState {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -1889,8 +2099,7 @@ mixin _$EurosomState {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -1905,8 +2114,7 @@ mixin _$EurosomState {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -2029,8 +2237,7 @@ class _$_Initial implements _Initial {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -2050,8 +2257,7 @@ class _$_Initial implements _Initial {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -2069,8 +2275,7 @@ class _$_Initial implements _Initial {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -2195,8 +2400,7 @@ class _$_Loading implements _Loading {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -2216,8 +2420,7 @@ class _$_Loading implements _Loading {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -2235,8 +2438,7 @@ class _$_Loading implements _Loading {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -2399,8 +2601,7 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -2420,8 +2621,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -2439,8 +2639,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -2599,8 +2798,7 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -2620,8 +2818,7 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -2639,8 +2836,7 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -2798,8 +2994,7 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -2819,8 +3014,7 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -2838,8 +3032,7 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -2998,8 +3191,7 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -3019,8 +3211,7 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -3038,8 +3229,7 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -3200,8 +3390,7 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -3221,8 +3410,7 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -3240,8 +3428,7 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -3333,8 +3520,6 @@ abstract class _$$_createSubscriptionSuccessCopyWith<$Res> {
           _$_createSubscriptionSuccess value,
           $Res Function(_$_createSubscriptionSuccess) then) =
       __$$_createSubscriptionSuccessCopyWithImpl<$Res>;
-  @useResult
-  $Res call({SubscriptionModel subscriptionModel});
 }
 
 /// @nodoc
@@ -3345,52 +3530,27 @@ class __$$_createSubscriptionSuccessCopyWithImpl<$Res>
       _$_createSubscriptionSuccess _value,
       $Res Function(_$_createSubscriptionSuccess) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? subscriptionModel = null,
-  }) {
-    return _then(_$_createSubscriptionSuccess(
-      null == subscriptionModel
-          ? _value.subscriptionModel
-          : subscriptionModel // ignore: cast_nullable_to_non_nullable
-              as SubscriptionModel,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
-  const _$_createSubscriptionSuccess(this.subscriptionModel);
-
-  @override
-  final SubscriptionModel subscriptionModel;
+  const _$_createSubscriptionSuccess();
 
   @override
   String toString() {
-    return 'EurosomState.createSubscriptionSuccess(subscriptionModel: $subscriptionModel)';
+    return 'EurosomState.createSubscriptionSuccess()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_createSubscriptionSuccess &&
-            (identical(other.subscriptionModel, subscriptionModel) ||
-                other.subscriptionModel == subscriptionModel));
+            other is _$_createSubscriptionSuccess);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, subscriptionModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_createSubscriptionSuccessCopyWith<_$_createSubscriptionSuccess>
-      get copyWith => __$$_createSubscriptionSuccessCopyWithImpl<
-          _$_createSubscriptionSuccess>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -3403,14 +3563,13 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
     required TResult Function(AuthModel authModel) updateUserSuccess,
   }) {
-    return createSubscriptionSuccess(subscriptionModel);
+    return createSubscriptionSuccess();
   }
 
   @override
@@ -3424,13 +3583,12 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
   }) {
-    return createSubscriptionSuccess?.call(subscriptionModel);
+    return createSubscriptionSuccess?.call();
   }
 
   @override
@@ -3443,15 +3601,14 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
     required TResult orElse(),
   }) {
     if (createSubscriptionSuccess != null) {
-      return createSubscriptionSuccess(subscriptionModel);
+      return createSubscriptionSuccess();
     }
     return orElse();
   }
@@ -3521,13 +3678,7 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
 }
 
 abstract class _createSubscriptionSuccess implements EurosomState {
-  const factory _createSubscriptionSuccess(
-      final SubscriptionModel subscriptionModel) = _$_createSubscriptionSuccess;
-
-  SubscriptionModel get subscriptionModel;
-  @JsonKey(ignore: true)
-  _$$_createSubscriptionSuccessCopyWith<_$_createSubscriptionSuccess>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory _createSubscriptionSuccess() = _$_createSubscriptionSuccess;
 }
 
 /// @nodoc
@@ -3604,8 +3755,7 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -3625,8 +3775,7 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -3644,8 +3793,7 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -3805,8 +3953,7 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -3826,8 +3973,7 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -3845,8 +3991,7 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,
@@ -4006,8 +4151,7 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
         getMySubscriptionSuccess,
-    required TResult Function(SubscriptionModel subscriptionModel)
-        createSubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
     required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
     required TResult Function(AffliateModel affliateModel)
         createAffliatesSuccess,
@@ -4027,8 +4171,7 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
         getMySubscriptionSuccess,
-    TResult? Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
     TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult? Function(AuthModel authModel)? updateUserSuccess,
@@ -4046,8 +4189,7 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
-    TResult Function(SubscriptionModel subscriptionModel)?
-        createSubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
     TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
     TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
     TResult Function(AuthModel authModel)? updateUserSuccess,

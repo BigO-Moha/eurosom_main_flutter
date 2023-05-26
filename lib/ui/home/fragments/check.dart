@@ -55,6 +55,12 @@ class _CheckSubscriptionState extends State<CheckSubscription> {
                 if (!DateTime.parse(subscriptions[i].expiryDate!)
                     .isBefore(now)) {
                   subscriped = true;
+                } else if (DateTime.parse(subscriptions[i].expiryDate!)
+                        .isBefore(now) &&
+                    subscriptions[i].status == 'active') {
+                  context.read<EurosomBloc>().add(
+                      EurosomEvent.updateSubscriptions(
+                          subscriptions[i].id!.toString()));
                 }
               }
             } else {
@@ -62,13 +68,13 @@ class _CheckSubscriptionState extends State<CheckSubscription> {
               subscriped = false;
             }
             if (subscriped == true) {
-              context.pushRoute(ChattingRoute());
+              context.replaceRoute(ChattingRoute());
             } else {
               context
                   .read<EurosomBloc>()
                   .add(EurosomEvent.getAppPricing(widget.appId));
 
-              context.pushRoute(Pricingshow(appId: widget.appId));
+              context.replaceRoute(Pricingshow(appId: widget.appId));
             }
           },
           loadFailure: (v) {

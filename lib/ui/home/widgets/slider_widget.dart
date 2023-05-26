@@ -5,7 +5,6 @@
 
 // import '../../../../main.dart';
 
-
 // // ignore: must_be_immutable
 // class T6SliderWidget extends StatelessWidget {
 //   List<hs.Datum>? mSliderList;
@@ -86,6 +85,6 @@
 //                   ),
 //                 ],
 //               )
-    
+
 //   }
 // }

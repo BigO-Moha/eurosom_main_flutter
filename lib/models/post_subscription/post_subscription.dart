@@ -3,27 +3,27 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'data.dart';
 
-part 'banner.g.dart';
+part 'post_subscription.g.dart';
 
 @JsonSerializable()
-class Banner {
+class PostSubscription {
   final Data? data;
 
-  const Banner({this.data});
+  const PostSubscription({this.data});
 
   @override
-  String toString() => 'Banner(data: $data)';
+  String toString() => 'PostSubscription(data: $data)';
 
-  factory Banner.fromJson(Map<String, dynamic> json) {
-    return _$BannerFromJson(json);
+  factory PostSubscription.fromJson(Map<String, dynamic> json) {
+    return _$PostSubscriptionFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$BannerToJson(this);
+  Map<String, dynamic> toJson() => _$PostSubscriptionToJson(this);
 
-  Banner copyWith({
+  PostSubscription copyWith({
     Data? data,
   }) {
-    return Banner(
+    return PostSubscription(
       data: data ?? this.data,
     );
   }
@@ -31,7 +31,7 @@ class Banner {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! Banner) return false;
+    if (other is! PostSubscription) return false;
     final mapEquals = const DeepCollectionEquality().equals;
     return mapEquals(other.toJson(), toJson());
   }

@@ -10,50 +10,47 @@ part 'formats.g.dart';
 
 @JsonSerializable()
 class Formats {
-	Large? large;
-	Small? small;
-	Medium? medium;
-	Thumbnail? thumbnail;
+  Large? large;
+  Small? small;
+  Medium? medium;
+  Thumbnail? thumbnail;
 
-	Formats({this.large, this.small, this.medium, this.thumbnail});
+  Formats({this.large, this.small, this.medium, this.thumbnail});
 
-	@override
-	String toString() {
-		return 'Formats(large: $large, small: $small, medium: $medium, thumbnail: $thumbnail)';
-	}
+  @override
+  String toString() {
+    return 'Formats(large: $large, small: $small, medium: $medium, thumbnail: $thumbnail)';
+  }
 
-	factory Formats.fromJson(Map<String, dynamic> json) {
-		return _$FormatsFromJson(json);
-	}
+  factory Formats.fromJson(Map<String, dynamic> json) {
+    return _$FormatsFromJson(json);
+  }
 
-	Map<String, dynamic> toJson() => _$FormatsToJson(this);
+  Map<String, dynamic> toJson() => _$FormatsToJson(this);
 
-	Formats copyWith({
-		Large? large,
-		Small? small,
-		Medium? medium,
-		Thumbnail? thumbnail,
-	}) {
-		return Formats(
-			large: large ?? this.large,
-			small: small ?? this.small,
-			medium: medium ?? this.medium,
-			thumbnail: thumbnail ?? this.thumbnail,
-		);
-	}
+  Formats copyWith({
+    Large? large,
+    Small? small,
+    Medium? medium,
+    Thumbnail? thumbnail,
+  }) {
+    return Formats(
+      large: large ?? this.large,
+      small: small ?? this.small,
+      medium: medium ?? this.medium,
+      thumbnail: thumbnail ?? this.thumbnail,
+    );
+  }
 
-	@override
-	bool operator ==(Object other) {
-		if (identical(other, this)) return true;
-		if (other is! Formats) return false;
-		final mapEquals = const DeepCollectionEquality().equals;
-		return mapEquals(other.toJson(), toJson());
-	}
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    if (other is! Formats) return false;
+    final mapEquals = const DeepCollectionEquality().equals;
+    return mapEquals(other.toJson(), toJson());
+  }
 
-	@override
-	int get hashCode =>
-			large.hashCode ^
-			small.hashCode ^
-			medium.hashCode ^
-			thumbnail.hashCode;
+  @override
+  int get hashCode =>
+      large.hashCode ^ small.hashCode ^ medium.hashCode ^ thumbnail.hashCode;
 }

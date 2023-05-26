@@ -8,38 +8,38 @@ part 'subscription_model.g.dart';
 
 @JsonSerializable()
 class SubscriptionModel {
-	final List<Datum>? data;
-	final Meta? meta;
+  final List<Datum>? data;
+  final Meta? meta;
 
-	const SubscriptionModel({this.data, this.meta});
+  const SubscriptionModel({this.data, this.meta});
 
-	@override
-	String toString() => 'SubscriptionModel(data: $data, meta: $meta)';
+  @override
+  String toString() => 'SubscriptionModel(data: $data, meta: $meta)';
 
-	factory SubscriptionModel.fromJson(Map<String, dynamic> json) {
-		return _$SubscriptionModelFromJson(json);
-	}
+  factory SubscriptionModel.fromJson(Map<String, dynamic> json) {
+    return _$SubscriptionModelFromJson(json);
+  }
 
-	Map<String, dynamic> toJson() => _$SubscriptionModelToJson(this);
+  Map<String, dynamic> toJson() => _$SubscriptionModelToJson(this);
 
-	SubscriptionModel copyWith({
-		List<Datum>? data,
-		Meta? meta,
-	}) {
-		return SubscriptionModel(
-			data: data ?? this.data,
-			meta: meta ?? this.meta,
-		);
-	}
+  SubscriptionModel copyWith({
+    List<Datum>? data,
+    Meta? meta,
+  }) {
+    return SubscriptionModel(
+      data: data ?? this.data,
+      meta: meta ?? this.meta,
+    );
+  }
 
-	@override
-	bool operator ==(Object other) {
-		if (identical(other, this)) return true;
-		if (other is! SubscriptionModel) return false;
-		final mapEquals = const DeepCollectionEquality().equals;
-		return mapEquals(other.toJson(), toJson());
-	}
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    if (other is! SubscriptionModel) return false;
+    final mapEquals = const DeepCollectionEquality().equals;
+    return mapEquals(other.toJson(), toJson());
+  }
 
-	@override
-	int get hashCode => data.hashCode ^ meta.hashCode;
+  @override
+  int get hashCode => data.hashCode ^ meta.hashCode;
 }

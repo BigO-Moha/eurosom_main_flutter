@@ -12,5 +12,15 @@ class StockInvestModel {
   Icon? icon;
   IconData? settingIcon;
 
-  StockInvestModel({this.settingIcon, this.image, this.profit, this.title, this.subTitle, this.stockPrice, this.stockScale, this.priceColor, this.imageBackground, this.icon});
+  StockInvestModel(
+      {this.settingIcon,
+      this.image,
+      this.profit,
+      this.title,
+      this.subTitle,
+      this.stockPrice,
+      this.stockScale,
+      this.priceColor,
+      this.imageBackground,
+      this.icon});
 }

@@ -60,7 +60,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(AuthState.unAuthenticated(f!));
         }
       }, signOut: (e) async {
-        await _authFacade.signOut();
+        await _authFacade.signOut().whenComplete(() =>
+            emit(const AuthState.unAuthenticated(AuthFailure.authException())));
       }, sendForgetToken: (e) async {
         final token = await _authFacade.sendResetToken(e.email);
         emit(const AuthState.codeSent());

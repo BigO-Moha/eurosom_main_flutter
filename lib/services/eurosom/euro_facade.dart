@@ -22,11 +22,11 @@ class EurosomFacade implements IEurosomRepo {
 
   EurosomFacade(this._apiService);
   @override
-  Future<Either<EurosomFailure, SubscriptionModel>> createSubscription(
+  Future<Either<EurosomFailure, Unit>> createSubscription(
       Map<String, dynamic> subscription) async {
     try {
       final subscripe = await _apiService.CreateSubscription(subscription);
-      return right(subscripe);
+      return right(unit);
     } on DioError catch (e) {
       if (e.type == DioErrorType.response) {
         return left(EurosomFailure.postError(
@@ -155,10 +155,10 @@ class EurosomFacade implements IEurosomRepo {
 
   @override
   Future<Either<EurosomFailure, SubscriptionModel>> updateSubscription(
-      String subscriptionId, SubscriptionModel subscriptionModel) async {
+      String subscriptionId) async {
     try {
-      final Subscription = await _apiService.updateSubscription(
-          subscriptionId, subscriptionModel.toJson());
+      final Subscription = await _apiService
+          .updateSubscription(subscriptionId, {'status': "expired"});
       return right(Subscription);
     } on DioError catch (e) {
       if (e.type == DioErrorType.response) {
@@ -220,6 +220,7 @@ class EurosomFacade implements IEurosomRepo {
   @override
   Future<Either<EurosomFailure, Unit>> payEvc(
       String account, double amount) async {
+    Either<EurosomFailure, Unit>? returnValue;
     try {
       const merchantEvcPlus = MerchantEvcPlus(
         apiKey: 'API-1685988125AHX', // API KEY
@@ -228,10 +229,15 @@ class EurosomFacade implements IEurosomRepo {
       );
 
       var rng = Random();
-      var l = List.generate(12, (_) => rng.nextInt(100));
+      int? num;
+      for (var i = 0; i < 10; i++) {
+        num = rng.nextInt(100);
+      }
 
       final transactionInfo = TransactionInfo(
-          payerPhoneNumber: account, amount: amount, invoiceId: l.toString());
+          payerPhoneNumber: account,
+          amount: amount,
+          invoiceId: num!.toString());
 
       await merchantEvcPlus.makePayment(
         transactionInfo: transactionInfo,
@@ -239,13 +245,14 @@ class EurosomFacade implements IEurosomRepo {
           return right(unit);
         },
         onFailure: (error) {
-          return EurosomFailure.paymentError(error);
+          returnValue = left(EurosomFailure.paymentError(error));
         },
       );
     } catch (e) {
       return left(const EurosomFailure.paymentError("error"));
     }
-    return null!;
+    print(returnValue);
+    return returnValue!;
   }
 
   @override

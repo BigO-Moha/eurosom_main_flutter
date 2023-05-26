@@ -46,7 +46,8 @@ class FrameContent extends StatelessWidget {
 
   Widget _screen(BuildContext context) {
     final currentSize = MediaQuery.of(context).size;
-    final sizeWidth = currentSize.width > size.width ? size.width : currentSize.width;
+    final sizeWidth =
+        currentSize.width > size.width ? size.width : currentSize.width;
 
     final box = SizedBox(
       width: sizeWidth,

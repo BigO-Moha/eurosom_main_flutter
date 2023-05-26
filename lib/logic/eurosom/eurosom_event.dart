@@ -8,8 +8,10 @@ class EurosomEvent with _$EurosomEvent {
   const factory EurosomEvent.getMySubscriptions() = _GetAllSubscriptions;
   const factory EurosomEvent.fetchAppSubscription(int app_id) =
       _FetchAppSubscription;
-  const factory EurosomEvent.updateSubscriptions(
-      String id, SubscriptionModel subscriptionModel) = _UpdateSubscription;
+  const factory EurosomEvent.createSubscription(PostSubscription susbcription) =
+      _CreateSubscription;
+  const factory EurosomEvent.updateSubscriptions(String id) =
+      _UpdateSubscription;
   const factory EurosomEvent.createMyAffliate(AffliateModel affliateModel) =
       _CreateMyAffliate;
   const factory EurosomEvent.findAffliate(String id) = _FindAffliate;

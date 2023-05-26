@@ -14,14 +14,14 @@ abstract class IEurosomRepo {
   Future<Either<EurosomFailure, SubscriptionModel>> getMySubscriptions();
   Future<Either<EurosomFailure, SubscriptionModel>> getAppSubscriptions(
       int appId);
-  Future<Either<EurosomFailure, Unit>> payEvc(String account, double amount);
+  Future<Either<EurosomFailure, Unit>>? payEvc(String account, double amount);
   Future<Either<EurosomFailure, Unit>> payEdahab(String account, double amount);
   Future<Either<EurosomFailure, Unit>> verifyEdahab(
       String account, double amount);
-  Future<Either<EurosomFailure, SubscriptionModel>> createSubscription(
+  Future<Either<EurosomFailure, Unit>> createSubscription(
       Map<String, dynamic> subscription);
   Future<Either<EurosomFailure, SubscriptionModel>> updateSubscription(
-      String subscriptionId, SubscriptionModel subscriptionModel);
+      String subscriptionId);
   Future<Either<EurosomFailure, AffliateModel>> createAffliate(
       AffliateModel subscriptionModel);
   Future<Either<EurosomFailure, AffliateModel>> getMyAffliate();
