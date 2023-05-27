@@ -1,2 +1,2 @@
-String CHAT_GPT_API_KEY = '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';
+String CHAT_GPT_API_KEY = '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';
 const showAdCount = 4;

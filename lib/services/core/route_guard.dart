@@ -20,3 +20,20 @@ class AuthGuard extends AutoRouteGuard {
     });
   }
 }
+
+// class HomePageBack extends AutoRouteGuard {
+//   @override
+//   void onNavigation(NavigationResolver resolver, StackRouter router) async {
+//     // the navigation is paused until resolver.next() is called with either
+//     // true to resume/continue navigation or false to abort navigation
+
+//     final user = getIt<IAuthFacade>().getSignedUser();
+
+//     user.fold((l) {
+//       print(resolver.route);
+//       router.push(const HomeDrawer());
+//     }, (r) {
+//       router.push(const HomeDrawer());
+//     });
+//   }
+// }
