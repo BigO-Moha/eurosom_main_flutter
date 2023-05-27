@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:another_flushbar/flushbar_helper.dart';
@@ -59,6 +60,7 @@ class _PricingshowState extends State<Pricingshow> {
 
   @override
   Widget build(BuildContext context) {
+    String payState = "waiting";
     TextEditingController evcNumber = TextEditingController();
     final user =
         getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r);
@@ -212,6 +214,13 @@ class _PricingshowState extends State<Pricingshow> {
                                     'Pay out your balance now',
                                     style: secondaryTextStyle(),
                                   ),
+                                  4.height,
+                                  Center(
+                                      child: Text(
+                                    payState,
+                                    style: secondaryTextStyle(),
+                                  )),
+                                  3.height,
                                   Spacer(),
                                   Container(
                                     decoration: BoxDecoration(
@@ -306,6 +315,7 @@ class _PricingshowState extends State<Pricingshow> {
                                       shapeBorder: RoundedRectangleBorder(
                                           borderRadius: radius(32)),
                                       onTap: () async {
+                                        setState(() {});
                                         Map<String, int> val = {
                                           "monthly": 1,
                                           "yearly": 12
@@ -314,10 +324,13 @@ class _PricingshowState extends State<Pricingshow> {
                                             price != null) {
                                           var evc = await getIt<IEurosomRepo>()
                                               .payEvc(evcNumber.text,
-                                                  price!.price!.toDouble());
+                                                  price!.price!.toDouble())!
+                                              .whenComplete(() {});
                                           print(evc);
-
+                                          payState = "Processing";
                                           if (evc!.isRight()) {
+                                            payState = "payment done";
+                                            sleep(const Duration(seconds: 1));
                                             int type = val[price!.duration!]!;
                                             var cDate = DateTime.now();
                                             context.read<EurosomBloc>().add(
@@ -351,6 +364,7 @@ class _PricingshowState extends State<Pricingshow> {
                                                 .replaceRoute(ChattingRoute());
                                           }
                                         } else {
+                                          payState = "paymentFailed";
                                           FlushbarHelper.createError(
                                                   message: "payment error")
                                               .show(context);
