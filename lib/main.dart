@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
         ),
         routeInformationParser: _appRouter.defaultRouteParser(),
         routerDelegate: _appRouter.delegate(),
-        title: 'Flutter Demo',
+        title: 'Eurosom',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
