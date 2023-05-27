@@ -97,7 +97,6 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
             emit(subscriptionState);
           },
           getConfig: (e) async {
-            emit(const EurosomState.loading());
             final configs = await _eurosomRepo.getConfigs();
             final configsState = configs.fold(
                 (l) => EurosomState.loadFailure(l),
