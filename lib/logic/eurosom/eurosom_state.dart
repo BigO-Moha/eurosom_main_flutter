@@ -8,6 +8,8 @@ class EurosomState with _$EurosomState {
       _LoadFailure;
   const factory EurosomState.getHomeBannerSuccess(BannerModel banners) =
       _GetHomeBannerSuccess;
+  const factory EurosomState.evcPaymentSuccess() = _EvcPaymentSuccess;
+  const factory EurosomState.evcPaymentFailure() = _EvcPaymentFailure;
   const factory EurosomState.getApplicationsSuccess(Appsmodel apps) =
       _GetAppsSuccess;
   const factory EurosomState.getPricingsSuccess(PricingModel pricings) =

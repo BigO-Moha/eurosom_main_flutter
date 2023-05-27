@@ -111,6 +111,13 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
                 (l) => EurosomState.loadFailure(l),
                 (r) => EurosomState.updateUserSuccess(r));
             emit(userTokensState);
+          },
+          payEvc: (e) async {
+            final evcPayment = await _eurosomRepo.payEvc(e.number, e.price);
+            final evcPaymentState = evcPayment!.fold(
+                (l) => const EurosomState.evcPaymentFailure(),
+                (r) => const EurosomState.evcPaymentSuccess());
+            emit(evcPaymentState);
           });
     });
   }

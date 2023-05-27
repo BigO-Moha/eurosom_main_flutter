@@ -47,11 +47,7 @@ class _PricingshowState extends State<Pricingshow> {
   void initState() {
     super.initState();
     // context.read<EurosomBloc>().add(EurosomEvent.getAppPricing(widget.appId));
-
-    init();
   }
-
-  init() async {}
 
   @override
   void setState(fn) {
@@ -304,33 +300,29 @@ class _PricingshowState extends State<Pricingshow> {
                                     ),
                                   ),
                                   Spacer(),
-                                  AppButton(
-                                      text: 'pay',
-                                      textStyle: primaryTextStyle(
-                                        size: 15,
-                                        color: Colors.white,
-                                      ),
-                                      color: Colors.deepOrange,
-                                      width: context.width(),
-                                      shapeBorder: RoundedRectangleBorder(
-                                          borderRadius: radius(32)),
-                                      onTap: () async {
-                                        setState(() {});
-                                        Map<String, int> val = {
-                                          "monthly": 1,
-                                          "yearly": 12
-                                        };
-                                        if (evcNumber.text.length > 5 &&
-                                            price != null) {
-                                          var evc = await getIt<IEurosomRepo>()
-                                              .payEvc(evcNumber.text,
-                                                  price!.price!.toDouble())!
-                                              .whenComplete(() {});
-                                          print(evc);
-                                          payState = "Processing";
-                                          if (evc!.isRight()) {
-                                            payState = "payment done";
-                                            sleep(const Duration(seconds: 1));
+                                  BlocListener<EurosomBloc, EurosomState>(
+                                    listener: (context, state) {
+                                      state.maybeMap(
+                                          orElse: () {},
+                                          evcPaymentFailure: (e) {
+                                            setState(() {
+                                              payState = "paymentFailed";
+                                            });
+
+                                            FlushbarHelper.createError(
+                                                    message: "payment error")
+                                                .show(context);
+                                            payState = 'Failed';
+                                          },
+                                          evcPaymentSuccess: (e) {
+                                            Map<String, int> val = {
+                                              "monthly": 1,
+                                              "yearly": 12
+                                            };
+                                            setState(() {
+                                              payState = "paymentSuccess";
+                                            });
+
                                             int type = val[price!.duration!]!;
                                             var cDate = DateTime.now();
                                             context.read<EurosomBloc>().add(
@@ -362,14 +354,31 @@ class _PricingshowState extends State<Pricingshow> {
                                                 const EurosomEvent.getConfig());
                                             context
                                                 .replaceRoute(ChattingRoute());
-                                          }
-                                        } else {
-                                          payState = "paymentFailed";
-                                          FlushbarHelper.createError(
-                                                  message: "payment error")
-                                              .show(context);
-                                        }
-                                      }).center(),
+                                          });
+                                    },
+                                    child: AppButton(
+                                        text: 'pay',
+                                        textStyle: primaryTextStyle(
+                                          size: 15,
+                                          color: Colors.white,
+                                        ),
+                                        color: Colors.deepOrange,
+                                        width: context.width(),
+                                        shapeBorder: RoundedRectangleBorder(
+                                            borderRadius: radius(32)),
+                                        onTap: () async {
+                                          if (evcNumber.text.length > 6 &&
+                                              price != null) {
+                                            context.read<EurosomBloc>().add(
+                                                EurosomEvent.payEvc(
+                                                    evcNumber.text,
+                                                    price!.price!.toDouble()));
+                                            setState(() {
+                                              payState = "Processing payment";
+                                            });
+                                          } else {}
+                                        }),
+                                  ).center(),
                                   8.height,
                                   AppButton(
                                     text: 'Never Mind',

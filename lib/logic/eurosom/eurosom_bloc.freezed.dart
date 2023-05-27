@@ -22,6 +22,7 @@ mixin _$EurosomEvent {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -39,6 +40,7 @@ mixin _$EurosomEvent {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -56,6 +58,7 @@ mixin _$EurosomEvent {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -74,6 +77,7 @@ mixin _$EurosomEvent {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -91,6 +95,7 @@ mixin _$EurosomEvent {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -108,6 +113,7 @@ mixin _$EurosomEvent {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -182,6 +188,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -202,6 +209,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -222,6 +230,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -246,6 +255,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -266,6 +276,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -286,6 +297,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -350,6 +362,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -370,6 +383,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -390,6 +404,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -414,6 +429,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -434,6 +450,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -454,6 +471,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -544,6 +562,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -564,6 +583,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -584,6 +604,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -608,6 +629,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -628,6 +650,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -648,6 +671,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -717,6 +741,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -737,6 +762,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -757,6 +783,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -781,6 +808,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -801,6 +829,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -821,6 +850,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -841,6 +871,218 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
 
 abstract class _GetAllSubscriptions implements EurosomEvent {
   const factory _GetAllSubscriptions() = _$_GetAllSubscriptions;
+}
+
+/// @nodoc
+abstract class _$$_PayEvcCopyWith<$Res> {
+  factory _$$_PayEvcCopyWith(_$_PayEvc value, $Res Function(_$_PayEvc) then) =
+      __$$_PayEvcCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String number, double price});
+}
+
+/// @nodoc
+class __$$_PayEvcCopyWithImpl<$Res>
+    extends _$EurosomEventCopyWithImpl<$Res, _$_PayEvc>
+    implements _$$_PayEvcCopyWith<$Res> {
+  __$$_PayEvcCopyWithImpl(_$_PayEvc _value, $Res Function(_$_PayEvc) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? number = null,
+    Object? price = null,
+  }) {
+    return _then(_$_PayEvc(
+      null == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PayEvc implements _PayEvc {
+  const _$_PayEvc(this.number, this.price);
+
+  @override
+  final String number;
+  @override
+  final double price;
+
+  @override
+  String toString() {
+    return 'EurosomEvent.payEvc(number: $number, price: $price)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PayEvc &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.price, price) || other.price == price));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, number, price);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PayEvcCopyWith<_$_PayEvc> get copyWith =>
+      __$$_PayEvcCopyWithImpl<_$_PayEvc>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getHomeSlider,
+    required TResult Function() getAllApplications,
+    required TResult Function(int id) getAppPricing,
+    required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
+    required TResult Function(int app_id) fetchAppSubscription,
+    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(String id) updateSubscriptions,
+    required TResult Function(AffliateModel affliateModel) createMyAffliate,
+    required TResult Function(String id) findAffliate,
+    required TResult Function() getConfig,
+    required TResult Function(int tokens) updateUserTokens,
+    required TResult Function() getMyAffliateInfo,
+    required TResult Function(AuthModel userInfo) updateUser,
+  }) {
+    return payEvc(number, price);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getHomeSlider,
+    TResult? Function()? getAllApplications,
+    TResult? Function(int id)? getAppPricing,
+    TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(int app_id)? fetchAppSubscription,
+    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(String id)? updateSubscriptions,
+    TResult? Function(AffliateModel affliateModel)? createMyAffliate,
+    TResult? Function(String id)? findAffliate,
+    TResult? Function()? getConfig,
+    TResult? Function(int tokens)? updateUserTokens,
+    TResult? Function()? getMyAffliateInfo,
+    TResult? Function(AuthModel userInfo)? updateUser,
+  }) {
+    return payEvc?.call(number, price);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getHomeSlider,
+    TResult Function()? getAllApplications,
+    TResult Function(int id)? getAppPricing,
+    TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
+    TResult Function(int app_id)? fetchAppSubscription,
+    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(String id)? updateSubscriptions,
+    TResult Function(AffliateModel affliateModel)? createMyAffliate,
+    TResult Function(String id)? findAffliate,
+    TResult Function()? getConfig,
+    TResult Function(int tokens)? updateUserTokens,
+    TResult Function()? getMyAffliateInfo,
+    TResult Function(AuthModel userInfo)? updateUser,
+    required TResult orElse(),
+  }) {
+    if (payEvc != null) {
+      return payEvc(number, price);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetHomeSliders value) getHomeSlider,
+    required TResult Function(_GetAllApplications value) getAllApplications,
+    required TResult Function(_GetAppPricing value) getAppPricing,
+    required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
+    required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
+    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(_UpdateSubscription value) updateSubscriptions,
+    required TResult Function(_CreateMyAffliate value) createMyAffliate,
+    required TResult Function(_FindAffliate value) findAffliate,
+    required TResult Function(_GetConfig value) getConfig,
+    required TResult Function(_UpdateUserTokens value) updateUserTokens,
+    required TResult Function(_GetMyAffliateInfo value) getMyAffliateInfo,
+    required TResult Function(_UpdateUser value) updateUser,
+  }) {
+    return payEvc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetHomeSliders value)? getHomeSlider,
+    TResult? Function(_GetAllApplications value)? getAllApplications,
+    TResult? Function(_GetAppPricing value)? getAppPricing,
+    TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
+    TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(_UpdateSubscription value)? updateSubscriptions,
+    TResult? Function(_CreateMyAffliate value)? createMyAffliate,
+    TResult? Function(_FindAffliate value)? findAffliate,
+    TResult? Function(_GetConfig value)? getConfig,
+    TResult? Function(_UpdateUserTokens value)? updateUserTokens,
+    TResult? Function(_GetMyAffliateInfo value)? getMyAffliateInfo,
+    TResult? Function(_UpdateUser value)? updateUser,
+  }) {
+    return payEvc?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetHomeSliders value)? getHomeSlider,
+    TResult Function(_GetAllApplications value)? getAllApplications,
+    TResult Function(_GetAppPricing value)? getAppPricing,
+    TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
+    TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
+    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(_UpdateSubscription value)? updateSubscriptions,
+    TResult Function(_CreateMyAffliate value)? createMyAffliate,
+    TResult Function(_FindAffliate value)? findAffliate,
+    TResult Function(_GetConfig value)? getConfig,
+    TResult Function(_UpdateUserTokens value)? updateUserTokens,
+    TResult Function(_GetMyAffliateInfo value)? getMyAffliateInfo,
+    TResult Function(_UpdateUser value)? updateUser,
+    required TResult orElse(),
+  }) {
+    if (payEvc != null) {
+      return payEvc(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PayEvc implements EurosomEvent {
+  const factory _PayEvc(final String number, final double price) = _$_PayEvc;
+
+  String get number;
+  double get price;
+  @JsonKey(ignore: true)
+  _$$_PayEvcCopyWith<_$_PayEvc> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -912,6 +1154,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -932,6 +1175,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -952,6 +1196,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -976,6 +1221,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -996,6 +1242,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1016,6 +1263,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1114,6 +1362,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -1134,6 +1383,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -1154,6 +1404,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -1178,6 +1429,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -1198,6 +1450,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1218,6 +1471,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1315,6 +1569,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -1335,6 +1590,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -1355,6 +1611,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -1379,6 +1636,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -1399,6 +1657,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1419,6 +1678,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1515,6 +1775,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -1535,6 +1796,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -1555,6 +1817,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -1579,6 +1842,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -1599,6 +1863,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1619,6 +1884,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1715,6 +1981,7 @@ class _$_FindAffliate implements _FindAffliate {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -1735,6 +2002,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -1755,6 +2023,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -1779,6 +2048,7 @@ class _$_FindAffliate implements _FindAffliate {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -1799,6 +2069,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1819,6 +2090,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1888,6 +2160,7 @@ class _$_GetConfig implements _GetConfig {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -1908,6 +2181,7 @@ class _$_GetConfig implements _GetConfig {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -1928,6 +2202,7 @@ class _$_GetConfig implements _GetConfig {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -1952,6 +2227,7 @@ class _$_GetConfig implements _GetConfig {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -1972,6 +2248,7 @@ class _$_GetConfig implements _GetConfig {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -1992,6 +2269,7 @@ class _$_GetConfig implements _GetConfig {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2082,6 +2360,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -2102,6 +2381,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -2122,6 +2402,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -2146,6 +2427,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -2166,6 +2448,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2186,6 +2469,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2255,6 +2539,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -2275,6 +2560,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -2295,6 +2581,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -2319,6 +2606,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -2339,6 +2627,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2359,6 +2648,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2450,6 +2740,7 @@ class _$_UpdateUser implements _UpdateUser {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
+    required TResult Function(String number, double price) payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
     required TResult Function(PostSubscription susbcription) createSubscription,
     required TResult Function(String id) updateSubscriptions,
@@ -2470,6 +2761,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
+    TResult? Function(String number, double price)? payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
     TResult? Function(PostSubscription susbcription)? createSubscription,
     TResult? Function(String id)? updateSubscriptions,
@@ -2490,6 +2782,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
+    TResult Function(String number, double price)? payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
     TResult Function(PostSubscription susbcription)? createSubscription,
     TResult Function(String id)? updateSubscriptions,
@@ -2514,6 +2807,7 @@ class _$_UpdateUser implements _UpdateUser {
     required TResult Function(_GetAllApplications value) getAllApplications,
     required TResult Function(_GetAppPricing value) getAppPricing,
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
+    required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
     required TResult Function(_CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
@@ -2534,6 +2828,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult? Function(_GetAllApplications value)? getAllApplications,
     TResult? Function(_GetAppPricing value)? getAppPricing,
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult? Function(_CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2554,6 +2849,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult Function(_GetAllApplications value)? getAllApplications,
     TResult Function(_GetAppPricing value)? getAppPricing,
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
+    TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
     TResult Function(_CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
@@ -2589,6 +2885,8 @@ mixin _$EurosomState {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -2607,6 +2905,8 @@ mixin _$EurosomState {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -2624,6 +2924,8 @@ mixin _$EurosomState {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -2641,6 +2943,8 @@ mixin _$EurosomState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -2660,6 +2964,8 @@ mixin _$EurosomState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -2677,6 +2983,8 @@ mixin _$EurosomState {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -2750,6 +3058,8 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -2771,6 +3081,8 @@ class _$_Initial implements _Initial {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -2791,6 +3103,8 @@ class _$_Initial implements _Initial {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -2814,6 +3128,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -2836,6 +3152,8 @@ class _$_Initial implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -2856,6 +3174,8 @@ class _$_Initial implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -2919,6 +3239,8 @@ class _$_Loading implements _Loading {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -2940,6 +3262,8 @@ class _$_Loading implements _Loading {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -2960,6 +3284,8 @@ class _$_Loading implements _Loading {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -2983,6 +3309,8 @@ class _$_Loading implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -3005,6 +3333,8 @@ class _$_Loading implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3025,6 +3355,8 @@ class _$_Loading implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3126,6 +3458,8 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -3147,6 +3481,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -3167,6 +3503,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -3190,6 +3528,8 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -3212,6 +3552,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3232,6 +3574,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3329,6 +3673,8 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -3350,6 +3696,8 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -3370,6 +3718,8 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -3393,6 +3743,8 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -3415,6 +3767,8 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3435,6 +3789,8 @@ class _$_GetHomeBannerSuccess implements _GetHomeBannerSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3461,6 +3817,370 @@ abstract class _GetHomeBannerSuccess implements EurosomState {
   @JsonKey(ignore: true)
   _$$_GetHomeBannerSuccessCopyWith<_$_GetHomeBannerSuccess> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_EvcPaymentSuccessCopyWith<$Res> {
+  factory _$$_EvcPaymentSuccessCopyWith(_$_EvcPaymentSuccess value,
+          $Res Function(_$_EvcPaymentSuccess) then) =
+      __$$_EvcPaymentSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_EvcPaymentSuccessCopyWithImpl<$Res>
+    extends _$EurosomStateCopyWithImpl<$Res, _$_EvcPaymentSuccess>
+    implements _$$_EvcPaymentSuccessCopyWith<$Res> {
+  __$$_EvcPaymentSuccessCopyWithImpl(
+      _$_EvcPaymentSuccess _value, $Res Function(_$_EvcPaymentSuccess) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_EvcPaymentSuccess implements _EvcPaymentSuccess {
+  const _$_EvcPaymentSuccess();
+
+  @override
+  String toString() {
+    return 'EurosomState.evcPaymentSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_EvcPaymentSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(EurosomFailure eurosomFailure) loadFailure,
+    required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
+    required TResult Function(Appsmodel apps) getApplicationsSuccess,
+    required TResult Function(PricingModel pricings) getPricingsSuccess,
+    required TResult Function(SubscriptionModel subscriptions)
+        getMySubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
+    required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
+    required TResult Function(Configs config) getConfigSuccess,
+    required TResult Function(AffliateModel affliateModel)
+        createAffliatesSuccess,
+    required TResult Function(UserResponse userResponse) updateUserSuccess,
+  }) {
+    return evcPaymentSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
+    TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
+    TResult? Function(Appsmodel apps)? getApplicationsSuccess,
+    TResult? Function(PricingModel pricings)? getPricingsSuccess,
+    TResult? Function(SubscriptionModel subscriptions)?
+        getMySubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
+    TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
+    TResult? Function(Configs config)? getConfigSuccess,
+    TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
+    TResult? Function(UserResponse userResponse)? updateUserSuccess,
+  }) {
+    return evcPaymentSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(EurosomFailure eurosomFailure)? loadFailure,
+    TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
+    TResult Function(Appsmodel apps)? getApplicationsSuccess,
+    TResult Function(PricingModel pricings)? getPricingsSuccess,
+    TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
+    TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
+    TResult Function(Configs config)? getConfigSuccess,
+    TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
+    TResult Function(UserResponse userResponse)? updateUserSuccess,
+    required TResult orElse(),
+  }) {
+    if (evcPaymentSuccess != null) {
+      return evcPaymentSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
+    required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
+    required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
+    required TResult Function(_GetSubscriptionsSuccess value)
+        getMySubscriptionSuccess,
+    required TResult Function(_createSubscriptionSuccess value)
+        createSubscriptionSuccess,
+    required TResult Function(_GetAffliatesSuccess value) getAffliatesSuccess,
+    required TResult Function(_GetConfigSuccess value) getConfigSuccess,
+    required TResult Function(_CreateAffliatesSuccess value)
+        createAffliatesSuccess,
+    required TResult Function(_UpdateUserSuccess value) updateUserSuccess,
+  }) {
+    return evcPaymentSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
+    TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
+    TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
+    TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
+    TResult? Function(_createSubscriptionSuccess value)?
+        createSubscriptionSuccess,
+    TResult? Function(_GetAffliatesSuccess value)? getAffliatesSuccess,
+    TResult? Function(_GetConfigSuccess value)? getConfigSuccess,
+    TResult? Function(_CreateAffliatesSuccess value)? createAffliatesSuccess,
+    TResult? Function(_UpdateUserSuccess value)? updateUserSuccess,
+  }) {
+    return evcPaymentSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
+    TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
+    TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
+    TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
+    TResult Function(_createSubscriptionSuccess value)?
+        createSubscriptionSuccess,
+    TResult Function(_GetAffliatesSuccess value)? getAffliatesSuccess,
+    TResult Function(_GetConfigSuccess value)? getConfigSuccess,
+    TResult Function(_CreateAffliatesSuccess value)? createAffliatesSuccess,
+    TResult Function(_UpdateUserSuccess value)? updateUserSuccess,
+    required TResult orElse(),
+  }) {
+    if (evcPaymentSuccess != null) {
+      return evcPaymentSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EvcPaymentSuccess implements EurosomState {
+  const factory _EvcPaymentSuccess() = _$_EvcPaymentSuccess;
+}
+
+/// @nodoc
+abstract class _$$_EvcPaymentFailureCopyWith<$Res> {
+  factory _$$_EvcPaymentFailureCopyWith(_$_EvcPaymentFailure value,
+          $Res Function(_$_EvcPaymentFailure) then) =
+      __$$_EvcPaymentFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_EvcPaymentFailureCopyWithImpl<$Res>
+    extends _$EurosomStateCopyWithImpl<$Res, _$_EvcPaymentFailure>
+    implements _$$_EvcPaymentFailureCopyWith<$Res> {
+  __$$_EvcPaymentFailureCopyWithImpl(
+      _$_EvcPaymentFailure _value, $Res Function(_$_EvcPaymentFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_EvcPaymentFailure implements _EvcPaymentFailure {
+  const _$_EvcPaymentFailure();
+
+  @override
+  String toString() {
+    return 'EurosomState.evcPaymentFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_EvcPaymentFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(EurosomFailure eurosomFailure) loadFailure,
+    required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
+    required TResult Function(Appsmodel apps) getApplicationsSuccess,
+    required TResult Function(PricingModel pricings) getPricingsSuccess,
+    required TResult Function(SubscriptionModel subscriptions)
+        getMySubscriptionSuccess,
+    required TResult Function() createSubscriptionSuccess,
+    required TResult Function(AffliateModel affliateModel) getAffliatesSuccess,
+    required TResult Function(Configs config) getConfigSuccess,
+    required TResult Function(AffliateModel affliateModel)
+        createAffliatesSuccess,
+    required TResult Function(UserResponse userResponse) updateUserSuccess,
+  }) {
+    return evcPaymentFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
+    TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
+    TResult? Function(Appsmodel apps)? getApplicationsSuccess,
+    TResult? Function(PricingModel pricings)? getPricingsSuccess,
+    TResult? Function(SubscriptionModel subscriptions)?
+        getMySubscriptionSuccess,
+    TResult? Function()? createSubscriptionSuccess,
+    TResult? Function(AffliateModel affliateModel)? getAffliatesSuccess,
+    TResult? Function(Configs config)? getConfigSuccess,
+    TResult? Function(AffliateModel affliateModel)? createAffliatesSuccess,
+    TResult? Function(UserResponse userResponse)? updateUserSuccess,
+  }) {
+    return evcPaymentFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(EurosomFailure eurosomFailure)? loadFailure,
+    TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
+    TResult Function(Appsmodel apps)? getApplicationsSuccess,
+    TResult Function(PricingModel pricings)? getPricingsSuccess,
+    TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
+    TResult Function()? createSubscriptionSuccess,
+    TResult Function(AffliateModel affliateModel)? getAffliatesSuccess,
+    TResult Function(Configs config)? getConfigSuccess,
+    TResult Function(AffliateModel affliateModel)? createAffliatesSuccess,
+    TResult Function(UserResponse userResponse)? updateUserSuccess,
+    required TResult orElse(),
+  }) {
+    if (evcPaymentFailure != null) {
+      return evcPaymentFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
+    required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
+    required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
+    required TResult Function(_GetSubscriptionsSuccess value)
+        getMySubscriptionSuccess,
+    required TResult Function(_createSubscriptionSuccess value)
+        createSubscriptionSuccess,
+    required TResult Function(_GetAffliatesSuccess value) getAffliatesSuccess,
+    required TResult Function(_GetConfigSuccess value) getConfigSuccess,
+    required TResult Function(_CreateAffliatesSuccess value)
+        createAffliatesSuccess,
+    required TResult Function(_UpdateUserSuccess value) updateUserSuccess,
+  }) {
+    return evcPaymentFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
+    TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
+    TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
+    TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
+    TResult? Function(_createSubscriptionSuccess value)?
+        createSubscriptionSuccess,
+    TResult? Function(_GetAffliatesSuccess value)? getAffliatesSuccess,
+    TResult? Function(_GetConfigSuccess value)? getConfigSuccess,
+    TResult? Function(_CreateAffliatesSuccess value)? createAffliatesSuccess,
+    TResult? Function(_UpdateUserSuccess value)? updateUserSuccess,
+  }) {
+    return evcPaymentFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
+    TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
+    TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
+    TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
+    TResult Function(_createSubscriptionSuccess value)?
+        createSubscriptionSuccess,
+    TResult Function(_GetAffliatesSuccess value)? getAffliatesSuccess,
+    TResult Function(_GetConfigSuccess value)? getConfigSuccess,
+    TResult Function(_CreateAffliatesSuccess value)? createAffliatesSuccess,
+    TResult Function(_UpdateUserSuccess value)? updateUserSuccess,
+    required TResult orElse(),
+  }) {
+    if (evcPaymentFailure != null) {
+      return evcPaymentFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EvcPaymentFailure implements EurosomState {
+  const factory _EvcPaymentFailure() = _$_EvcPaymentFailure;
 }
 
 /// @nodoc
@@ -3531,6 +4251,8 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -3552,6 +4274,8 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -3572,6 +4296,8 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -3595,6 +4321,8 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -3617,6 +4345,8 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3637,6 +4367,8 @@ class _$_GetAppsSuccess implements _GetAppsSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3734,6 +4466,8 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -3755,6 +4489,8 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -3775,6 +4511,8 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -3798,6 +4536,8 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -3820,6 +4560,8 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3840,6 +4582,8 @@ class _$_GetPricingsSuccess implements _GetPricingsSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -3939,6 +4683,8 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -3960,6 +4706,8 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -3980,6 +4728,8 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -4003,6 +4753,8 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -4025,6 +4777,8 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4045,6 +4799,8 @@ class _$_GetSubscriptionsSuccess implements _GetSubscriptionsSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4118,6 +4874,8 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -4139,6 +4897,8 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -4159,6 +4919,8 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -4182,6 +4944,8 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -4204,6 +4968,8 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4224,6 +4990,8 @@ class _$_createSubscriptionSuccess implements _createSubscriptionSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4316,6 +5084,8 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -4337,6 +5107,8 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -4357,6 +5129,8 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -4380,6 +5154,8 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -4402,6 +5178,8 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4422,6 +5200,8 @@ class _$_GetAffliatesSuccess implements _GetAffliatesSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4518,6 +5298,8 @@ class _$_GetConfigSuccess implements _GetConfigSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -4539,6 +5321,8 @@ class _$_GetConfigSuccess implements _GetConfigSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -4559,6 +5343,8 @@ class _$_GetConfigSuccess implements _GetConfigSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -4582,6 +5368,8 @@ class _$_GetConfigSuccess implements _GetConfigSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -4604,6 +5392,8 @@ class _$_GetConfigSuccess implements _GetConfigSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4624,6 +5414,8 @@ class _$_GetConfigSuccess implements _GetConfigSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4721,6 +5513,8 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -4742,6 +5536,8 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -4762,6 +5558,8 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -4785,6 +5583,8 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -4807,6 +5607,8 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4827,6 +5629,8 @@ class _$_CreateAffliatesSuccess implements _CreateAffliatesSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -4925,6 +5729,8 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     required TResult Function() loading,
     required TResult Function(EurosomFailure eurosomFailure) loadFailure,
     required TResult Function(BannerModel banners) getHomeBannerSuccess,
+    required TResult Function() evcPaymentSuccess,
+    required TResult Function() evcPaymentFailure,
     required TResult Function(Appsmodel apps) getApplicationsSuccess,
     required TResult Function(PricingModel pricings) getPricingsSuccess,
     required TResult Function(SubscriptionModel subscriptions)
@@ -4946,6 +5752,8 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     TResult? Function()? loading,
     TResult? Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult? Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult? Function()? evcPaymentSuccess,
+    TResult? Function()? evcPaymentFailure,
     TResult? Function(Appsmodel apps)? getApplicationsSuccess,
     TResult? Function(PricingModel pricings)? getPricingsSuccess,
     TResult? Function(SubscriptionModel subscriptions)?
@@ -4966,6 +5774,8 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     TResult Function()? loading,
     TResult Function(EurosomFailure eurosomFailure)? loadFailure,
     TResult Function(BannerModel banners)? getHomeBannerSuccess,
+    TResult Function()? evcPaymentSuccess,
+    TResult Function()? evcPaymentFailure,
     TResult Function(Appsmodel apps)? getApplicationsSuccess,
     TResult Function(PricingModel pricings)? getPricingsSuccess,
     TResult Function(SubscriptionModel subscriptions)? getMySubscriptionSuccess,
@@ -4989,6 +5799,8 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     required TResult Function(_Loading value) loading,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_GetHomeBannerSuccess value) getHomeBannerSuccess,
+    required TResult Function(_EvcPaymentSuccess value) evcPaymentSuccess,
+    required TResult Function(_EvcPaymentFailure value) evcPaymentFailure,
     required TResult Function(_GetAppsSuccess value) getApplicationsSuccess,
     required TResult Function(_GetPricingsSuccess value) getPricingsSuccess,
     required TResult Function(_GetSubscriptionsSuccess value)
@@ -5011,6 +5823,8 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_LoadFailure value)? loadFailure,
     TResult? Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult? Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult? Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult? Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult? Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult? Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
@@ -5031,6 +5845,8 @@ class _$_UpdateUserSuccess implements _UpdateUserSuccess {
     TResult Function(_Loading value)? loading,
     TResult Function(_LoadFailure value)? loadFailure,
     TResult Function(_GetHomeBannerSuccess value)? getHomeBannerSuccess,
+    TResult Function(_EvcPaymentSuccess value)? evcPaymentSuccess,
+    TResult Function(_EvcPaymentFailure value)? evcPaymentFailure,
     TResult Function(_GetAppsSuccess value)? getApplicationsSuccess,
     TResult Function(_GetPricingsSuccess value)? getPricingsSuccess,
     TResult Function(_GetSubscriptionsSuccess value)? getMySubscriptionSuccess,
