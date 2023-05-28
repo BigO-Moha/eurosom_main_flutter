@@ -5,7 +5,7 @@ part 'data.g.dart';
 
 @JsonSerializable()
 class Data {
-  final String? user;
+  final int? user;
   final String? status;
   @JsonKey(name: 'start_date')
   final String? startDate;
@@ -41,7 +41,7 @@ class Data {
   Map<String, dynamic> toJson() => _$DataToJson(this);
 
   Data copyWith({
-    String? user,
+    int? user,
     String? status,
     String? startDate,
     String? expiryDate,

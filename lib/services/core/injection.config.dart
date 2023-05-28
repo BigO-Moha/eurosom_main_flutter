@@ -43,7 +43,10 @@ _i1.GetIt $initGetIt(
   gh.lazySingleton<_i7.IEurosomRepo>(
       () => _i8.EurosomFacade(gh<_i4.EuroApiService>()));
   gh.factory<_i9.AuthBloc>(() => _i9.AuthBloc(gh<_i5.IAuthFacade>()));
-  gh.factory<_i10.EurosomBloc>(() => _i10.EurosomBloc(gh<_i7.IEurosomRepo>()));
+  gh.factory<_i10.EurosomBloc>(() => _i10.EurosomBloc(
+        gh<_i7.IEurosomRepo>(),
+        gh<_i5.IAuthFacade>(),
+      ));
   return getIt;
 }
 

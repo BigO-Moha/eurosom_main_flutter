@@ -58,8 +58,6 @@ class _PricingshowState extends State<Pricingshow> {
   Widget build(BuildContext context) {
     String payState = "waiting";
     TextEditingController evcNumber = TextEditingController();
-    final user =
-        getIt<IAuthFacade>().getSignedUser().fold((l) => null, (r) => r);
     bool checkBox = true;
     return Scaffold(
       appBar: AppBar(
@@ -304,7 +302,15 @@ class _PricingshowState extends State<Pricingshow> {
                                     listener: (context, state) {
                                       state.maybeMap(
                                           orElse: () {},
+                                          // paymentLoading: (e) {
+                                          //   // FlushbarHelper.createAction(
+                                          //   //         button: const Text(
+                                          //   //             "playing app that"),
+                                          //   //         message: "loading payment")
+                                          //   //     .show(context);
+                                          // },
                                           evcPaymentFailure: (e) {
+                                            context.replaceRoute(HomeDrawer());
                                             setState(() {
                                               payState = "paymentFailed";
                                             });
@@ -333,14 +339,10 @@ class _PricingshowState extends State<Pricingshow> {
                                                                 .text,
                                                             amount: price!
                                                                 .price!,
-                                                            user: user!
-                                                                .user!.id!
-                                                                .toString(),
                                                             paymentMethod:
                                                                 'EVC',
-                                                            startDate:
-                                                                cDate
-                                                                    .toString(),
+                                                            startDate: cDate
+                                                                .toString(),
                                                             expiryDate: DateTime(
                                                                     cDate.year,
                                                                     cDate.month +
@@ -349,7 +351,8 @@ class _PricingshowState extends State<Pricingshow> {
                                                                 .toString(),
                                                             app: widget.appId
                                                                 .toString(),
-                                                            status: 'active'))));
+                                                            status:
+                                                                'active'))));
                                             context.read<EurosomBloc>().add(
                                                 const EurosomEvent.getConfig());
                                             context

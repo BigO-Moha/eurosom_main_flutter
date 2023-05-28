@@ -7,7 +7,7 @@ part of 'data.dart';
 // **************************************************************************
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      user: json['user'] as String?,
+      user: json['user'] as int?,
       status: json['status'] as String?,
       startDate: json['start_date'] as String?,
       expiryDate: json['expiry_date'] as String?,

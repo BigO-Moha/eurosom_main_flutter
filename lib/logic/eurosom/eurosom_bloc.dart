@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:eurosom/models/absatractions/auth.dart';
 import 'package:eurosom/models/absatractions/eurosom.dart';
 import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
@@ -7,6 +8,7 @@ import 'package:eurosom/models/banner_model/banner_model.dart';
 import 'package:eurosom/models/configs/configs.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
 import 'package:eurosom/models/post_subscription/post_subscription.dart';
+import 'package:eurosom/models/post_subscription/data.dart' as ps;
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
 import 'package:eurosom/models/user_response/user_response.dart';
@@ -21,7 +23,8 @@ part 'eurosom_bloc.freezed.dart';
 @injectable
 class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
   final IEurosomRepo _eurosomRepo;
-  EurosomBloc(this._eurosomRepo) : super(_Initial()) {
+  final IAuthFacade _authFacade;
+  EurosomBloc(this._eurosomRepo, this._authFacade) : super(const _Initial()) {
     on<EurosomEvent>((event, emit) async {
       await event.map(
           getHomeSlider: (e) async {
@@ -88,9 +91,14 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
           },
           updateUser: (e) async {},
           createSubscription: (e) async {
-            emit(const EurosomState.loading());
-            final subscription =
-                await _eurosomRepo.createSubscription(e.susbcription.toJson());
+            final user = await _authFacade
+                .getSignedUser()
+                .fold((l) => null, (r) => r.user);
+
+            final subscription = await _eurosomRepo.createSubscription(e
+                .susbcription
+                .copyWith(data: ps.Data(user: user!.id!))
+                .toJson());
             final subscriptionState = subscription.fold(
                 (l) => EurosomState.loadFailure(l),
                 (r) => const EurosomState.createSubscriptionSuccess());
@@ -112,6 +120,7 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
             emit(userTokensState);
           },
           payEvc: (e) async {
+            // emit(const EurosomState.paymentLoading());
             final evcPayment = await _eurosomRepo.payEvc(e.number, e.price);
             final evcPaymentState = evcPayment!.fold(
                 (l) => const EurosomState.evcPaymentFailure(),
