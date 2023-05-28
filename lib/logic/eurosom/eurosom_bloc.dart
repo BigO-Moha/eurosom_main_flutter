@@ -5,10 +5,12 @@ import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
+import 'package:eurosom/models/pricing_model/datum.dart' as pm;
+import 'package:eurosom/models/post_subscription/data.dart' as dm;
 import 'package:eurosom/models/configs/configs.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
 import 'package:eurosom/models/post_subscription/post_subscription.dart';
-import 'package:eurosom/models/post_subscription/data.dart' as ps;
+
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
 import 'package:eurosom/models/user_response/user_response.dart';
@@ -91,14 +93,27 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
           },
           updateUser: (e) async {},
           createSubscription: (e) async {
-            final user = await _authFacade
+            final uid = await _authFacade
                 .getSignedUser()
-                .fold((l) => null, (r) => r.user);
+                .fold((l) => null, (r) => r.user!.id!);
+            Map<String, int> val = {"monthly": 1, "yearly": 12};
+            int type = val[e.pricing.duration!]!;
+            var cDate = DateTime.now();
+            final subscription = await _eurosomRepo.createSubscription(
+                PostSubscription(
+                        data: dm.Data(
+                            account: e.evc_num,
+                            amount: e.amount,
+                            paymentMethod: 'EVC',
+                            startDate: cDate.toString(),
+                            user: uid,
+                            expiryDate: DateTime(
+                                    cDate.year, cDate.month + type, cDate.day)
+                                .toString(),
+                            app: e.app_id.toString(),
+                            status: 'active'))
+                    .toJson());
 
-            final subscription = await _eurosomRepo.createSubscription(e
-                .susbcription
-                .copyWith(data: ps.Data(user: user!.id!))
-                .toJson());
             final subscriptionState = subscription.fold(
                 (l) => EurosomState.loadFailure(l),
                 (r) => const EurosomState.createSubscriptionSuccess());
@@ -120,12 +135,14 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
             emit(userTokensState);
           },
           payEvc: (e) async {
-            // emit(const EurosomState.paymentLoading());
+            emit(const EurosomState.paymentLoading());
             final evcPayment = await _eurosomRepo.payEvc(e.number, e.price);
-            final evcPaymentState = evcPayment!.fold(
-                (l) => const EurosomState.evcPaymentFailure(),
-                (r) => const EurosomState.evcPaymentSuccess());
-            emit(evcPaymentState);
+            if (evcPayment!.isRight()) {
+              add(CreateSubscription(
+                  e.number, e.price, e.pricing_model, e.app_id));
+            } else {
+              emit(const EurosomState.evcPaymentFailure());
+            }
           });
     });
   }

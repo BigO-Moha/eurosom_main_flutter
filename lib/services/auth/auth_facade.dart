@@ -64,6 +64,7 @@ class AuthFacade implements IAuthFacade {
     try {
       final registerData = await _authApiService.register(signupInfo.toJson());
       saveUser(registerData);
+
       return right(registerData);
     } on DioError catch (e) {
       if (e.type == DioErrorType.response) {
@@ -109,6 +110,7 @@ class AuthFacade implements IAuthFacade {
   Future<void> saveUser(AuthModel authModel) async {
     try {
       await authBox.add(authModel);
+      box.write("uid", authModel.user!.id!);
     } on HiveError catch (e) {
       print(e);
     }
@@ -164,5 +166,11 @@ class AuthFacade implements IAuthFacade {
     } on DioError catch (e) {
       print(e);
     }
+  }
+
+  @override
+  int getUserId() {
+    final uid = box.read('uid');
+    return uid;
   }
 }

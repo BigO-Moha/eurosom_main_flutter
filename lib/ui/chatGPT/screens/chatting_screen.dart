@@ -238,11 +238,11 @@ class _ChattingScreenState extends State<ChattingScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<EurosomBloc, EurosomState>(
       listener: (context, state) {
-        // state.maybeMap(
-        //     orElse: () {},
-        //     getConfigSuccess: (e) {
-        //       CHAT_GPT_API_KEY = e.config.data![0].token!;
-        //     });
+        state.maybeMap(orElse: () {
+          context.read<EurosomBloc>().add(const EurosomEvent.getConfig());
+        }, getConfigSuccess: (e) {
+          CHAT_GPT_API_KEY = e.config.data![0].token!;
+        });
       },
       builder: (context, state) {
         return state.maybeMap(orElse: () {

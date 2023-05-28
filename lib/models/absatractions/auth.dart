@@ -8,6 +8,8 @@ abstract class IAuthFacade {
   Future<Either<AuthFailure, AuthModel>> registerWithEmailAndPassword(
       RegisterData signupInfo);
 
+  int getUserId();
+
   Future<Either<AuthFailure, AuthModel>> signInWithEmailAndPassword(
       LoginData loginInfo);
   Future<void> saveItsfristTime();

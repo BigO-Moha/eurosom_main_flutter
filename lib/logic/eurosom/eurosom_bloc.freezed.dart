@@ -22,9 +22,13 @@ mixin _$EurosomEvent {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -40,9 +44,13 @@ mixin _$EurosomEvent {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -58,9 +66,13 @@ mixin _$EurosomEvent {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -79,7 +91,7 @@ mixin _$EurosomEvent {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -97,7 +109,7 @@ mixin _$EurosomEvent {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -115,7 +127,7 @@ mixin _$EurosomEvent {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -188,9 +200,13 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -209,9 +225,13 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -230,9 +250,13 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -257,7 +281,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -278,7 +302,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -299,7 +323,7 @@ class _$_GetHomeSliders implements _GetHomeSliders {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -362,9 +386,13 @@ class _$_GetAllApplications implements _GetAllApplications {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -383,9 +411,13 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -404,9 +436,13 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -431,7 +467,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -452,7 +488,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -473,7 +509,7 @@ class _$_GetAllApplications implements _GetAllApplications {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -562,9 +598,13 @@ class _$_GetAppPricing implements _GetAppPricing {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -583,9 +623,13 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -604,9 +648,13 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -631,7 +679,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -652,7 +700,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -673,7 +721,7 @@ class _$_GetAppPricing implements _GetAppPricing {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -741,9 +789,13 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -762,9 +814,13 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -783,9 +839,13 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -810,7 +870,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -831,7 +891,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -852,7 +912,7 @@ class _$_GetAllSubscriptions implements _GetAllSubscriptions {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -878,7 +938,7 @@ abstract class _$$_PayEvcCopyWith<$Res> {
   factory _$$_PayEvcCopyWith(_$_PayEvc value, $Res Function(_$_PayEvc) then) =
       __$$_PayEvcCopyWithImpl<$Res>;
   @useResult
-  $Res call({String number, double price});
+  $Res call({String number, double price, pm.Datum pricing_model, int app_id});
 }
 
 /// @nodoc
@@ -893,6 +953,8 @@ class __$$_PayEvcCopyWithImpl<$Res>
   $Res call({
     Object? number = null,
     Object? price = null,
+    Object? pricing_model = null,
+    Object? app_id = null,
   }) {
     return _then(_$_PayEvc(
       null == number
@@ -903,6 +965,14 @@ class __$$_PayEvcCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      null == pricing_model
+          ? _value.pricing_model
+          : pricing_model // ignore: cast_nullable_to_non_nullable
+              as pm.Datum,
+      null == app_id
+          ? _value.app_id
+          : app_id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -910,16 +980,20 @@ class __$$_PayEvcCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PayEvc implements _PayEvc {
-  const _$_PayEvc(this.number, this.price);
+  const _$_PayEvc(this.number, this.price, this.pricing_model, this.app_id);
 
   @override
   final String number;
   @override
   final double price;
+  @override
+  final pm.Datum pricing_model;
+  @override
+  final int app_id;
 
   @override
   String toString() {
-    return 'EurosomEvent.payEvc(number: $number, price: $price)';
+    return 'EurosomEvent.payEvc(number: $number, price: $price, pricing_model: $pricing_model, app_id: $app_id)';
   }
 
   @override
@@ -928,11 +1002,15 @@ class _$_PayEvc implements _PayEvc {
         (other.runtimeType == runtimeType &&
             other is _$_PayEvc &&
             (identical(other.number, number) || other.number == number) &&
-            (identical(other.price, price) || other.price == price));
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.pricing_model, pricing_model) ||
+                other.pricing_model == pricing_model) &&
+            (identical(other.app_id, app_id) || other.app_id == app_id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, number, price);
+  int get hashCode =>
+      Object.hash(runtimeType, number, price, pricing_model, app_id);
 
   @JsonKey(ignore: true)
   @override
@@ -947,9 +1025,13 @@ class _$_PayEvc implements _PayEvc {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -958,7 +1040,7 @@ class _$_PayEvc implements _PayEvc {
     required TResult Function() getMyAffliateInfo,
     required TResult Function(AuthModel userInfo) updateUser,
   }) {
-    return payEvc(number, price);
+    return payEvc(number, price, pricing_model, app_id);
   }
 
   @override
@@ -968,9 +1050,13 @@ class _$_PayEvc implements _PayEvc {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -979,7 +1065,7 @@ class _$_PayEvc implements _PayEvc {
     TResult? Function()? getMyAffliateInfo,
     TResult? Function(AuthModel userInfo)? updateUser,
   }) {
-    return payEvc?.call(number, price);
+    return payEvc?.call(number, price, pricing_model, app_id);
   }
 
   @override
@@ -989,9 +1075,13 @@ class _$_PayEvc implements _PayEvc {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -1002,7 +1092,7 @@ class _$_PayEvc implements _PayEvc {
     required TResult orElse(),
   }) {
     if (payEvc != null) {
-      return payEvc(number, price);
+      return payEvc(number, price, pricing_model, app_id);
     }
     return orElse();
   }
@@ -1016,7 +1106,7 @@ class _$_PayEvc implements _PayEvc {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1037,7 +1127,7 @@ class _$_PayEvc implements _PayEvc {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1058,7 +1148,7 @@ class _$_PayEvc implements _PayEvc {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1076,10 +1166,13 @@ class _$_PayEvc implements _PayEvc {
 }
 
 abstract class _PayEvc implements EurosomEvent {
-  const factory _PayEvc(final String number, final double price) = _$_PayEvc;
+  const factory _PayEvc(final String number, final double price,
+      final pm.Datum pricing_model, final int app_id) = _$_PayEvc;
 
   String get number;
   double get price;
+  pm.Datum get pricing_model;
+  int get app_id;
   @JsonKey(ignore: true)
   _$$_PayEvcCopyWith<_$_PayEvc> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1154,9 +1247,13 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -1175,9 +1272,13 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -1196,9 +1297,13 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -1223,7 +1328,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1244,7 +1349,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1265,7 +1370,7 @@ class _$_FetchAppSubscription implements _FetchAppSubscription {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1293,66 +1398,91 @@ abstract class _FetchAppSubscription implements EurosomEvent {
 }
 
 /// @nodoc
-abstract class _$$_CreateSubscriptionCopyWith<$Res> {
-  factory _$$_CreateSubscriptionCopyWith(_$_CreateSubscription value,
-          $Res Function(_$_CreateSubscription) then) =
-      __$$_CreateSubscriptionCopyWithImpl<$Res>;
+abstract class _$$CreateSubscriptionCopyWith<$Res> {
+  factory _$$CreateSubscriptionCopyWith(_$CreateSubscription value,
+          $Res Function(_$CreateSubscription) then) =
+      __$$CreateSubscriptionCopyWithImpl<$Res>;
   @useResult
-  $Res call({PostSubscription susbcription});
+  $Res call({String evc_num, double amount, pm.Datum pricing, int app_id});
 }
 
 /// @nodoc
-class __$$_CreateSubscriptionCopyWithImpl<$Res>
-    extends _$EurosomEventCopyWithImpl<$Res, _$_CreateSubscription>
-    implements _$$_CreateSubscriptionCopyWith<$Res> {
-  __$$_CreateSubscriptionCopyWithImpl(
-      _$_CreateSubscription _value, $Res Function(_$_CreateSubscription) _then)
+class __$$CreateSubscriptionCopyWithImpl<$Res>
+    extends _$EurosomEventCopyWithImpl<$Res, _$CreateSubscription>
+    implements _$$CreateSubscriptionCopyWith<$Res> {
+  __$$CreateSubscriptionCopyWithImpl(
+      _$CreateSubscription _value, $Res Function(_$CreateSubscription) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? susbcription = null,
+    Object? evc_num = null,
+    Object? amount = null,
+    Object? pricing = null,
+    Object? app_id = null,
   }) {
-    return _then(_$_CreateSubscription(
-      null == susbcription
-          ? _value.susbcription
-          : susbcription // ignore: cast_nullable_to_non_nullable
-              as PostSubscription,
+    return _then(_$CreateSubscription(
+      null == evc_num
+          ? _value.evc_num
+          : evc_num // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as double,
+      null == pricing
+          ? _value.pricing
+          : pricing // ignore: cast_nullable_to_non_nullable
+              as pm.Datum,
+      null == app_id
+          ? _value.app_id
+          : app_id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_CreateSubscription implements _CreateSubscription {
-  const _$_CreateSubscription(this.susbcription);
+class _$CreateSubscription implements CreateSubscription {
+  const _$CreateSubscription(
+      this.evc_num, this.amount, this.pricing, this.app_id);
 
   @override
-  final PostSubscription susbcription;
+  final String evc_num;
+  @override
+  final double amount;
+  @override
+  final pm.Datum pricing;
+  @override
+  final int app_id;
 
   @override
   String toString() {
-    return 'EurosomEvent.createSubscription(susbcription: $susbcription)';
+    return 'EurosomEvent.createSubscription(evc_num: $evc_num, amount: $amount, pricing: $pricing, app_id: $app_id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreateSubscription &&
-            (identical(other.susbcription, susbcription) ||
-                other.susbcription == susbcription));
+            other is _$CreateSubscription &&
+            (identical(other.evc_num, evc_num) || other.evc_num == evc_num) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.pricing, pricing) || other.pricing == pricing) &&
+            (identical(other.app_id, app_id) || other.app_id == app_id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, susbcription);
+  int get hashCode =>
+      Object.hash(runtimeType, evc_num, amount, pricing, app_id);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreateSubscriptionCopyWith<_$_CreateSubscription> get copyWith =>
-      __$$_CreateSubscriptionCopyWithImpl<_$_CreateSubscription>(
+  _$$CreateSubscriptionCopyWith<_$CreateSubscription> get copyWith =>
+      __$$CreateSubscriptionCopyWithImpl<_$CreateSubscription>(
           this, _$identity);
 
   @override
@@ -1362,9 +1492,13 @@ class _$_CreateSubscription implements _CreateSubscription {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -1373,7 +1507,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     required TResult Function() getMyAffliateInfo,
     required TResult Function(AuthModel userInfo) updateUser,
   }) {
-    return createSubscription(susbcription);
+    return createSubscription(evc_num, amount, pricing, app_id);
   }
 
   @override
@@ -1383,9 +1517,13 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -1394,7 +1532,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult? Function()? getMyAffliateInfo,
     TResult? Function(AuthModel userInfo)? updateUser,
   }) {
-    return createSubscription?.call(susbcription);
+    return createSubscription?.call(evc_num, amount, pricing, app_id);
   }
 
   @override
@@ -1404,9 +1542,13 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -1417,7 +1559,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     required TResult orElse(),
   }) {
     if (createSubscription != null) {
-      return createSubscription(susbcription);
+      return createSubscription(evc_num, amount, pricing, app_id);
     }
     return orElse();
   }
@@ -1431,7 +1573,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1452,7 +1594,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1473,7 +1615,7 @@ class _$_CreateSubscription implements _CreateSubscription {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1490,13 +1632,16 @@ class _$_CreateSubscription implements _CreateSubscription {
   }
 }
 
-abstract class _CreateSubscription implements EurosomEvent {
-  const factory _CreateSubscription(final PostSubscription susbcription) =
-      _$_CreateSubscription;
+abstract class CreateSubscription implements EurosomEvent {
+  const factory CreateSubscription(final String evc_num, final double amount,
+      final pm.Datum pricing, final int app_id) = _$CreateSubscription;
 
-  PostSubscription get susbcription;
+  String get evc_num;
+  double get amount;
+  pm.Datum get pricing;
+  int get app_id;
   @JsonKey(ignore: true)
-  _$$_CreateSubscriptionCopyWith<_$_CreateSubscription> get copyWith =>
+  _$$CreateSubscriptionCopyWith<_$CreateSubscription> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1569,9 +1714,13 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -1590,9 +1739,13 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -1611,9 +1764,13 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -1638,7 +1795,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1659,7 +1816,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1680,7 +1837,7 @@ class _$_UpdateSubscription implements _UpdateSubscription {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1775,9 +1932,13 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -1796,9 +1957,13 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -1817,9 +1982,13 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -1844,7 +2013,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -1865,7 +2034,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -1886,7 +2055,7 @@ class _$_CreateMyAffliate implements _CreateMyAffliate {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -1981,9 +2150,13 @@ class _$_FindAffliate implements _FindAffliate {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -2002,9 +2175,13 @@ class _$_FindAffliate implements _FindAffliate {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -2023,9 +2200,13 @@ class _$_FindAffliate implements _FindAffliate {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -2050,7 +2231,7 @@ class _$_FindAffliate implements _FindAffliate {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -2071,7 +2252,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -2092,7 +2273,7 @@ class _$_FindAffliate implements _FindAffliate {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -2160,9 +2341,13 @@ class _$_GetConfig implements _GetConfig {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -2181,9 +2366,13 @@ class _$_GetConfig implements _GetConfig {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -2202,9 +2391,13 @@ class _$_GetConfig implements _GetConfig {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -2229,7 +2422,7 @@ class _$_GetConfig implements _GetConfig {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -2250,7 +2443,7 @@ class _$_GetConfig implements _GetConfig {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -2271,7 +2464,7 @@ class _$_GetConfig implements _GetConfig {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -2360,9 +2553,13 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -2381,9 +2578,13 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -2402,9 +2603,13 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -2429,7 +2634,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -2450,7 +2655,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -2471,7 +2676,7 @@ class _$_UpdateUserTokens implements _UpdateUserTokens {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -2539,9 +2744,13 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -2560,9 +2769,13 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -2581,9 +2794,13 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -2608,7 +2825,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -2629,7 +2846,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -2650,7 +2867,7 @@ class _$_GetMyAffliateInfo implements _GetMyAffliateInfo {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,
@@ -2740,9 +2957,13 @@ class _$_UpdateUser implements _UpdateUser {
     required TResult Function() getAllApplications,
     required TResult Function(int id) getAppPricing,
     required TResult Function() getMySubscriptions,
-    required TResult Function(String number, double price) payEvc,
+    required TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)
+        payEvc,
     required TResult Function(int app_id) fetchAppSubscription,
-    required TResult Function(PostSubscription susbcription) createSubscription,
+    required TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)
+        createSubscription,
     required TResult Function(String id) updateSubscriptions,
     required TResult Function(AffliateModel affliateModel) createMyAffliate,
     required TResult Function(String id) findAffliate,
@@ -2761,9 +2982,13 @@ class _$_UpdateUser implements _UpdateUser {
     TResult? Function()? getAllApplications,
     TResult? Function(int id)? getAppPricing,
     TResult? Function()? getMySubscriptions,
-    TResult? Function(String number, double price)? payEvc,
+    TResult? Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult? Function(int app_id)? fetchAppSubscription,
-    TResult? Function(PostSubscription susbcription)? createSubscription,
+    TResult? Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult? Function(String id)? updateSubscriptions,
     TResult? Function(AffliateModel affliateModel)? createMyAffliate,
     TResult? Function(String id)? findAffliate,
@@ -2782,9 +3007,13 @@ class _$_UpdateUser implements _UpdateUser {
     TResult Function()? getAllApplications,
     TResult Function(int id)? getAppPricing,
     TResult Function()? getMySubscriptions,
-    TResult Function(String number, double price)? payEvc,
+    TResult Function(
+            String number, double price, pm.Datum pricing_model, int app_id)?
+        payEvc,
     TResult Function(int app_id)? fetchAppSubscription,
-    TResult Function(PostSubscription susbcription)? createSubscription,
+    TResult Function(
+            String evc_num, double amount, pm.Datum pricing, int app_id)?
+        createSubscription,
     TResult Function(String id)? updateSubscriptions,
     TResult Function(AffliateModel affliateModel)? createMyAffliate,
     TResult Function(String id)? findAffliate,
@@ -2809,7 +3038,7 @@ class _$_UpdateUser implements _UpdateUser {
     required TResult Function(_GetAllSubscriptions value) getMySubscriptions,
     required TResult Function(_PayEvc value) payEvc,
     required TResult Function(_FetchAppSubscription value) fetchAppSubscription,
-    required TResult Function(_CreateSubscription value) createSubscription,
+    required TResult Function(CreateSubscription value) createSubscription,
     required TResult Function(_UpdateSubscription value) updateSubscriptions,
     required TResult Function(_CreateMyAffliate value) createMyAffliate,
     required TResult Function(_FindAffliate value) findAffliate,
@@ -2830,7 +3059,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult? Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult? Function(_PayEvc value)? payEvc,
     TResult? Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult? Function(_CreateSubscription value)? createSubscription,
+    TResult? Function(CreateSubscription value)? createSubscription,
     TResult? Function(_UpdateSubscription value)? updateSubscriptions,
     TResult? Function(_CreateMyAffliate value)? createMyAffliate,
     TResult? Function(_FindAffliate value)? findAffliate,
@@ -2851,7 +3080,7 @@ class _$_UpdateUser implements _UpdateUser {
     TResult Function(_GetAllSubscriptions value)? getMySubscriptions,
     TResult Function(_PayEvc value)? payEvc,
     TResult Function(_FetchAppSubscription value)? fetchAppSubscription,
-    TResult Function(_CreateSubscription value)? createSubscription,
+    TResult Function(CreateSubscription value)? createSubscription,
     TResult Function(_UpdateSubscription value)? updateSubscriptions,
     TResult Function(_CreateMyAffliate value)? createMyAffliate,
     TResult Function(_FindAffliate value)? findAffliate,

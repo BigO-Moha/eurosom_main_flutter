@@ -257,7 +257,7 @@ class EurosomFacade implements IEurosomRepo {
     } catch (e) {
       return left(const EurosomFailure.paymentError("error"));
     }
-    print(returnValue);
+
     return returnValue!;
   }
 
