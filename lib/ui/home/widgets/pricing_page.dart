@@ -420,23 +420,20 @@ class _PricingshowState extends State<Pricingshow> {
                                                             .toDouble(),
                                                         price!,
                                                         widget.appId));
-                                                setState(() {
-                                                  payState =
-                                                      "Processing payment";
-                                                });
                                               } else {}
                                             }),
                                       ).center(),
                                       8.height,
                                       AppButton(
-                                        text: 'Never Mind',
+                                        text: 'Go back',
                                         textStyle: primaryTextStyle(size: 15),
                                         width: context.width(),
                                         color: context.cardColor,
                                         shapeBorder: RoundedRectangleBorder(
                                             borderRadius: radius(32)),
                                         onTap: () {
-                                          Navigator.pop(context);
+                                          context
+                                              .replaceRoute(const HomeDrawer());
                                         },
                                       ).center(),
                                     ],
