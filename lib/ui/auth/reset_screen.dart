@@ -4,6 +4,7 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/logic/auth/auth_bloc.dart';
 import 'package:eurosom/main.dart';
+import 'package:eurosom/ui/routes/app_router.gr.dart';
 import 'package:eurosom/ui/utils/colors.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/constant.dart';
@@ -100,7 +101,7 @@ class _ResetScreenState extends State<ResetScreen> {
             orElse: () {},
             resetSuccess: (e) async {
               print("ok");
-              //  context.replaceRoute(route)
+              context.replaceRoute(const HomeDrawer());
             },
             resetFaliure: (e) {
               FlushbarHelper.createError(

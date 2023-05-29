@@ -167,10 +167,4 @@ class AuthFacade implements IAuthFacade {
       print(e);
     }
   }
-
-  @override
-  int getUserId() {
-    final uid = box.read('uid');
-    return uid;
-  }
 }

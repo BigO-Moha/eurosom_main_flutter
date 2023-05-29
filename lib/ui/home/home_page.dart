@@ -230,6 +230,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
                                       GestureDetector(
                                         onTap: () {
                                           toast("logging out");
+                                          context.replaceRoute(
+                                              const SignWithEmailInRoute());
                                           context
                                               .read<AuthBloc>()
                                               .add(const AuthEvent.signOut());

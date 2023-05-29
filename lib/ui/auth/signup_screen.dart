@@ -93,18 +93,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   style: secondaryTextStyle()),
 
               // commonSocialLoginButton(context),
-              24.height,
 
-              24.height,
-              AppTextField(
-                textFieldType: TextFieldType.NAME,
-                controller: fNameCont,
-                nextFocus: nameFocus,
-                decoration: inputDecoration(context,
-                    labelText: "Full name",
-                    prefixIcon: ic_profile.iconImage(size: 10).paddingAll(14)),
-              ),
-              16.height,
               IntlPhoneField(
                 disableLengthCheck: true,
                 decoration: const InputDecoration(
@@ -119,6 +108,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   phoneNum = phone.completeNumber.split("+").last;
                   print(phoneNum);
                 },
+              ),
+
+              16.height,
+              AppTextField(
+                textFieldType: TextFieldType.NAME,
+                controller: fNameCont,
+                nextFocus: nameFocus,
+                decoration: inputDecoration(context,
+                    labelText: "Full name",
+                    prefixIcon: ic_profile.iconImage(size: 10).paddingAll(14)),
               ),
 
               16.height,
@@ -168,7 +167,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               email: emailCont.text,
                               password: passwordCont.text,
                               username: phoneNum,
-                              affliate: affliateId.text.toInt(),
+                              affliate: affliateId.text.isNotEmpty
+                                  ? affliateId.text.toInt()
+                                  : null,
                               name: fNameCont.text)));
                     } else {
                       FlushbarHelper.createError(
