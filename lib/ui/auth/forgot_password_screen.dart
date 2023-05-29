@@ -47,7 +47,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   .add(AuthEvent.sendForgetToken(emailCont.text));
               context.pushRoute(const ResetRoute());
             } else {
-              FlushbarHelper.createError(message: "Enter valid Password")
+              FlushbarHelper.createError(message: "Enter valid email")
                   .show(context);
             }
           }).paddingOnly(bottom: 24),

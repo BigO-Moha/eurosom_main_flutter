@@ -35,50 +35,55 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: commonAppBarWidget(context, title: "", showLeadingIcon: false),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [],
-      ).paddingOnly(bottom: 24),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            24.height,
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                CommonCachedNetworkImage(walkThrough3,
-                    fit: BoxFit.cover,
-                    width: context.width() * 0.8,
-                    radius: 16),
-              ],
-            ),
-            60.height,
-            Text('Welcome to Eurosom', style: boldTextStyle(size: 26)),
-            24.height,
-            Text(
-              'We let you enjoy the technology \nwith as little as \Auth.',
-              textAlign: TextAlign.center,
-              style: secondaryTextStyle(height: 1.4),
-            ),
-            32.height,
-            CommonButton(
-                buttonText: "Login",
-                width: context.width(),
-                onTap: () {
-                  SignWithEmailInScreen().launch(context);
-                }),
-            16.height,
-            CommonButton(
-                buttonText: "Register",
-                width: context.width(),
-                onTap: () {
-                  SignUpScreen().launch(context);
-                }),
-          ],
-        ).paddingAll(16),
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        appBar: commonAppBarWidget(context, title: "", showLeadingIcon: false),
+        bottomNavigationBar: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [],
+        ).paddingOnly(bottom: 24),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              24.height,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  CommonCachedNetworkImage(walkThrough3,
+                      fit: BoxFit.cover,
+                      width: context.width() * 0.3,
+                      radius: 16),
+                ],
+              ),
+              60.height,
+              Text('Welcome to Eurosom', style: boldTextStyle(size: 26)),
+              24.height,
+              Text(
+                'We let you enjoy the technology \nwith as little as \Auth.',
+                textAlign: TextAlign.center,
+                style: secondaryTextStyle(height: 1.4),
+              ),
+              32.height,
+              CommonButton(
+                  buttonText: "Login",
+                  width: context.width(),
+                  onTap: () {
+                    context.pushRoute(const SignWithEmailInRoute());
+                  }),
+              16.height,
+              CommonButton(
+                  buttonText: "Register",
+                  width: context.width(),
+                  onTap: () {
+                    context.pushRoute(const SignUpRoute());
+                  }),
+            ],
+          ).paddingAll(16),
+        ),
       ),
     );
   }
