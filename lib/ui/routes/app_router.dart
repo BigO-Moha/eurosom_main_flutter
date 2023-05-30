@@ -23,10 +23,13 @@ class AppRouter extends $AppRouter {
         MaterialRoute(
             page: ChattingRoute.page, guards: <AutoRouteGuard>[AuthGuard()]),
         MaterialRoute(
+            keepHistory: false,
             page: CheckSubscription.page,
             guards: <AutoRouteGuard>[AuthGuard()]),
         MaterialRoute(
-            page: Pricingshow.page, guards: <AutoRouteGuard>[AuthGuard()]),
+            keepHistory: false,
+            page: Pricingshow.page,
+            guards: <AutoRouteGuard>[AuthGuard()]),
         MaterialRoute(page: SplashRoute.page, initial: true),
       ];
 }
