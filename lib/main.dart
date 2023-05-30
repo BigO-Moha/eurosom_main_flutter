@@ -18,6 +18,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 AppStore appStore = AppStore();
 
@@ -28,6 +29,7 @@ late String lightMapStyle;
 late Box authBox;
 late Box localBox;
 void main() async {
+  setUrlStrategy(null);
   await Hive.initFlutter();
   Hive.registerAdapter(AuthModelAdapter());
   Hive.registerAdapter(UserAdapter());

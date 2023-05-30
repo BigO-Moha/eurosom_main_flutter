@@ -97,7 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: secondaryTextStyle()),
 
                 // commonSocialLoginButton(context),
-
+                20.height,
                 IntlPhoneField(
                   disableLengthCheck: true,
                   decoration: const InputDecoration(
