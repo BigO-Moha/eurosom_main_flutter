@@ -263,9 +263,8 @@ class EurosomFacade implements IEurosomRepo {
 
   @override
   Future<Either<EurosomFailure, Unit>> payEdahab(
-      String account, double amount) {
-    // TODO: implement payEdahab
-    throw UnimplementedError();
+      String account, double amount) async {
+    final configs = await getConfigs();
   }
 
   @override
@@ -307,5 +306,12 @@ class EurosomFacade implements IEurosomRepo {
         return left(const EurosomFailure.serverError());
       }
     }
+  }
+
+  @override
+  Future<Either<EurosomFailure, Unit>> payPremierWalet(
+      String account, double amount) {
+    // TODO: implement payPremierWalet
+    throw UnimplementedError();
   }
 }
