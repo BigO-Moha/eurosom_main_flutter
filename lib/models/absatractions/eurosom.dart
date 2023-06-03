@@ -19,6 +19,8 @@ abstract class IEurosomRepo {
       int appId);
   Future<Either<EurosomFailure, Unit>>? payEvc(String account, double amount);
   Future<Either<EurosomFailure, Unit>> payEdahab(String account, double amount);
+  Future<Either<EurosomFailure, Unit>> payPremierWalet(
+      String account, double amount);
   Future<Either<EurosomFailure, Unit>> verifyEdahab(
       String account, double amount);
   Future<Either<EurosomFailure, Unit>> createSubscription(

@@ -213,231 +213,405 @@ class _PricingshowState extends State<Pricingshow> {
                             onPress: () {
                               bool isExpanded = false;
                               String dropdownValue = 'UK';
-
                               showModalBottomSheet(
                                 shape: RoundedRectangleBorder(
                                     borderRadius:
                                         radiusOnly(topLeft: 32, topRight: 32)),
                                 context: context,
                                 builder: (builder) {
-                                  return Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                  return Wrap(
                                     children: [
-                                      Text(
-                                        'Payout',
-                                        style: boldTextStyle(
-                                            size: 30, weight: FontWeight.w400),
-                                      ),
-                                      4.height,
-                                      Text(
-                                        'Pay out your balance now',
-                                        style: secondaryTextStyle(),
-                                      ),
-                                      4.height,
-                                      Center(
-                                          child: Text(
-                                        payState,
-                                        style: secondaryTextStyle(),
-                                      )),
-                                      3.height,
-                                      Spacer(),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: radius(),
-                                          color: appColorPrimary.withAlpha(100),
-                                        ),
-                                        child: ExpansionTile(
-                                          childrenPadding: EdgeInsets.all(8),
-                                          leading: Container(
-                                            child: Icon(Icons.payment_outlined,
-                                                color: Colors.white, size: 30),
-                                            padding: EdgeInsets.all(6),
-                                            decoration: BoxDecoration(
-                                                borderRadius: radius(100),
-                                                color: const Color(0xFFD51A18)),
-                                          ),
-                                          title: Text.rich(
-                                            TextSpan(
-                                              text: ' Evc plus',
-                                              style: boldTextStyle(),
-                                              children: <InlineSpan>[
-                                                // TextSpan(
-                                                //     text: ' *5138',
-                                                //     style: primaryTextStyle()),
-                                                // TextSpan(
-                                                //     text: ' is Expired',
-                                                //     style: boldTextStyle()),
-                                              ],
-                                            ),
-                                          ),
-                                          subtitle: Text(
-                                              'Enter your account number',
-                                              style:
-                                                  secondaryTextStyle(size: 12)),
-                                          trailing: isExpanded
-                                              ? Container(
-                                                  child: Icon(
-                                                      Icons.keyboard_arrow_up,
-                                                      color: context.iconColor,
-                                                      size: 30),
-                                                  padding: EdgeInsets.all(4),
+                                      Expanded(
+                                        child: Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height -
+                                              100,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Payout',
+                                                style: boldTextStyle(
+                                                    size: 30,
+                                                    weight: FontWeight.w400),
+                                              ),
+                                              4.height,
+                                              Text(
+                                                'Pay out your balance now',
+                                                style: secondaryTextStyle(),
+                                              ),
+                                              4.height,
+                                              Center(
+                                                  child: Text(
+                                                payState,
+                                                style: secondaryTextStyle(),
+                                              )),
+                                              3.height,
+                                              Spacer(),
+                                              Form(
+                                                child: Container(
                                                   decoration: BoxDecoration(
-                                                      borderRadius: radius(100),
-                                                      color: context.accentColor
-                                                          .withAlpha(32)),
-                                                )
-                                              : Icon(Icons.keyboard_arrow_down,
-                                                  color: context.iconColor,
-                                                  size: 30),
-                                          onExpansionChanged: (t) {
-                                            isExpanded = !isExpanded;
-                                            setState(() {});
-                                          },
-                                          children: [
-                                            Container(
-                                              decoration: boxDecorationDefault(
-                                                  color: context.cardColor,
-                                                  boxShadow: null),
-                                              padding: EdgeInsets.all(8),
-                                              child: Column(
-                                                children: [
-                                                  10.height,
-                                                  AppTextField(
-                                                    controller: evcNumber,
-                                                    textFieldType:
-                                                        TextFieldType.PHONE,
-                                                    decoration: InputDecoration(
-                                                      prefixIcon: Icon(
-                                                          Icons.payment,
-                                                          color: context
-                                                              .iconColor),
-                                                      labelText: 'Evc Number',
-                                                      suffixIcon: Icon(
-                                                          Icons
-                                                              .camera_alt_outlined,
-                                                          color: context
-                                                              .iconColor),
-                                                      border:
-                                                          OutlineInputBorder(),
-                                                    ),
+                                                    borderRadius: radius(),
+                                                    color: appColorPrimary
+                                                        .withAlpha(100),
                                                   ),
-                                                ],
-                                              ).paddingAll(8),
-                                            )
-                                          ],
+                                                  child: ExpansionTile(
+                                                    childrenPadding:
+                                                        EdgeInsets.all(8),
+                                                    leading: Container(
+                                                      child: Icon(
+                                                          Icons
+                                                              .payment_outlined,
+                                                          color: Colors.white,
+                                                          size: 30),
+                                                      padding:
+                                                          EdgeInsets.all(6),
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              radius(100),
+                                                          color: const Color(
+                                                              0xFFD51A18)),
+                                                    ),
+                                                    title: Text.rich(
+                                                      TextSpan(
+                                                        text: ' Evc plus',
+                                                        style: boldTextStyle(),
+                                                        children: <InlineSpan>[
+                                                          // TextSpan(
+                                                          //     text: ' *5138',
+                                                          //     style: primaryTextStyle()),
+                                                          // TextSpan(
+                                                          //     text: ' is Expired',
+                                                          //     style: boldTextStyle()),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    subtitle: Text(
+                                                        'Enter your account number',
+                                                        style:
+                                                            secondaryTextStyle(
+                                                                size: 12)),
+                                                    trailing: isExpanded
+                                                        ? Container(
+                                                            child: Icon(
+                                                                Icons
+                                                                    .keyboard_arrow_up,
+                                                                color: context
+                                                                    .iconColor,
+                                                                size: 30),
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    4),
+                                                            decoration: BoxDecoration(
+                                                                borderRadius:
+                                                                    radius(100),
+                                                                color: context
+                                                                    .accentColor
+                                                                    .withAlpha(
+                                                                        32)),
+                                                          )
+                                                        : Icon(
+                                                            Icons
+                                                                .keyboard_arrow_down,
+                                                            color: context
+                                                                .iconColor,
+                                                            size: 30),
+                                                    onExpansionChanged: (t) {
+                                                      isExpanded = !isExpanded;
+                                                      setState(() {});
+                                                    },
+                                                    children: [
+                                                      Container(
+                                                        decoration:
+                                                            boxDecorationDefault(
+                                                                color: context
+                                                                    .cardColor,
+                                                                boxShadow:
+                                                                    null),
+                                                        padding:
+                                                            EdgeInsets.all(8),
+                                                        child: Column(
+                                                          children: [
+                                                            10.height,
+                                                            AppTextField(
+                                                              controller:
+                                                                  evcNumber,
+                                                              textFieldType:
+                                                                  TextFieldType
+                                                                      .PHONE,
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                prefixIcon: Icon(
+                                                                    Icons
+                                                                        .payment,
+                                                                    color: context
+                                                                        .iconColor),
+                                                                labelText:
+                                                                    'Evc Number',
+                                                                suffixIcon: Icon(
+                                                                    Icons
+                                                                        .camera_alt_outlined,
+                                                                    color: context
+                                                                        .iconColor),
+                                                                border:
+                                                                    OutlineInputBorder(),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ).paddingAll(8),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              15.height,
+                                              Form(
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: radius(),
+                                                    color: appColorPrimary
+                                                        .withAlpha(100),
+                                                  ),
+                                                  child: ExpansionTile(
+                                                    childrenPadding:
+                                                        EdgeInsets.all(8),
+                                                    leading: Container(
+                                                      child: Icon(
+                                                          Icons
+                                                              .payment_outlined,
+                                                          color: Colors.white,
+                                                          size: 30),
+                                                      padding:
+                                                          EdgeInsets.all(6),
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              radius(100),
+                                                          color: const Color(
+                                                              0xFFD51A18)),
+                                                    ),
+                                                    title: Text.rich(
+                                                      TextSpan(
+                                                        text: ' Evc plus',
+                                                        style: boldTextStyle(),
+                                                        children: <InlineSpan>[
+                                                          // TextSpan(
+                                                          //     text: ' *5138',
+                                                          //     style: primaryTextStyle()),
+                                                          // TextSpan(
+                                                          //     text: ' is Expired',
+                                                          //     style: boldTextStyle()),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    subtitle: Text(
+                                                        'Enter your account number',
+                                                        style:
+                                                            secondaryTextStyle(
+                                                                size: 12)),
+                                                    trailing: isExpanded
+                                                        ? Container(
+                                                            child: Icon(
+                                                                Icons
+                                                                    .keyboard_arrow_up,
+                                                                color: context
+                                                                    .iconColor,
+                                                                size: 30),
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    4),
+                                                            decoration: BoxDecoration(
+                                                                borderRadius:
+                                                                    radius(100),
+                                                                color: context
+                                                                    .accentColor
+                                                                    .withAlpha(
+                                                                        32)),
+                                                          )
+                                                        : Icon(
+                                                            Icons
+                                                                .keyboard_arrow_down,
+                                                            color: context
+                                                                .iconColor,
+                                                            size: 30),
+                                                    onExpansionChanged: (t) {
+                                                      isExpanded = !isExpanded;
+                                                      setState(() {});
+                                                    },
+                                                    children: [
+                                                      Container(
+                                                        decoration:
+                                                            boxDecorationDefault(
+                                                                color: context
+                                                                    .cardColor,
+                                                                boxShadow:
+                                                                    null),
+                                                        padding:
+                                                            EdgeInsets.all(8),
+                                                        child: Column(
+                                                          children: [
+                                                            10.height,
+                                                            AppTextField(
+                                                              controller:
+                                                                  evcNumber,
+                                                              textFieldType:
+                                                                  TextFieldType
+                                                                      .PHONE,
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                prefixIcon: Icon(
+                                                                    Icons
+                                                                        .payment,
+                                                                    color: context
+                                                                        .iconColor),
+                                                                labelText:
+                                                                    'Evc Number',
+                                                                suffixIcon: Icon(
+                                                                    Icons
+                                                                        .camera_alt_outlined,
+                                                                    color: context
+                                                                        .iconColor),
+                                                                border:
+                                                                    OutlineInputBorder(),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ).paddingAll(8),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              15.height,
+                                              Spacer(),
+                                              BlocListener<EurosomBloc,
+                                                  EurosomState>(
+                                                listenWhen:
+                                                    (previous, current) =>
+                                                        previous != current,
+                                                listener: (context, state) {
+                                                  state.maybeMap(
+                                                      orElse: () {},
+                                                      paymentLoading: (e) {
+                                                        FlushbarHelper
+                                                                .createLoading(
+                                                                    duration: const Duration(
+                                                                        seconds:
+                                                                            10),
+                                                                    title:
+                                                                        "Requesting payment",
+                                                                    linearProgressIndicator:
+                                                                        const LinearProgressIndicator(
+                                                                      minHeight:
+                                                                          10,
+                                                                    ),
+                                                                    message:
+                                                                        "loading payment")
+                                                            .show(context);
+                                                      },
+                                                      evcPaymentFailure: (e) {
+                                                        context.replaceRoute(
+                                                            const HomeDrawer());
+
+                                                        FlushbarHelper.createError(
+                                                                message:
+                                                                    "payment error")
+                                                            .show(context);
+                                                        payState = 'Failed';
+                                                      },
+                                                      evcPaymentSuccess:
+                                                          (e) async {
+                                                        // Map<String, int> val = {
+                                                        //   "monthly": 1,
+                                                        //   "yearly": 12
+                                                        // };
+
+                                                        // int type = val[price!.duration!]!;
+                                                        // var cDate = DateTime.now();
+                                                        // await getIt<IEurosomRepo>()
+                                                        //     .createSubscription(PostSubscription(
+                                                        //             data: dm.Data(
+                                                        //                 account:
+                                                        //                     evcNumber.text,
+                                                        //                 amount:
+                                                        //                     price!.price!,
+                                                        //                 paymentMethod:
+                                                        //                     'EVC',
+                                                        //                 startDate: cDate
+                                                        //                     .toString(),
+                                                        //                 user: getIt<AuthFacade>()
+                                                        //                     .getSignedUser()
+                                                        //                     .fold(
+                                                        //                         (l) => 8,
+                                                        //                         (r) => r
+                                                        //                             .user!
+                                                        //                             .id!),
+                                                        //                 expiryDate: DateTime(
+                                                        //                         cDate.year,
+                                                        //                         cDate.month +
+                                                        //                             type,
+                                                        //                         cDate.day)
+                                                        //                     .toString(),
+                                                        //                 app: widget.appId.toString(),
+                                                        //                 status: 'active'))
+                                                        //         .toJson());
+                                                        // context.read<EurosomBloc>()
+                                                        //   ..add(EurosomEvent.createSubscription(
+                                                        //     )));
+                                                      });
+                                                },
+                                                child: AppButton(
+                                                    text: 'pay',
+                                                    textStyle: primaryTextStyle(
+                                                      size: 15,
+                                                      color: Colors.white,
+                                                    ),
+                                                    color: Colors.deepOrange,
+                                                    width: context.width(),
+                                                    shapeBorder:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                radius(32)),
+                                                    onTap: () async {
+                                                      if (evcNumber
+                                                                  .text.length >
+                                                              6 &&
+                                                          price != null) {
+                                                        context
+                                                            .read<EurosomBloc>()
+                                                            .add(EurosomEvent.payEvc(
+                                                                evcNumber.text,
+                                                                price!.price!
+                                                                    .toDouble(),
+                                                                price!,
+                                                                widget.appId));
+                                                      } else {}
+                                                    }),
+                                              ).center(),
+                                              8.height,
+                                              AppButton(
+                                                text: 'Go back',
+                                                textStyle:
+                                                    primaryTextStyle(size: 15),
+                                                width: context.width(),
+                                                color: context.cardColor,
+                                                shapeBorder:
+                                                    RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            radius(32)),
+                                                onTap: () {
+                                                  context.replaceRoute(
+                                                      const HomeDrawer());
+                                                },
+                                              ).center(),
+                                              300.height
+                                            ],
+                                          ).paddingAll(16),
                                         ),
                                       ),
-                                      Spacer(),
-                                      BlocListener<EurosomBloc, EurosomState>(
-                                        listenWhen: (previous, current) =>
-                                            previous != current,
-                                        listener: (context, state) {
-                                          state.maybeMap(
-                                              orElse: () {},
-                                              paymentLoading: (e) {
-                                                FlushbarHelper.createLoading(
-                                                        duration:
-                                                            const Duration(
-                                                                seconds: 10),
-                                                        title:
-                                                            "Requesting payment",
-                                                        linearProgressIndicator:
-                                                            const LinearProgressIndicator(
-                                                          minHeight: 10,
-                                                        ),
-                                                        message:
-                                                            "loading payment")
-                                                    .show(context);
-                                              },
-                                              evcPaymentFailure: (e) {
-                                                context.replaceRoute(
-                                                    const HomeDrawer());
-
-                                                FlushbarHelper.createError(
-                                                        message:
-                                                            "payment error")
-                                                    .show(context);
-                                                payState = 'Failed';
-                                              },
-                                              evcPaymentSuccess: (e) async {
-                                                // Map<String, int> val = {
-                                                //   "monthly": 1,
-                                                //   "yearly": 12
-                                                // };
-
-                                                // int type = val[price!.duration!]!;
-                                                // var cDate = DateTime.now();
-                                                // await getIt<IEurosomRepo>()
-                                                //     .createSubscription(PostSubscription(
-                                                //             data: dm.Data(
-                                                //                 account:
-                                                //                     evcNumber.text,
-                                                //                 amount:
-                                                //                     price!.price!,
-                                                //                 paymentMethod:
-                                                //                     'EVC',
-                                                //                 startDate: cDate
-                                                //                     .toString(),
-                                                //                 user: getIt<AuthFacade>()
-                                                //                     .getSignedUser()
-                                                //                     .fold(
-                                                //                         (l) => 8,
-                                                //                         (r) => r
-                                                //                             .user!
-                                                //                             .id!),
-                                                //                 expiryDate: DateTime(
-                                                //                         cDate.year,
-                                                //                         cDate.month +
-                                                //                             type,
-                                                //                         cDate.day)
-                                                //                     .toString(),
-                                                //                 app: widget.appId.toString(),
-                                                //                 status: 'active'))
-                                                //         .toJson());
-                                                // context.read<EurosomBloc>()
-                                                //   ..add(EurosomEvent.createSubscription(
-                                                //     )));
-                                              });
-                                        },
-                                        child: AppButton(
-                                            text: 'pay',
-                                            textStyle: primaryTextStyle(
-                                              size: 15,
-                                              color: Colors.white,
-                                            ),
-                                            color: Colors.deepOrange,
-                                            width: context.width(),
-                                            shapeBorder: RoundedRectangleBorder(
-                                                borderRadius: radius(32)),
-                                            onTap: () async {
-                                              if (evcNumber.text.length > 6 &&
-                                                  price != null) {
-                                                context.read<EurosomBloc>().add(
-                                                    EurosomEvent.payEvc(
-                                                        evcNumber.text,
-                                                        price!.price!
-                                                            .toDouble(),
-                                                        price!,
-                                                        widget.appId));
-                                              } else {}
-                                            }),
-                                      ).center(),
-                                      8.height,
-                                      AppButton(
-                                        text: 'Go back',
-                                        textStyle: primaryTextStyle(size: 15),
-                                        width: context.width(),
-                                        color: context.cardColor,
-                                        shapeBorder: RoundedRectangleBorder(
-                                            borderRadius: radius(32)),
-                                        onTap: () {
-                                          context
-                                              .replaceRoute(const HomeDrawer());
-                                        },
-                                      ).center(),
                                     ],
-                                  ).paddingAll(16);
+                                  );
                                 },
                               );
                             },

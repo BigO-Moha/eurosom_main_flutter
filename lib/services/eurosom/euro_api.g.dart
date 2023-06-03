@@ -294,6 +294,90 @@ class _EuroApiService implements EuroApiService {
     return value;
   }
 
+  @override
+  Future<DahabInvoice> createEdahab(query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DahabInvoice>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'http://app.eurosom.com/pay.php',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = DahabInvoice.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<VerifyEdahabPayment> verifyEdahabPayment(query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<VerifyEdahabPayment>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://api.premierwallets.com/api/GetPaymentDetails',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = VerifyEdahabPayment.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PwToken> authPW(
+    query,
+    deviceType,
+    chennelId,
+    machineID,
+    basicauth,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
+    final _headers = <String, dynamic>{
+      r'DeviceType': deviceType,
+      r'ChannelID': chennelId,
+      r'MachineID': machineID,
+      r'Authorization': basicauth,
+    };
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<PwToken>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://api.premierwallets.com/api/MerchantLogin',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PwToken.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

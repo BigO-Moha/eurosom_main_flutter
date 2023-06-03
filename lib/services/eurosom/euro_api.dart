@@ -4,9 +4,14 @@ import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
 import 'package:eurosom/models/configs/configs.dart';
+import 'package:eurosom/models/dahab_invoice/dahab_invoice.dart';
+import 'package:eurosom/models/p_wreq_response/p_wreq_response.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
+import 'package:eurosom/models/pw_token/pw_token.dart';
+import 'package:eurosom/models/pw_verify/pw_verify.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
 import 'package:eurosom/models/user_response/user_response.dart';
+import 'package:eurosom/models/verify_edahab_payment/verify_edahab_payment.dart';
 import 'package:eurosom/services/core/config.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -41,4 +46,31 @@ abstract class EuroApiService {
   @PUT("/users/{id}")
   Future<UserResponse> updateTokensUsed(
       @Path() String id, @Body() Map<String, dynamic> body);
+
+  @POST(Config.createInvoiceUrl)
+  Future<DahabInvoice> createEdahab(@Queries() Map<String, dynamic> query);
+  @GET(Config.verifyPamentPwUrl)
+  Future<VerifyEdahabPayment> verifyEdahabPayment(
+      @Queries() Map<String, dynamic> query);
+  @POST(Config.authPremierWallet)
+  Future<PwToken> authPW(
+      @Queries() Map<String, dynamic> query,
+      @Header("DeviceType") String deviceType,
+      @Header("ChannelID") String chennelId,
+      @Header("MachineID") String machineID,
+      @Header("Authorization") String basicauth);
+
+  Future<PWreqResponse> requestPWpayment(
+      @Body() Map<String, dynamic> body,
+      @Header("DeviceType") String deviceType,
+      @Header("ChannelID") String chennelId,
+      @Header("MachineID") String machineID,
+      @Header("Authorization") String bearerToken);
+
+  Future<PwVerify> verifyPWpayment(
+      @Body() Map<String, dynamic> body,
+      @Header("DeviceType") String deviceType,
+      @Header("ChannelID") String chennelId,
+      @Header("MachineID") String machineID,
+      @Header("Authorization") String bearerToken);
 }

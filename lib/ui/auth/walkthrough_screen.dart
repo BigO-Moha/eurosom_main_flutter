@@ -31,8 +31,18 @@ class _WalkThroughScreenState extends State<WalkThroughScreen>
     list.add(StockInvestModel(
         title: 'The Simplest Way to Invest',
         subTitle:
-            "Invest with only three taps on your phone \nand enjoy the low fee.",
+            "Invest with only 1 three taps on your phone \nand enjoy the low fee.",
         image: walkThrough1));
+    list.add(StockInvestModel(
+        title: 'Get Better Returns',
+        subTitle:
+            "Invest in the world leading brands & \nunlock amazing returns.",
+        image: walkThrough2));
+    list.add(StockInvestModel(
+        title: 'Get Better Returns',
+        subTitle:
+            "Invest in the world leading brands & \nunlock amazing returns.",
+        image: walkThrough2));
     list.add(StockInvestModel(
         title: 'Get Better Returns',
         subTitle:

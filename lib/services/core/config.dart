@@ -4,4 +4,10 @@ class Config {
   static const edahabPayUrl = "https://edahab.net/api/payment";
   static const checkInvoiceUrl = "http://app.eurosom.com/checkInvoice.php";
   static const createInvoiceUrl = "http://app.eurosom.com/pay.php";
+  static const authPremierWallet =
+      "https://api.premierwallets.com/api/MerchantLogin";
+  static const requestPaymentPWUrl =
+      "https://api.premierwallets.com/api/PushPayment";
+  static const verifyPamentPwUrl =
+      "https://api.premierwallets.com/api/GetPaymentDetails";
 }
