@@ -9,6 +9,7 @@ import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
 import 'package:eurosom/models/configs/configs.dart';
+import 'package:eurosom/models/dahab_invoice/dahab_invoice.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
@@ -262,15 +263,23 @@ class EurosomFacade implements IEurosomRepo {
   }
 
   @override
-  Future<Either<EurosomFailure, Unit>> payEdahab(
+  Future<Either<EurosomFailure, DahabInvoice>> payEdahab(
       String account, double amount) async {
-    final configs = await getConfigs();
+    // final configs = await getConfigs();
+    try {
+      final getEdahabInvoice = await _apiService
+          .createEdahab({"phone": account, "amount": amount.toString()});
+      print(getEdahabInvoice);
+      return right(getEdahabInvoice);
+    } on DioError catch (e) {
+      print(e.message);
+      return left(const EurosomFailure.serverError());
+    }
   }
 
   @override
   Future<Either<EurosomFailure, Unit>> verifyEdahab(
-      String account, double amount) {
-    // TODO: implement verifyEdahab
+      String account, double amount) async {
     throw UnimplementedError();
   }
 

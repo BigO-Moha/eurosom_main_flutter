@@ -303,7 +303,7 @@ class _EuroApiService implements EuroApiService {
     final _data = <String, dynamic>{};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<DahabInvoice>(Options(
-      method: 'POST',
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
@@ -375,6 +375,78 @@ class _EuroApiService implements EuroApiService {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = PwToken.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PWreqResponse> requestPWpayment(
+    body,
+    deviceType,
+    chennelId,
+    machineID,
+    bearerToken,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      r'DeviceType': deviceType,
+      r'ChannelID': chennelId,
+      r'MachineID': machineID,
+      r'Authorization': bearerToken,
+    };
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<PWreqResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://api.premierwallets.com/api/PushPayment',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PWreqResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PwVerify> verifyPWpayment(
+    body,
+    deviceType,
+    chennelId,
+    machineID,
+    bearerToken,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      r'DeviceType': deviceType,
+      r'ChannelID': chennelId,
+      r'MachineID': machineID,
+      r'Authorization': bearerToken,
+    };
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<PwVerify>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://api.premierwallets.com/api/GetPaymentDetails',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PwVerify.fromJson(_result.data!);
     return value;
   }
 

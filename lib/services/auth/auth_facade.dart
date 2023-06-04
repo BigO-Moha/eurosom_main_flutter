@@ -25,7 +25,6 @@ class AuthFacade implements IAuthFacade {
     if (data == false) {
       return false;
     } else {
-      saveItsfristTime();
       return true;
     }
   }

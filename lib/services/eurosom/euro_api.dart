@@ -47,7 +47,7 @@ abstract class EuroApiService {
   Future<UserResponse> updateTokensUsed(
       @Path() String id, @Body() Map<String, dynamic> body);
 
-  @POST(Config.createInvoiceUrl)
+  @GET(Config.createInvoiceUrl)
   Future<DahabInvoice> createEdahab(@Queries() Map<String, dynamic> query);
   @GET(Config.verifyPamentPwUrl)
   Future<VerifyEdahabPayment> verifyEdahabPayment(
@@ -59,14 +59,14 @@ abstract class EuroApiService {
       @Header("ChannelID") String chennelId,
       @Header("MachineID") String machineID,
       @Header("Authorization") String basicauth);
-
+  @POST(Config.requestPaymentPWUrl)
   Future<PWreqResponse> requestPWpayment(
       @Body() Map<String, dynamic> body,
       @Header("DeviceType") String deviceType,
       @Header("ChannelID") String chennelId,
       @Header("MachineID") String machineID,
       @Header("Authorization") String bearerToken);
-
+  @POST(Config.verifyPamentPwUrl)
   Future<PwVerify> verifyPWpayment(
       @Body() Map<String, dynamic> body,
       @Header("DeviceType") String deviceType,

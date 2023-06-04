@@ -72,7 +72,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: secondaryTextStyle(height: 1.3),
               children: [
                 TextSpan(
-                  text: "Stock Platform Terms & Conditions. Reward Policy,",
+                  text: "Eurosom Platform Terms & Conditions. Reward Policy,",
                   style: boldTextStyle(size: 14),
                 ),
                 TextSpan(
@@ -93,7 +93,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Text('Welcome to Eurosom', style: boldTextStyle(size: 24)),
                 16.height,
                 Text(
-                    'Create a commintent-free profile to explore stock products and rewards.',
+                    'Create a commintent-free profile to explore Eurosom products and apps.',
                     style: secondaryTextStyle()),
 
                 // commonSocialLoginButton(context),

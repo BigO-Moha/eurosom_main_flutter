@@ -4,6 +4,7 @@ import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
 import 'package:eurosom/models/configs/configs.dart';
+import 'package:eurosom/models/dahab_invoice/dahab_invoice.dart';
 import 'package:eurosom/models/failures/eurosom_failure.dart';
 import 'package:eurosom/models/pricing_model/pricing_model.dart';
 import 'package:eurosom/models/subscription_model/subscription_model.dart';
@@ -18,7 +19,8 @@ abstract class IEurosomRepo {
   Future<Either<EurosomFailure, SubscriptionModel>> getAppSubscriptions(
       int appId);
   Future<Either<EurosomFailure, Unit>>? payEvc(String account, double amount);
-  Future<Either<EurosomFailure, Unit>> payEdahab(String account, double amount);
+  Future<Either<EurosomFailure, DahabInvoice>> payEdahab(
+      String account, double amount);
   Future<Either<EurosomFailure, Unit>> payPremierWalet(
       String account, double amount);
   Future<Either<EurosomFailure, Unit>> verifyEdahab(

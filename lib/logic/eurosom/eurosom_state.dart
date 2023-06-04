@@ -21,6 +21,8 @@ class EurosomState with _$EurosomState {
       _createSubscriptionSuccess;
   const factory EurosomState.getAffliatesSuccess(AffliateModel affliateModel) =
       _GetAffliatesSuccess;
+  const factory EurosomState.edahahbGeneratedInvoice(
+      DahabInvoice dahabInvoice) = _DahabInvoice;
   const factory EurosomState.getConfigSuccess(Configs config) =
       _GetConfigSuccess;
   const factory EurosomState.createAffliatesSuccess(

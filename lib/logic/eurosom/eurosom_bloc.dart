@@ -5,6 +5,7 @@ import 'package:eurosom/models/affliate_model/affliate_model.dart';
 import 'package:eurosom/models/appsmodel/appsmodel.dart';
 import 'package:eurosom/models/auth_model/auth_model.dart';
 import 'package:eurosom/models/banner_model/banner_model.dart';
+import 'package:eurosom/models/dahab_invoice/dahab_invoice.dart';
 import 'package:eurosom/models/pricing_model/datum.dart' as pm;
 import 'package:eurosom/models/post_subscription/data.dart' as dm;
 import 'package:eurosom/models/configs/configs.dart';
@@ -136,8 +137,37 @@ class EurosomBloc extends Bloc<EurosomEvent, EurosomState> {
           },
           payEvc: (e) async {
             emit(const EurosomState.paymentLoading());
+
             final evcPayment = await _eurosomRepo.payEvc(e.number, e.price);
             if (evcPayment!.isRight()) {
+              add(CreateSubscription(
+                  e.number, e.price, e.pricing_model, e.app_id));
+            } else {
+              emit(const EurosomState.evcPaymentFailure());
+            }
+          },
+          payEdahab: (e) async {
+            emit(const EurosomState.paymentLoading());
+
+            final edahabPayment =
+                await _eurosomRepo.payEdahab(e.number, e.price);
+            print(edahabPayment.fold((l) => l, (r) => r));
+            final result = edahabPayment.fold((l) => null, (r) => r);
+            final dahabState = EurosomState.edahahbGeneratedInvoice(result!);
+            if (edahabPayment.isRight()) {
+              print("okkkkkkkkkkkkkkkk");
+              print(result);
+              emit(dahabState);
+            } else {
+              print("noooooooooooooooooooo");
+              emit(const EurosomState.evcPaymentFailure());
+            }
+          },
+          payPW: (e) async {
+            emit(const EurosomState.paymentLoading());
+            final pWPayment =
+                await _eurosomRepo.payPremierWalet(e.number, e.price);
+            if (pWPayment.isRight()) {
               add(CreateSubscription(
                   e.number, e.price, e.pricing_model, e.app_id));
             } else {

@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:eurosom/main.dart';
+import 'package:eurosom/models/absatractions/auth.dart';
+import 'package:eurosom/services/core/injection.dart';
 import 'package:eurosom/ui/auth/signin_screen.dart';
 import 'package:eurosom/ui/model/stock_invest_model.dart';
+import 'package:eurosom/ui/routes/app_router.gr.dart';
 import 'package:eurosom/ui/utils/common.dart';
 import 'package:eurosom/ui/utils/images.dart';
 import 'package:flutter/material.dart';
@@ -29,25 +32,31 @@ class _WalkThroughScreenState extends State<WalkThroughScreen>
 
   Future<void> init() async {
     list.add(StockInvestModel(
-        title: 'The Simplest Way to Invest',
+        title: 'Cloud solutions',
         subTitle:
-            "Invest with only 1 three taps on your phone \nand enjoy the low fee.",
-        image: walkThrough1));
+            "Eurosom is the leading cloud service provider in Somalia, \n offering an extensive array of cloud-based solutions such as Public, Private, and Hybrid Cloud.",
+        image: "assets/images/Group_4.png"));
+
     list.add(StockInvestModel(
-        title: 'Get Better Returns',
+        title: 'ChatGPT 4',
         subTitle:
-            "Invest in the world leading brands & \nunlock amazing returns.",
-        image: walkThrough2));
+            "With decades of experience in modern AI, Eurosom understands that AI is just the beginning, \n and that businesses without advanced AI will be left behind.",
+        image: "assets/images/ChatGPT_Pic.png"));
     list.add(StockInvestModel(
-        title: 'Get Better Returns',
+        title: 'Eurosom ERP',
         subTitle:
-            "Invest in the world leading brands & \nunlock amazing returns.",
-        image: walkThrough2));
+            "Eurosom recognizes that every business needs a process, \n and becoming a data-driven business can be a challenge.",
+        image: "assets/images/ERP_Pic.png"));
     list.add(StockInvestModel(
-        title: 'Get Better Returns',
+        title: 'IT Consultancy',
         subTitle:
-            "Invest in the world leading brands & \nunlock amazing returns.",
-        image: walkThrough2));
+            "With extensive expertise in modern technologies, \n Eurosom offers professional and comprehensive IT consultancy services.",
+        image: "assets/images/Group_8.png"));
+    list.add(StockInvestModel(
+        title: 'IOT',
+        subTitle:
+            "Eurosom's cutting-edge services connect the world through data, \n offering advanced data collection from any device connected to their network.",
+        image: "assets/images/IOT_Pic.png"));
   }
 
   @override
@@ -70,18 +79,18 @@ class _WalkThroughScreenState extends State<WalkThroughScreen>
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Stack(
-                      alignment: Alignment.center,
+                      alignment: Alignment.topCenter,
                       children: [
                         Container(
                           decoration: boxDecorationWithShadow(
                               boxShape: BoxShape.circle,
                               backgroundColor: greenColor),
-                          width: 350,
-                          height: 350,
+                          width: 100,
+                          height: 100,
                         ),
                         CommonCachedNetworkImage(e.image.validate(),
                             fit: BoxFit.cover,
-                            width: context.width() * 0.8,
+                            width: context.width() * 0.6,
                             radius: 16),
                       ],
                     ),
@@ -107,7 +116,8 @@ class _WalkThroughScreenState extends State<WalkThroughScreen>
                 children: [
                   OutlinedButton(
                     onPressed: () {
-                      SignInScreen().launch(context);
+                      getIt<IAuthFacade>().saveItsfristTime();
+                      context.replaceRoute(const SignInRoute());
                     },
                     child: Text('Skip', style: boldTextStyle()),
                     style: OutlinedButton.styleFrom(
@@ -126,7 +136,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen>
                     currentDotSize: 45,
                     currentDotWidth: 5,
                     dotSize: 27,
-                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
                     boxShape: BoxShape.rectangle,
                     currentBoxShape: BoxShape.rectangle,
                     currentBorderRadius: radius(),
@@ -148,7 +158,8 @@ class _WalkThroughScreenState extends State<WalkThroughScreen>
                 buttonText: "Get Started",
                 margin: 16,
                 onTap: () {
-                  SignInScreen().launch(context);
+                  getIt<IAuthFacade>().saveItsfristTime();
+                  context.replaceRoute(const SignInRoute());
                 },
               ),
             ),

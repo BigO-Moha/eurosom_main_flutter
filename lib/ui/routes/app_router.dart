@@ -21,6 +21,8 @@ class AppRouter extends $AppRouter {
         MaterialRoute(
             page: HomeDrawer.page, guards: <AutoRouteGuard>[AuthGuard()]),
         MaterialRoute(
+            page: DahaPayment.page, guards: <AutoRouteGuard>[AuthGuard()]),
+        MaterialRoute(
             page: ChattingRoute.page, guards: <AutoRouteGuard>[AuthGuard()]),
         MaterialRoute(
             keepHistory: false,

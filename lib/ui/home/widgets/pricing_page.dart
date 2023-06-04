@@ -60,6 +60,9 @@ class _PricingshowState extends State<Pricingshow> {
   Widget build(BuildContext context) {
     String payState = "waiting";
     TextEditingController evcNumber = TextEditingController();
+    TextEditingController edahabNumber = TextEditingController();
+    TextEditingController premierNumber = TextEditingController();
+
     bool checkBox = true;
     return BlocListener<EurosomBloc, EurosomState>(
       listener: (context, state) {
@@ -214,43 +217,134 @@ class _PricingshowState extends State<Pricingshow> {
                               bool isExpanded = false;
                               String dropdownValue = 'UK';
                               showModalBottomSheet(
+                                isScrollControlled: true,
                                 shape: RoundedRectangleBorder(
                                     borderRadius:
                                         radiusOnly(topLeft: 32, topRight: 32)),
                                 context: context,
                                 builder: (builder) {
-                                  return Wrap(
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height -
-                                              100,
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Payout',
-                                                style: boldTextStyle(
-                                                    size: 30,
-                                                    weight: FontWeight.w400),
-                                              ),
-                                              4.height,
-                                              Text(
-                                                'Pay out your balance now',
-                                                style: secondaryTextStyle(),
-                                              ),
-                                              4.height,
-                                              Center(
-                                                  child: Text(
-                                                payState,
-                                                style: secondaryTextStyle(),
-                                              )),
-                                              3.height,
-                                              Spacer(),
-                                              Form(
+                                  return Container(
+                                    height:
+                                        MediaQuery.of(context).size.height - 50,
+                                    child: FractionallySizedBox(
+                                      heightFactor: 0.9,
+                                      child: Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Payout',
+                                              style: boldTextStyle(
+                                                  size: 30,
+                                                  weight: FontWeight.w400),
+                                            ),
+                                            4.height,
+                                            Text(
+                                              'Pay out your balance now',
+                                              style: secondaryTextStyle(),
+                                            ),
+                                            4.height,
+                                            Center(
+                                                child: Text(
+                                              payState,
+                                              style: secondaryTextStyle(),
+                                            )),
+                                            3.height,
+                                            Spacer(),
+                                            BlocListener<EurosomBloc,
+                                                EurosomState>(
+                                              listener: (context, state) {
+                                                state.maybeMap(
+                                                    orElse: () {},
+                                                    paymentLoading: (e) {
+                                                      FlushbarHelper
+                                                              .createLoading(
+                                                                  duration:
+                                                                      const Duration(
+                                                                          seconds:
+                                                                              10),
+                                                                  title:
+                                                                      "Requesting payment",
+                                                                  linearProgressIndicator:
+                                                                      const LinearProgressIndicator(
+                                                                    minHeight:
+                                                                        10,
+                                                                  ),
+                                                                  message:
+                                                                      "loading payment")
+                                                          .show(context);
+                                                    },
+                                                    evcPaymentFailure: (e) {
+                                                      context.replaceRoute(
+                                                          const HomeDrawer());
+
+                                                      FlushbarHelper.createError(
+                                                              message:
+                                                                  "payment error")
+                                                          .show(context);
+                                                      payState = 'Failed';
+                                                    },
+                                                    edahahbGeneratedInvoice:
+                                                        (e) {
+                                                      context
+                                                          .pushRoute(DahaPayment(
+                                                              invoiceid: e
+                                                                  .dahabInvoice
+                                                                  .invoiceId!
+                                                                  .toString(),
+                                                              number:
+                                                                  edahabNumber
+                                                                      .text,
+                                                              price:
+                                                                  price!.price!,
+                                                              pricingmodel:
+                                                                  price!,
+                                                              appid: widget
+                                                                  .appId));
+                                                    },
+                                                    evcPaymentSuccess:
+                                                        (e) async {
+                                                      // Map<String, int> val = {
+                                                      //   "monthly": 1,
+                                                      //   "yearly": 12
+                                                      // };
+
+                                                      // int type = val[price!.duration!]!;
+                                                      // var cDate = DateTime.now();
+                                                      // await getIt<IEurosomRepo>()
+                                                      //     .createSubscription(PostSubscription(
+                                                      //             data: dm.Data(
+                                                      //                 account:
+                                                      //                     evcNumber.text,
+                                                      //                 amount:
+                                                      //                     price!.price!,
+                                                      //                 paymentMethod:
+                                                      //                     'EVC',
+                                                      //                 startDate: cDate
+                                                      //                     .toString(),
+                                                      //                 user: getIt<AuthFacade>()
+                                                      //                     .getSignedUser()
+                                                      //                     .fold(
+                                                      //                         (l) => 8,
+                                                      //                         (r) => r
+                                                      //                             .user!
+                                                      //                             .id!),
+                                                      //                 expiryDate: DateTime(
+                                                      //                         cDate.year,
+                                                      //                         cDate.month +
+                                                      //                             type,
+                                                      //                         cDate.day)
+                                                      //                     .toString(),
+                                                      //                 app: widget.appId.toString(),
+                                                      //                 status: 'active'))
+                                                      //         .toJson());
+                                                      // context.read<EurosomBloc>()
+                                                      //   ..add(EurosomEvent.createSubscription(
+                                                      //     )));
+                                                    });
+                                              },
+                                              child: Form(
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                     borderRadius: radius(),
@@ -331,7 +425,8 @@ class _PricingshowState extends State<Pricingshow> {
                                                                 boxShadow:
                                                                     null),
                                                         padding:
-                                                            EdgeInsets.all(8),
+                                                            const EdgeInsets
+                                                                .all(8),
                                                         child: Column(
                                                           children: [
                                                             10.height,
@@ -359,6 +454,44 @@ class _PricingshowState extends State<Pricingshow> {
                                                                     OutlineInputBorder(),
                                                               ),
                                                             ),
+                                                            10.height,
+                                                            AppButton(
+                                                                text: 'pay',
+                                                                textStyle:
+                                                                    primaryTextStyle(
+                                                                  size: 15,
+                                                                  color: Colors
+                                                                      .white,
+                                                                ),
+                                                                color: Colors
+                                                                    .deepOrange,
+                                                                width: context
+                                                                    .width(),
+                                                                shapeBorder: RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        radius(
+                                                                            32)),
+                                                                onTap:
+                                                                    () async {
+                                                                  print(price);
+                                                                  if (evcNumber
+                                                                              .text
+                                                                              .length >
+                                                                          6 &&
+                                                                      price !=
+                                                                          null) {
+                                                                    context.read<EurosomBloc>().add(EurosomEvent.payEvc(
+                                                                        "Evc",
+                                                                        evcNumber
+                                                                            .text,
+                                                                        price!
+                                                                            .price!
+                                                                            .toDouble(),
+                                                                        price!,
+                                                                        widget
+                                                                            .appId));
+                                                                  } else {}
+                                                                }).center(),
                                                           ],
                                                         ).paddingAll(8),
                                                       )
@@ -366,8 +499,101 @@ class _PricingshowState extends State<Pricingshow> {
                                                   ),
                                                 ),
                                               ),
-                                              15.height,
-                                              Form(
+                                            ),
+                                            15.height,
+                                            BlocListener<EurosomBloc,
+                                                EurosomState>(
+                                              listener: (context, state) {
+                                                state.maybeMap(
+                                                    orElse: () {},
+                                                    paymentLoading: (e) {
+                                                      FlushbarHelper
+                                                              .createLoading(
+                                                                  duration:
+                                                                      const Duration(
+                                                                          seconds:
+                                                                              10),
+                                                                  title:
+                                                                      "Requesting payment",
+                                                                  linearProgressIndicator:
+                                                                      const LinearProgressIndicator(
+                                                                    minHeight:
+                                                                        10,
+                                                                  ),
+                                                                  message:
+                                                                      "loading payment")
+                                                          .show(context);
+                                                    },
+                                                    evcPaymentFailure: (e) {
+                                                      context.replaceRoute(
+                                                          const HomeDrawer());
+
+                                                      FlushbarHelper.createError(
+                                                              message:
+                                                                  "payment error")
+                                                          .show(context);
+                                                      payState = 'Failed';
+                                                    },
+                                                    edahahbGeneratedInvoice:
+                                                        (e) {
+                                                      context
+                                                          .pushRoute(DahaPayment(
+                                                              invoiceid: e
+                                                                  .dahabInvoice
+                                                                  .invoiceId!
+                                                                  .toString(),
+                                                              number:
+                                                                  edahabNumber
+                                                                      .text,
+                                                              price:
+                                                                  price!.price!,
+                                                              pricingmodel:
+                                                                  price!,
+                                                              appid: widget
+                                                                  .appId));
+                                                    },
+                                                    evcPaymentSuccess:
+                                                        (e) async {
+                                                      // Map<String, int> val = {
+                                                      //   "monthly": 1,
+                                                      //   "yearly": 12
+                                                      // };
+
+                                                      // int type = val[price!.duration!]!;
+                                                      // var cDate = DateTime.now();
+                                                      // await getIt<IEurosomRepo>()
+                                                      //     .createSubscription(PostSubscription(
+                                                      //             data: dm.Data(
+                                                      //                 account:
+                                                      //                     evcNumber.text,
+                                                      //                 amount:
+                                                      //                     price!.price!,
+                                                      //                 paymentMethod:
+                                                      //                     'EVC',
+                                                      //                 startDate: cDate
+                                                      //                     .toString(),
+                                                      //                 user: getIt<AuthFacade>()
+                                                      //                     .getSignedUser()
+                                                      //                     .fold(
+                                                      //                         (l) => 8,
+                                                      //                         (r) => r
+                                                      //                             .user!
+                                                      //                             .id!),
+                                                      //                 expiryDate: DateTime(
+                                                      //                         cDate.year,
+                                                      //                         cDate.month +
+                                                      //                             type,
+                                                      //                         cDate.day)
+                                                      //                     .toString(),
+                                                      //                 app: widget.appId.toString(),
+                                                      //                 status: 'active'))
+                                                      //         .toJson());
+                                                      // context.read<EurosomBloc>()
+                                                      //   ..add(EurosomEvent.createSubscription(
+                                                      //     )));
+                                                    });
+                                              },
+                                              child: Form(
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                     borderRadius: radius(),
@@ -393,7 +619,7 @@ class _PricingshowState extends State<Pricingshow> {
                                                     ),
                                                     title: Text.rich(
                                                       TextSpan(
-                                                        text: ' Evc plus',
+                                                        text: ' Edahab',
                                                         style: boldTextStyle(),
                                                         children: <InlineSpan>[
                                                           // TextSpan(
@@ -406,7 +632,7 @@ class _PricingshowState extends State<Pricingshow> {
                                                       ),
                                                     ),
                                                     subtitle: Text(
-                                                        'Enter your account number',
+                                                        'Enter your edahab number',
                                                         style:
                                                             secondaryTextStyle(
                                                                 size: 12)),
@@ -454,7 +680,7 @@ class _PricingshowState extends State<Pricingshow> {
                                                             10.height,
                                                             AppTextField(
                                                               controller:
-                                                                  evcNumber,
+                                                                  edahabNumber,
                                                               textFieldType:
                                                                   TextFieldType
                                                                       .PHONE,
@@ -466,7 +692,7 @@ class _PricingshowState extends State<Pricingshow> {
                                                                     color: context
                                                                         .iconColor),
                                                                 labelText:
-                                                                    'Evc Number',
+                                                                    'Edahab',
                                                                 suffixIcon: Icon(
                                                                     Icons
                                                                         .camera_alt_outlined,
@@ -476,141 +702,73 @@ class _PricingshowState extends State<Pricingshow> {
                                                                     OutlineInputBorder(),
                                                               ),
                                                             ),
+                                                            10.height,
+                                                            AppButton(
+                                                                text: 'pay',
+                                                                textStyle:
+                                                                    primaryTextStyle(
+                                                                  size: 15,
+                                                                  color: Colors
+                                                                      .white,
+                                                                ),
+                                                                color: Colors
+                                                                    .deepOrange,
+                                                                width: context
+                                                                    .width(),
+                                                                shapeBorder: RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        radius(
+                                                                            32)),
+                                                                onTap:
+                                                                    () async {
+                                                                  print(price);
+                                                                  if (edahabNumber
+                                                                              .text
+                                                                              .length >
+                                                                          6 &&
+                                                                      price !=
+                                                                          null) {
+                                                                    context.read<EurosomBloc>().add(EurosomEvent.payEdahab(
+                                                                        "Edahab",
+                                                                        edahabNumber
+                                                                            .text,
+                                                                        price!
+                                                                            .price!
+                                                                            .toDouble(),
+                                                                        price!,
+                                                                        widget
+                                                                            .appId));
+                                                                  } else {}
+                                                                }).center(),
                                                           ],
-                                                        ).paddingAll(8),
-                                                      )
+                                                        ),
+                                                      ).paddingAll(8)
                                                     ],
                                                   ),
                                                 ),
                                               ),
-                                              15.height,
-                                              Spacer(),
-                                              BlocListener<EurosomBloc,
-                                                  EurosomState>(
-                                                listenWhen:
-                                                    (previous, current) =>
-                                                        previous != current,
-                                                listener: (context, state) {
-                                                  state.maybeMap(
-                                                      orElse: () {},
-                                                      paymentLoading: (e) {
-                                                        FlushbarHelper
-                                                                .createLoading(
-                                                                    duration: const Duration(
-                                                                        seconds:
-                                                                            10),
-                                                                    title:
-                                                                        "Requesting payment",
-                                                                    linearProgressIndicator:
-                                                                        const LinearProgressIndicator(
-                                                                      minHeight:
-                                                                          10,
-                                                                    ),
-                                                                    message:
-                                                                        "loading payment")
-                                                            .show(context);
-                                                      },
-                                                      evcPaymentFailure: (e) {
-                                                        context.replaceRoute(
-                                                            const HomeDrawer());
-
-                                                        FlushbarHelper.createError(
-                                                                message:
-                                                                    "payment error")
-                                                            .show(context);
-                                                        payState = 'Failed';
-                                                      },
-                                                      evcPaymentSuccess:
-                                                          (e) async {
-                                                        // Map<String, int> val = {
-                                                        //   "monthly": 1,
-                                                        //   "yearly": 12
-                                                        // };
-
-                                                        // int type = val[price!.duration!]!;
-                                                        // var cDate = DateTime.now();
-                                                        // await getIt<IEurosomRepo>()
-                                                        //     .createSubscription(PostSubscription(
-                                                        //             data: dm.Data(
-                                                        //                 account:
-                                                        //                     evcNumber.text,
-                                                        //                 amount:
-                                                        //                     price!.price!,
-                                                        //                 paymentMethod:
-                                                        //                     'EVC',
-                                                        //                 startDate: cDate
-                                                        //                     .toString(),
-                                                        //                 user: getIt<AuthFacade>()
-                                                        //                     .getSignedUser()
-                                                        //                     .fold(
-                                                        //                         (l) => 8,
-                                                        //                         (r) => r
-                                                        //                             .user!
-                                                        //                             .id!),
-                                                        //                 expiryDate: DateTime(
-                                                        //                         cDate.year,
-                                                        //                         cDate.month +
-                                                        //                             type,
-                                                        //                         cDate.day)
-                                                        //                     .toString(),
-                                                        //                 app: widget.appId.toString(),
-                                                        //                 status: 'active'))
-                                                        //         .toJson());
-                                                        // context.read<EurosomBloc>()
-                                                        //   ..add(EurosomEvent.createSubscription(
-                                                        //     )));
-                                                      });
-                                                },
-                                                child: AppButton(
-                                                    text: 'pay',
-                                                    textStyle: primaryTextStyle(
-                                                      size: 15,
-                                                      color: Colors.white,
-                                                    ),
-                                                    color: Colors.deepOrange,
-                                                    width: context.width(),
-                                                    shapeBorder:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                radius(32)),
-                                                    onTap: () async {
-                                                      if (evcNumber
-                                                                  .text.length >
-                                                              6 &&
-                                                          price != null) {
-                                                        context
-                                                            .read<EurosomBloc>()
-                                                            .add(EurosomEvent.payEvc(
-                                                                evcNumber.text,
-                                                                price!.price!
-                                                                    .toDouble(),
-                                                                price!,
-                                                                widget.appId));
-                                                      } else {}
-                                                    }),
-                                              ).center(),
-                                              8.height,
-                                              AppButton(
-                                                text: 'Go back',
-                                                textStyle:
-                                                    primaryTextStyle(size: 15),
-                                                width: context.width(),
-                                                color: context.cardColor,
-                                                shapeBorder:
-                                                    RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            radius(32)),
-                                                onTap: () {
-                                                  context.replaceRoute(
-                                                      const HomeDrawer());
-                                                },
-                                              ).center(),
-                                              300.height
-                                            ],
-                                          ).paddingAll(16),
-                                        ),
+                                            ),
+                                            Spacer(),
+                                            8.height,
+                                            AppButton(
+                                              text: 'Go back',
+                                              textStyle:
+                                                  primaryTextStyle(size: 15),
+                                              width: context.width(),
+                                              color: context.cardColor,
+                                              shapeBorder:
+                                                  RoundedRectangleBorder(
+                                                      borderRadius: radius(32)),
+                                              onTap: () {
+                                                context.replaceRoute(
+                                                    const HomeDrawer());
+                                              },
+                                            ).center(),
+                                            300.height
+                                          ],
+                                        ).paddingAll(16),
                                       ),
-                                    ],
+                                    ),
                                   );
                                 },
                               );

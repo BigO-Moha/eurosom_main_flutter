@@ -126,9 +126,11 @@ class _HomeFragmentState extends State<HomeFragment> {
                                 const Icon(Icons.keyboard_arrow_up, size: 16),
                           ),
                           Text(
-                              'Technology is best when it brings people together.',
-                              style: secondaryTextStyle(
-                                  color: white.withOpacity(0.6))),
+                            'The home of SAAS applicatons',
+                            overflow: TextOverflow.ellipsis,
+                            style: secondaryTextStyle(
+                                color: white.withOpacity(0.6)),
+                          ),
                         ],
                       ),
                       16.height,

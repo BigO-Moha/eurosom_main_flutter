@@ -72,6 +72,7 @@ dependencies:
   flutter_expanded_tile: ^0.3.7
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  webview_flutter: ^4.2.1
 
 
 dev_dependencies:
